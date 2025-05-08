@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+    --primary: #155dfc;
+}
+
+@layer base {
+    body {
+        @apply text-gray-900 bg-white;
+    }
+}
+
+@layer components {
+    .gradient-bg {
+        background: linear-gradient(135deg, var(--primary) 0%, #2563EB 100%);
+    }
+    .text-primary {
+        color: var(--primary);
+    }
+    .bg-primary {
+        background-color: var(--primary);
+    }
+    .feature-card:hover {
+        transform: translateY(-5px);
+    }
+    .floating {
+        animation: float 6s ease-in-out infinite;
+    }
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+}
+
+main {
+    margin-top: 64px;
+    /* ヘッダーの高さに合わせる */
+}

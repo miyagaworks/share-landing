@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- トップページ -->
+  <url>
+    <loc>https://sns-share.com/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- デジタル名刺関連ページ -->
+  <url>
+    <loc>https://sns-share.com/digital-namecard/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/profile-creation.webp</image:loc>
+      <image:title>デジタル名刺サービス Share</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/digital-namecard/about/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/social-links.webp</image:loc>
+      <image:title>デジタル名刺とは</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/digital-namecard/how-to-create/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/profile-creation.webp</image:loc>
+      <image:title>デジタル名刺の作り方</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/digital-namecard/business-benefits/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/business/meeting.webp</image:loc>
+      <image:title>ビジネスで差をつけるデジタル名刺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/digital-namecard/for-executives/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/business/meeting.webp</image:loc>
+      <image:title>経営者向けデジタル名刺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/digital-namecard/ultimate-guide/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/qr-code.webp</image:loc>
+      <image:title>デジタル名刺完全ガイド</image:title>
+    </image:image>
+  </url>
+
+  <!-- ブログ記事 -->
+  <url>
+    <loc>https://sns-share.com/blog/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sns-share.com/blog/digital-namecard/what-is/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/intro-generator.webp</image:loc>
+      <image:title>デジタル名刺とは？紙の名刺との違いとビジネスでのメリット</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/blog/qr-code-namecard-guide/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/qr-code.webp</image:loc>
+      <image:title>QRコード名刺の作り方と注意点</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://sns-share.com/blog/sns-integration-business-card/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://sns-share.com/images/screenshots/social-links.webp</image:loc>
+      <image:title>SNSアカウントを一元管理できるデジタル名刺の活用法</image:title>
+    </image:image>
+  </url>
+
+  <!-- 無料トライアル -->
+  <url>
+    <loc>https://sns-share.com/free-trial/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- 活用事例 -->
+  <url>
+    <loc>https://sns-share.com/case-studies/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- その他 -->
+  <url>
+    <loc>https://sns-share.com/support/faq/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://sns-share.com/support/contact/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <!-- 法的ページ -->
+  <url>
+    <loc>https://sns-share.com/legal/terms/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://sns-share.com/legal/privacy/</loc>
+    <lastmod>2025-04-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>
