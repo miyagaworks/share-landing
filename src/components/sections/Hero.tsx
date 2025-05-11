@@ -74,7 +74,7 @@ export default function Hero() {
                 height={377}
                 style={{ width: "auto", height: "auto" }}
                 priority
-                className="z-10 mx-auto md:mx-0"
+                className="z-10 mx-auto md:ml-12 md:mx-0"
               />
             </div>
           </div>
