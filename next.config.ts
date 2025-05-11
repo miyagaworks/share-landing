@@ -2,16 +2,15 @@ import type { NextConfig } from "next";
 import type { Configuration as WebpackConfiguration } from "webpack";
 
 const nextConfig: NextConfig = {
-  reactStrictMode: true,
-  // swcMinify: true, // この行を削除または無効化
+  output: "export",
   images: {
-    formats: ["image/avif", "image/webp"],
-    domains: [],
+    unoptimized: true, // 静的エクスポート時に画像最適化を無効化
   },
   // i18n: { // App Routerではこのセクションをまるごとコメントアウトまたは削除
   //   locales: ["ja"],
   //   defaultLocale: "ja",
   // },
+  reactStrictMode: true,
   async rewrites() {
     return [];
   },

@@ -70,24 +70,25 @@ export default function Hero() {
               <Image
                 src="/images/hero/illust_meet.webp"
                 alt="デジタル名刺でスマートなビジネスミーティング"
-                width={380}
-                height={329}
+                width={320}
+                height={377}
                 style={{ width: "auto", height: "auto" }}
                 priority
-                className="z-10 mx-auto md:mx-0"
+                className="z-10 mx-auto md:mx-0 scale-[0.85]"
               />
             </div>
           </div>
 
           {/* 右側 - スマホイラスト */}
           <div className="hidden md:block w-1/2 relative">
-            <div className="absolute -bottom-12 right-0 floating">
+            {/* 以下のdivを修正 */}
+            <div className="absolute transform -translate-y-24 -bottom-12 right-0 floating">
               <Image
                 src="/images/hero/illust_phone.webp"
                 alt="経営者向け電子名刺アプリのスマートフォン画面"
                 width={557}
                 height={720}
-                style={{ height: "auto" }}
+                style={{ height: "auto", transform: "translateY(-150px)" }}
                 priority
                 className="z-20"
               />

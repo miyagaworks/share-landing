@@ -1,6 +1,7 @@
 {
     "name": "share-landing",
     "version": "0.1.0",
+    "type": "module",
     "private": true,
     "scripts": {
         "dev": "next dev",
@@ -14,7 +15,8 @@
         "next": "^15.2.4",
         "nodemailer": "^6.10.1",
         "react": "^19.1.0",
-        "react-dom": "^19.1.0"
+        "react-dom": "^19.1.0",
+        "resend": "^4.5.1"
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3",

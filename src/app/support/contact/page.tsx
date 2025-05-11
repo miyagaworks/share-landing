@@ -46,6 +46,13 @@ export default function ContactPage() {
         throw new Error("法人プランのお問い合わせには会社名が必須です");
       }
 
+      console.log("APIリクエスト送信:", {
+        name,
+        email,
+        contactType,
+        subject,
+      });
+
       // APIエンドポイントにPOSTリクエストを送信
       const response = await fetch("/api/contact", {
         method: "POST",
@@ -62,10 +69,28 @@ export default function ContactPage() {
         }),
       });
 
-      const data = await response.json();
+      // レスポンスのデバッグ
+      console.log("APIレスポンスステータス:", response.status);
+
+      // テキストとしてレスポンスを取得
+      const responseText = await response.text();
+      console.log("APIレスポンステキスト:", responseText);
+
+      // JSONに変換できる場合のみ変換
+      let data;
+      try {
+        data = JSON.parse(responseText);
+      } catch (jsonError) {
+        console.error("JSONパースエラー:", jsonError);
+        throw new Error(
+          "レスポンスの解析に失敗しました: " +
+            responseText.substring(0, 100) +
+            "..."
+        );
+      }
 
       if (!response.ok) {
-        throw new Error(data.error || "お問い合わせの送信に失敗しました");
+        throw new Error(data?.error || "お問い合わせの送信に失敗しました");
       }
 
       // 成功
@@ -81,6 +106,7 @@ export default function ContactPage() {
         setPrivacyAgreed(false);
       }
     } catch (err) {
+      console.error("詳細なエラー:", err);
       if (err instanceof Error) {
         setError(err.message);
       } else {
@@ -91,7 +117,8 @@ export default function ContactPage() {
     }
   };
 
-  const resetForm = () => {
+  // 新しいお問い合わせを作成する関数
+  const handleNewContact = () => {
     setSuccess(false);
     setError(null);
     if (contactType !== "corporate") {
@@ -125,7 +152,7 @@ export default function ContactPage() {
             <p className="text-green-700 mb-4">
               法人プランに関するお問い合わせを受け付けました。担当者より1営業日以内にご連絡いたします。
             </p>
-            <Button type="button" onClick={resetForm} variant="success">
+            <Button type="button" onClick={handleNewContact} variant="success">
               新しいお問い合わせをする
             </Button>
           </div>
@@ -137,7 +164,7 @@ export default function ContactPage() {
             <p className="text-green-700 mb-4 text-justify">
               お問い合わせありがとうございます。内容を確認の上、必要に応じてご連絡いたします。
             </p>
-            <Button type="button" onClick={resetForm} variant="success">
+            <Button type="button" onClick={handleNewContact} variant="success">
               新しいお問い合わせをする
             </Button>
           </div>
