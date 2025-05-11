@@ -178,63 +178,67 @@ export default function Header() {
           isMenuOpen ? "block" : "hidden"
         } md:hidden bg-white border-b border-gray-200`}
       >
-        <div className="px-2 pt-2 pb-3 space-y-1">
+        <div className="px-2 pt-2 pb-3">
           <Link
             href="/#features"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             機能
           </Link>
           <Link
             href="/#pricing"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             料金
           </Link>
           <Link
             href="/#benefits"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             メリット
           </Link>
           <Link
             href="/digital-namecard/"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             デジタル名刺
           </Link>
           <Link
             href="/blog/"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             ブログ
           </Link>
           <Link
             href="/#faq"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             FAQ
           </Link>
           <Link
             href="/support/contact"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-2"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-6"
             onClick={handleMenuItemClick}
           >
             お問い合わせ
           </Link>
-          <Link
-            href={signupUrl}
-            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-8 mb-8 text-center"
-            onClick={handleMenuItemClick}
-          >
-            無料で試す
-          </Link>
+          <div className="py-4">
+            {" "}
+            {/* 追加の余白用のコンテナ */}
+            <Link
+              href={signupUrl}
+              className="block w-full px-3 py-3 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 text-center"
+              onClick={handleMenuItemClick}
+            >
+              無料で試す
+            </Link>
+          </div>
         </div>
       </div>
     </header>
