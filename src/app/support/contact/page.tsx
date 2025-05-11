@@ -45,24 +45,21 @@ export default function ContactPage() {
         throw new Error("法人プランのお問い合わせには会社名が必須です");
       }
 
-      // Vercel上のAPIエンドポイントを使用
-      const response = await fetch(
-        "https://share-landing-xi.vercel.app/api/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            email,
-            companyName,
-            contactType,
-            subject,
-            message,
-          }),
-        }
-      );
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
+      const response = await fetch(`${apiUrl}/api/contact`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          companyName,
+          contactType,
+          subject,
+          message,
+        }),
+      });
 
       // レスポンス処理...（既存のコードと同じ）
       const responseText = await response.text();

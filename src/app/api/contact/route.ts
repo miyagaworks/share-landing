@@ -6,24 +6,49 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // CORSヘッダーを設定する関数
-function setCorsHeaders(response: NextResponse) {
-  // 固定のオリジンを設定（本番環境用）
-  response.headers.set("Access-Control-Allow-Origin", "https://sns-share.com");
+function setCorsHeaders(response: NextResponse, request?: Request) {
+  // 環境に応じて適切なオリジンを設定
+  const allowedOrigins = [
+    "https://sns-share.com",
+    "http://localhost:3000",
+    "https://share-landing-xi.vercel.app",
+  ];
+
+  const origin = request?.headers.get("origin") || "";
+
+  if (request && allowedOrigins.includes(origin)) {
+    response.headers.set("Access-Control-Allow-Origin", origin);
+  } else if (process.env.NODE_ENV === "development") {
+    // 開発環境ではすべてのオリジンを許可（一時的な設定）
+    response.headers.set("Access-Control-Allow-Origin", "*");
+  } else {
+    // デフォルトのオリジン設定
+    response.headers.set(
+      "Access-Control-Allow-Origin",
+      "https://sns-share.com"
+    );
+  }
+
   response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   response.headers.set(
     "Access-Control-Allow-Headers",
     "Content-Type, Authorization"
   );
+  response.headers.set("Access-Control-Allow-Credentials", "true");
 
   return response;
 }
 
-export async function OPTIONS() {
+export async function OPTIONS(request: Request) {
   const response = new NextResponse(null, { status: 200 });
-  return setCorsHeaders(response);
+  return setCorsHeaders(response, request);
 }
 
 export async function POST(request: Request) {
+  console.log(
+    "リクエストヘッダー:",
+    Object.fromEntries(request.headers.entries())
+  );
   console.log("API Route Called");
   console.log("環境変数:", {
     RESEND_API_KEY: process.env.RESEND_API_KEY ? "設定あり" : "未設定",
