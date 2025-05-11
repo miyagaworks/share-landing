@@ -40,14 +40,7 @@ export default function Footer() {
           <div>
             <h2 className="text-lg font-semibold mb-4">サポート</h2>
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/support/help"
-                  className="text-gray-700 hover:text-blue-600"
-                >
-                  ヘルプセンター
-                </Link>
-              </li>
+              {/* ヘルプセンターへのリンクを削除 */}
               <li>
                 <Link
                   href="/support/faq"
