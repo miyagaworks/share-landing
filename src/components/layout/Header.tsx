@@ -229,15 +229,8 @@ export default function Header() {
             お問い合わせ
           </Link>
           <Link
-            href="/login"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
-            onClick={handleMenuItemClick}
-          >
-            ログイン
-          </Link>
-          <Link
             href={signupUrl}
-            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-2 text-center"
+            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-4 mb-4 text-center"
             onClick={handleMenuItemClick}
           >
             無料で試す
