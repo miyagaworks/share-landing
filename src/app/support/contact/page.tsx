@@ -46,7 +46,7 @@ export default function ContactPage() {
       }
 
       const response = await fetch(
-        "/api/contact", // 絶対URLを相対パスに変更
+        "/api/contact", // 相対パスに変更
         {
           method: "POST",
           headers: {
