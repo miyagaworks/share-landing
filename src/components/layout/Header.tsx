@@ -230,7 +230,7 @@ export default function Header() {
           </Link>
           <Link
             href={signupUrl}
-            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-4 mb-4 text-center"
+            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-4 mb-12 text-center"
             onClick={handleMenuItemClick}
           >
             無料で試す
