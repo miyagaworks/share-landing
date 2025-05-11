@@ -1,50 +1,12 @@
-import type { NextConfig } from "next";
-import type { Configuration as WebpackConfiguration } from "webpack";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   output: "export",
+  // APIルートは使用しないので、画面を表示するパスのみが対象
+  distDir: "out",
+  // 画像の最適化を無効化（静的サイトでは不要）
   images: {
-    unoptimized: true, // 静的エクスポート時に画像最適化を無効化
-  },
-  // i18n: { // App Routerではこのセクションをまるごとコメントアウトまたは削除
-  //   locales: ["ja"],
-  //   defaultLocale: "ja",
-  // },
-  reactStrictMode: true,
-  async rewrites() {
-    return [];
-  },
-  // 環境変数の公開設定
-  env: {
-    NEXT_PUBLIC_SITE_URL: "https://sns-share.com",
-  },
-  // TypeScriptの設定
-  typescript: {
-    ignoreBuildErrors: false,
-  },
-  // Webpackの設定
-  webpack: (config: WebpackConfiguration) => {
-    // SVGをReactコンポーネントとしてインポートできるようにする
-    if (config.module && config.module.rules) {
-      config.module.rules.push({
-        test: /\.svg$/,
-        use: ["@svgr/webpack"],
-      });
-    }
-
-    return config;
-  },
-  // ページのビルド時静的生成の設定
-  staticPageGenerationTimeout: 120,
-  // 実験的機能
-  experimental: {
-    // serverActionsの型を修正
-    serverActions: {
-      // 空のオブジェクトを指定することで型エラーを解消
-      bodySizeLimit: "2mb",
-      allowedOrigins: ["localhost:3000", "sns-share.com"],
-    },
+    unoptimized: true,
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

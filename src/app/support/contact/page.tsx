@@ -36,67 +36,51 @@ export default function ContactPage() {
     setError(null);
 
     try {
-      // フォームのバリデーション
+      // フォームのバリデーション...
       if (!name || !email || !subject || !message || !privacyAgreed) {
         throw new Error("すべての必須項目を入力してください");
       }
 
-      // 法人プランの場合は会社名必須
       if (contactType === "corporate" && !companyName) {
         throw new Error("法人プランのお問い合わせには会社名が必須です");
       }
 
-      console.log("APIリクエスト送信:", {
-        name,
-        email,
-        contactType,
-        subject,
-      });
+      // Vercel上のAPIエンドポイントを使用
+      const response = await fetch(
+        "https://share-landing-xi.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            companyName,
+            contactType,
+            subject,
+            message,
+          }),
+        }
+      );
 
-      // APIエンドポイントにPOSTリクエストを送信
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          companyName,
-          contactType,
-          subject,
-          message,
-        }),
-      });
-
-      // レスポンスのデバッグ
-      console.log("APIレスポンスステータス:", response.status);
-
-      // テキストとしてレスポンスを取得
+      // レスポンス処理...（既存のコードと同じ）
       const responseText = await response.text();
-      console.log("APIレスポンステキスト:", responseText);
-
-      // JSONに変換できる場合のみ変換
       let data;
       try {
         data = JSON.parse(responseText);
       } catch (jsonError) {
         console.error("JSONパースエラー:", jsonError);
-        throw new Error(
-          "レスポンスの解析に失敗しました: " +
-            responseText.substring(0, 100) +
-            "..."
-        );
+        throw new Error("レスポンスの解析に失敗しました");
       }
 
       if (!response.ok) {
         throw new Error(data?.error || "お問い合わせの送信に失敗しました");
       }
 
-      // 成功
+      // 成功処理...（既存のコードと同じ）
       setSuccess(true);
 
-      // フォームをリセット（法人プラン申し込みの場合は残す）
       if (contactType !== "corporate") {
         setName("");
         setEmail("");
@@ -106,6 +90,7 @@ export default function ContactPage() {
         setPrivacyAgreed(false);
       }
     } catch (err) {
+      // エラー処理...（既存のコードと同じ）
       console.error("詳細なエラー:", err);
       if (err instanceof Error) {
         setError(err.message);

@@ -5,6 +5,24 @@ import { Resend } from "resend";
 // Resendインスタンスを初期化
 const resend = new Resend(process.env.RESEND_API_KEY);
 
+// CORSヘッダーを設定する関数
+function setCorsHeaders(response: NextResponse) {
+  // 固定のオリジンを設定（本番環境用）
+  response.headers.set("Access-Control-Allow-Origin", "https://sns-share.com");
+  response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  response.headers.set(
+    "Access-Control-Allow-Headers",
+    "Content-Type, Authorization"
+  );
+
+  return response;
+}
+
+export async function OPTIONS() {
+  const response = new NextResponse(null, { status: 200 });
+  return setCorsHeaders(response);
+}
+
 export async function POST(request: Request) {
   console.log("API Route Called");
   console.log("環境変数:", {
@@ -21,18 +39,20 @@ export async function POST(request: Request) {
 
     // バリデーション
     if (!name || !email || !subject || !message) {
-      return NextResponse.json(
+      const response = NextResponse.json(
         { error: "すべての必須項目を入力してください" },
         { status: 400 }
       );
+      return setCorsHeaders(response);
     }
 
     // 法人プランの場合は会社名必須
     if (contactType === "corporate" && !companyName) {
-      return NextResponse.json(
+      const response = NextResponse.json(
         { error: "法人プランのお問い合わせには会社名が必須です" },
         { status: 400 }
       );
+      return setCorsHeaders(response);
     }
 
     // 問い合わせタイプの日本語表記を取得
@@ -197,7 +217,8 @@ export async function POST(request: Request) {
         );
       }
 
-      return NextResponse.json({ success: true });
+      const response = NextResponse.json({ success: true });
+      return setCorsHeaders(response);
     } catch (emailError) {
       console.error("メール送信エラー:", emailError);
 
@@ -211,14 +232,19 @@ export async function POST(request: Request) {
             }`
           : "お問い合わせの送信に失敗しました";
 
-      return NextResponse.json({ error: errorMessage }, { status: 500 });
+      const response = NextResponse.json(
+        { error: errorMessage },
+        { status: 500 }
+      );
+      return setCorsHeaders(response);
     }
   } catch (error) {
     console.error("お問い合わせ処理エラー:", error);
-    return NextResponse.json(
+    const response = NextResponse.json(
       { error: "お問い合わせの送信に失敗しました" },
       { status: 500 }
     );
+    return setCorsHeaders(response);
   }
 }
 
