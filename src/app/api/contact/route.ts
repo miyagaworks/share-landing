@@ -6,29 +6,11 @@ import { Resend } from "resend";
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // CORSヘッダーを設定する関数
-function setCorsHeaders(response: NextResponse, request?: Request) {
-  // 環境に応じて適切なオリジンを設定
-  const allowedOrigins = [
-    "https://sns-share.com",
-    "http://localhost:3000",
-    "https://share-landing-xi.vercel.app",
-  ];
-
-  const origin = request?.headers.get("origin") || "";
-
-  if (request && allowedOrigins.includes(origin)) {
-    response.headers.set("Access-Control-Allow-Origin", origin);
-  } else if (process.env.NODE_ENV === "development") {
-    // 開発環境ではすべてのオリジンを許可（一時的な設定）
-    response.headers.set("Access-Control-Allow-Origin", "*");
-  } else {
-    // デフォルトのオリジン設定
-    response.headers.set(
-      "Access-Control-Allow-Origin",
-      "https://sns-share.com"
-    );
-  }
-
+function setCorsHeaders(response: NextResponse) {
+  // 本番サイトのオリジンを許可
+  response.headers.set("Access-Control-Allow-Origin", "https://sns-share.com");
+  // 開発環境も許可する場合
+  // response.headers.set("Access-Control-Allow-Origin", "*");
   response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   response.headers.set(
     "Access-Control-Allow-Headers",
@@ -39,25 +21,21 @@ function setCorsHeaders(response: NextResponse, request?: Request) {
   return response;
 }
 
-export async function OPTIONS(request: Request) {
+export async function OPTIONS() {
   const response = new NextResponse(null, { status: 200 });
-  return setCorsHeaders(response, request);
+  return setCorsHeaders(response);
 }
 
 export async function POST(request: Request) {
+  console.log("API Route Called");
   console.log(
-    "リクエストヘッダー:",
+    "Request Headers:",
     Object.fromEntries(request.headers.entries())
   );
-  console.log("API Route Called");
-  console.log("環境変数:", {
-    RESEND_API_KEY: process.env.RESEND_API_KEY ? "設定あり" : "未設定",
-    MAIL_FROM: process.env.MAIL_FROM || "未設定",
-    NODE_ENV: process.env.NODE_ENV || "未設定",
-  });
 
   try {
     const body = await request.json();
+    console.log("Request Body:", body);
     const { name, email, companyName, contactType, subject, message } = body;
 
     console.log("リクエストボディ:", { name, email, contactType, subject });

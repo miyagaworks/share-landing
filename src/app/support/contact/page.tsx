@@ -45,30 +45,47 @@ export default function ContactPage() {
         throw new Error("法人プランのお問い合わせには会社名が必須です");
       }
 
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "";
-      const response = await fetch(`${apiUrl}/api/contact`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name,
-          email,
-          companyName,
-          contactType,
-          subject,
-          message,
-        }),
-      });
+      const response = await fetch(
+        "https://share-landing-xi.vercel.app/api/contact",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            companyName,
+            contactType,
+            subject,
+            message,
+          }),
+        }
+      );
 
-      // レスポンス処理...（既存のコードと同じ）
-      const responseText = await response.text();
       let data;
       try {
-        data = JSON.parse(responseText);
-      } catch (jsonError) {
-        console.error("JSONパースエラー:", jsonError);
-        throw new Error("レスポンスの解析に失敗しました");
+        // Content-Type: application/json が設定されているか確認
+        const contentType = response.headers.get("content-type");
+
+        if (contentType && contentType.includes("application/json")) {
+          // JSONの場合は直接パース
+          data = await response.json();
+        } else {
+          // JSON以外の場合はテキストとして取得してパース
+          const responseText = await response.text();
+          console.log("レスポンステキスト:", responseText);
+
+          try {
+            data = JSON.parse(responseText);
+          } catch (jsonError) {
+            console.error("JSONパースエラー:", jsonError);
+            throw new Error(`レスポンスの解析に失敗しました: ${responseText}`);
+          }
+        }
+      } catch (responseError) {
+        console.error("レスポンス処理エラー:", responseError);
+        throw new Error("レスポンスの処理に失敗しました");
       }
 
       if (!response.ok) {
