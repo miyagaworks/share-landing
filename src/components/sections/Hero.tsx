@@ -74,7 +74,7 @@ export default function Hero() {
                 height={377}
                 style={{ width: "auto", height: "auto" }}
                 priority
-                className="z-10 mx-auto md:mx-0 scale-[0.85]"
+                className="z-10 mx-auto md:mx-0"
               />
             </div>
           </div>
@@ -88,7 +88,7 @@ export default function Hero() {
                 alt="経営者向け電子名刺アプリのスマートフォン画面"
                 width={557}
                 height={720}
-                style={{ height: "auto", transform: "translateY(-150px)" }}
+                style={{ height: "auto" }}
                 priority
                 className="z-20"
               />
