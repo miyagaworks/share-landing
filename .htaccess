@@ -7,6 +7,31 @@ RewriteRule ^(.*)$ https://sns-share.com/$1 [R=301,L]
 RewriteCond %{HTTPS} off
 RewriteRule (.*) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
+# API リクエストをVercelにプロキシ
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # /api/contact へのリクエストを Vercel にプロキシ
+  RewriteCond %{REQUEST_URI} ^/api/contact
+  RewriteRule ^api/contact(.*)$ https://share-landing-xi.vercel.app/api/contact$1 [P,L]
+  
+  # プロキシヘッダーの設定
+  <IfModule mod_headers.c>
+    # プロキシ先のレスポンスヘッダーを保持
+    Header unset Access-Control-Allow-Origin
+    Header unset Access-Control-Allow-Methods
+    Header unset Access-Control-Allow-Headers
+    
+    # プロキシされたリクエストに対して以下のヘッダーを設定
+    <FilesMatch "^api/">
+      Header always set Access-Control-Allow-Origin "*"
+      Header always set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+      Header always set Access-Control-Allow-Headers "Content-Type, Authorization"
+      Header always set Access-Control-Allow-Credentials "true"
+    </FilesMatch>
+  </IfModule>
+</IfModule>
+
 # 末尾のスラッシュの統一
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_URI} !(.*)/$

@@ -7,20 +7,18 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 // CORSヘッダーを設定する関数
 function setCorsHeaders(response: NextResponse) {
-  // 本番サイトのオリジンを許可
+  // sns-share.comからのリクエストを許可
   response.headers.set("Access-Control-Allow-Origin", "https://sns-share.com");
-  // 開発環境も許可する場合
-  // response.headers.set("Access-Control-Allow-Origin", "*");
   response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
   response.headers.set(
     "Access-Control-Allow-Headers",
     "Content-Type, Authorization"
   );
-  response.headers.set("Access-Control-Allow-Credentials", "true");
 
   return response;
 }
 
+// プリフライトリクエスト（OPTIONS）に対応
 export async function OPTIONS() {
   const response = new NextResponse(null, { status: 200 });
   return setCorsHeaders(response);
