@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",
-  // APIルートは使用しないので、画面を表示するパスのみが対象
-  distDir: "out",
-  // 画像の最適化を無効化（静的サイトでは不要）
+  // 静的出力設定を削除
+  // output: "export",
+  // distDir: "out",
+
+  // 画像の最適化を有効にする（SSR/ISRモードでは必要）
   images: {
-    unoptimized: true,
+    // unoptimized: true,  // この行を削除または false に設定
   },
 };
 

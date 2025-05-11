@@ -46,7 +46,7 @@ export default function ContactPage() {
       }
 
       const response = await fetch(
-        "https://share-landing-xi.vercel.app/api/contact",
+        "/api/contact", // 絶対URLを相対パスに変更
         {
           method: "POST",
           headers: {

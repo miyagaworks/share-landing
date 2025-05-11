@@ -5,49 +5,12 @@ import { Resend } from "resend";
 // Resendインスタンスを初期化
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// CORSヘッダーを設定する関数
-function setCorsHeaders(response: NextResponse, request?: Request) {
-  // 環境変数から許可するオリジンを取得（カンマ区切りで複数設定可能）
-  const allowedOrigins = process.env.ALLOWED_ORIGINS?.split(",") || [
-    "https://sns-share.com",
-  ];
-  const origin = request?.headers.get("origin") || "";
-
-  if (request && allowedOrigins.includes(origin)) {
-    response.headers.set("Access-Control-Allow-Origin", origin);
-  } else if (process.env.NODE_ENV === "development") {
-    response.headers.set("Access-Control-Allow-Origin", "*");
-  } else {
-    // デフォルトのオリジン設定
-    response.headers.set(
-      "Access-Control-Allow-Origin",
-      "https://sns-share.com"
-    );
-  }
-
-  response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-  response.headers.set(
-    "Access-Control-Allow-Headers",
-    "Content-Type, Authorization"
-  );
-  response.headers.set("Access-Control-Allow-Credentials", "true");
-
-  return response;
-}
-
-// プリフライトリクエスト（OPTIONS）に対応
-export async function OPTIONS(request: Request) {
-  const response = new NextResponse(null, { status: 200 });
-  return setCorsHeaders(response, request);
-}
-
 export async function POST(request: Request) {
   console.log("API Route Called");
   console.log("環境変数:", {
     RESEND_API_KEY: process.env.RESEND_API_KEY ? "設定あり" : "未設定",
     MAIL_FROM: process.env.MAIL_FROM || "未設定",
     NODE_ENV: process.env.NODE_ENV || "未設定",
-    ALLOWED_ORIGINS: process.env.ALLOWED_ORIGINS || "未設定",
   });
 
   try {
@@ -58,20 +21,18 @@ export async function POST(request: Request) {
 
     // バリデーション
     if (!name || !email || !subject || !message) {
-      const response = NextResponse.json(
+      return NextResponse.json(
         { error: "すべての必須項目を入力してください" },
         { status: 400 }
       );
-      return setCorsHeaders(response, request);
     }
 
     // 法人プランの場合は会社名必須
     if (contactType === "corporate" && !companyName) {
-      const response = NextResponse.json(
+      return NextResponse.json(
         { error: "法人プランのお問い合わせには会社名が必須です" },
         { status: 400 }
       );
-      return setCorsHeaders(response, request);
     }
 
     // 問い合わせタイプの日本語表記を取得
@@ -236,8 +197,7 @@ export async function POST(request: Request) {
         );
       }
 
-      const response = NextResponse.json({ success: true });
-      return setCorsHeaders(response, request);
+      return NextResponse.json({ success: true });
     } catch (emailError) {
       console.error("メール送信エラー:", emailError);
 
@@ -251,19 +211,14 @@ export async function POST(request: Request) {
             }`
           : "お問い合わせの送信に失敗しました";
 
-      const response = NextResponse.json(
-        { error: errorMessage },
-        { status: 500 }
-      );
-      return setCorsHeaders(response, request);
+      return NextResponse.json({ error: errorMessage }, { status: 500 });
     }
   } catch (error) {
     console.error("お問い合わせ処理エラー:", error);
-    const response = NextResponse.json(
+    return NextResponse.json(
       { error: "お問い合わせの送信に失敗しました" },
       { status: 500 }
     );
-    return setCorsHeaders(response, request);
   }
 }
 
