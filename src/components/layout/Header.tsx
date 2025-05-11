@@ -223,14 +223,14 @@ export default function Header() {
           </Link>
           <Link
             href="/support/contact"
-            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50"
+            className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-2"
             onClick={handleMenuItemClick}
           >
             お問い合わせ
           </Link>
           <Link
             href={signupUrl}
-            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-4 mb-12 text-center"
+            className="block w-full px-3 py-2 rounded-md text-base font-medium text-white bg-primary hover:bg-blue-700 mt-8 mb-8 text-center"
             onClick={handleMenuItemClick}
           >
             無料で試す
