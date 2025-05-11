@@ -1,22 +1,45 @@
-// src/app/blog/page.tsx
+// src/app/blog/category/[slug]/page.tsx
 "use client";
 
 import Link from "next/link";
+import { useParams } from "next/navigation";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { useBreadcrumb } from "@/hooks/useBreadcrumb";
 
-export default function BlogIndex() {
+// BreadcrumbItemの型定義を取得（既存のものと一致させる）
+interface BreadcrumbItem {
+  name: string;
+  href: string;
+}
+
+export default function BlogCategory() {
+  const params = useParams();
+  const { slug } = params;
   const breadcrumbItems = useBreadcrumb();
 
-  // ブログ記事データ - categorySlugプロパティを追加
-  const blogPosts = [
+  // カテゴリー名のマッピング
+  const categoryNames = {
+    all: "すべて",
+    basic: "基礎知識",
+    guide: "活用ガイド",
+    technique: "活用テクニック",
+  };
+
+  // 現在のカテゴリー名を取得
+  const currentCategory =
+    slug && typeof slug === "string"
+      ? categoryNames[slug as keyof typeof categoryNames] || slug
+      : "カテゴリー";
+
+  // ブログ記事データ（メインページと同じデータ）
+  const allBlogPosts = [
     {
       slug: "digital-namecard/what-is",
       title: "デジタル名刺とは？紙の名刺との違いとビジネスでのメリット",
       excerpt:
         "デジタル名刺（電子名刺）の基本概念から、従来の紙の名刺との違い、ビジネスシーンでの具体的なメリットまで詳しく解説します。複数のSNSアカウントを一つにまとめて効率的に共有する方法をご紹介。",
       category: "基礎知識",
-      categorySlug: "basic", // 追加
+      categorySlug: "basic",
       date: "2025-04-15",
       readTime: "7分",
       thumbnail: "/images/screenshots/profile-creation.webp",
@@ -27,7 +50,7 @@ export default function BlogIndex() {
       excerpt:
         "QRコードを活用したデジタル名刺の作成方法を解説。最適なQRコードのサイズ、配置、デザイン例から、スキャン時の注意点まで、ビジネスで差をつけるQRコード名刺の完全ガイド。",
       category: "活用ガイド",
-      categorySlug: "guide", // 追加
+      categorySlug: "guide",
       date: "2025-04-10",
       readTime: "6分",
       thumbnail: "/images/screenshots/qr-code.webp",
@@ -38,40 +61,54 @@ export default function BlogIndex() {
       excerpt:
         "複数のSNSアカウントを一つのデジタル名刺にまとめる方法と、ビジネスシーンでの効果的な活用方法をご紹介。LINE、X、Instagram、Facebookなど、SNS別の最適な設定方法も解説。",
       category: "活用テクニック",
-      categorySlug: "technique", // 追加
+      categorySlug: "technique",
       date: "2025-04-05",
       readTime: "5分",
       thumbnail: "/images/screenshots/social-links.webp",
     },
   ];
 
-  // カテゴリーデータ - 各カテゴリーの記事数を正確に計算
+  // フィルタリングされたブログ記事
+  const filteredPosts =
+    slug === "all"
+      ? allBlogPosts
+      : allBlogPosts.filter((post) => post.categorySlug === slug);
+
+  // カテゴリーデータ（メインページと同じデータ）
   const categories = [
-    { name: "すべて", slug: "all", count: blogPosts.length },
+    { name: "すべて", slug: "all", count: allBlogPosts.length },
     {
       name: "基礎知識",
       slug: "basic",
-      count: blogPosts.filter((post) => post.categorySlug === "basic").length,
+      count: allBlogPosts.filter((post) => post.categorySlug === "basic")
+        .length,
     },
     {
       name: "活用ガイド",
       slug: "guide",
-      count: blogPosts.filter((post) => post.categorySlug === "guide").length,
+      count: allBlogPosts.filter((post) => post.categorySlug === "guide")
+        .length,
     },
     {
       name: "活用テクニック",
       slug: "technique",
-      count: blogPosts.filter((post) => post.categorySlug === "technique")
+      count: allBlogPosts.filter((post) => post.categorySlug === "technique")
         .length,
     },
   ];
+
+  // 修正: BreadcrumbItemのhrefプロパティを追加
+  const categoryBreadcrumb: BreadcrumbItem = {
+    name: currentCategory,
+    href: `/blog/category/${slug}`,
+  };
 
   return (
     <div className="bg-white">
       {/* パンくずリスト */}
       <div className="bg-white py-2 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
-          <Breadcrumb items={breadcrumbItems} />
+          <Breadcrumb items={[...breadcrumbItems, categoryBreadcrumb]} />
         </div>
       </div>
 
@@ -80,13 +117,13 @@ export default function BlogIndex() {
         <div className="max-w-6xl mx-auto px-4">
           <div className="md:w-2/3">
             <h1 className="text-3xl md:text-4xl font-bold mb-4">
-              デジタル名刺活用ブログ
+              {currentCategory} の記事
             </h1>
             <p className="text-xl text-blue-100 mb-2">
-              先進的なビジネスパーソンのためのデジタル名刺情報
+              デジタル名刺に関する「{currentCategory}」カテゴリーの記事一覧
             </p>
             <p className="text-blue-50 text-justify">
-              Share（シェア）のデジタル名刺活用ブログでは、複数のSNSアカウントを一元管理するデジタル名刺の基本から応用まで、ビジネスシーンで差をつけるための実践的な情報を発信しています。経営者やビジネスパーソンのデジタル活用をサポートします。
+              Share（シェア）のデジタル名刺活用ブログでは、複数のSNSアカウントを一元管理するデジタル名刺の基本から応用まで、ビジネスシーンで差をつけるための実践的な情報を発信しています。
             </p>
           </div>
         </div>
@@ -102,7 +139,11 @@ export default function BlogIndex() {
               <Link
                 key={category.slug}
                 href={`/blog/category/${category.slug}`}
-                className="px-4 py-2 rounded-full text-sm font-medium bg-white border border-gray-200 text-gray-700 hover:border-primary hover:text-primary transition-colors"
+                className={`px-4 py-2 rounded-full text-sm font-medium ${
+                  category.slug === slug
+                    ? "bg-primary text-white"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-primary hover:text-primary"
+                } transition-colors`}
               >
                 {category.name} ({category.count})
               </Link>
@@ -111,83 +152,55 @@ export default function BlogIndex() {
         </div>
 
         {/* 記事リスト */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogPosts.map((post) => (
-            <Link
-              key={post.slug}
-              href={`/blog/${post.slug}`}
-              className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100"
-            >
-              <div className="h-48 bg-gray-200 relative">
-                <div
-                  className="w-full h-full bg-center bg-cover"
-                  style={{ backgroundImage: `url(${post.thumbnail})` }}
-                />
-                {/* 白い半透明オーバーレイを追加 */}
-                <div className="absolute top-0 left-0 right-0 h-full bg-white bg-opacity-50"></div>
-                <div className="absolute top-3 left-3">
-                  <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded shadow-md shadow-black/20">
-                    {post.category}
-                  </span>
+        {filteredPosts.length > 0 ? (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredPosts.map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blog/${post.slug}`}
+                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 border border-gray-100"
+              >
+                <div className="h-48 bg-gray-200 relative">
+                  <div
+                    className="w-full h-full bg-center bg-cover"
+                    style={{ backgroundImage: `url(${post.thumbnail})` }}
+                  />
+                  {/* 白い半透明オーバーレイを追加 */}
+                  <div className="absolute top-0 left-0 right-0 h-full bg-white bg-opacity-50"></div>
+                  <div className="absolute top-3 left-3">
+                    <span className="bg-primary text-white text-xs font-bold px-2 py-1 rounded shadow-md shadow-black/20">
+                      {post.category}
+                    </span>
+                  </div>
                 </div>
-              </div>
-              <div className="p-6">
-                <h3 className="text-lg font-bold mb-2 text-gray-800 line-clamp-2">
-                  {post.title}
-                </h3>
-                <p className="text-gray-600 text-sm mb-4 line-clamp-3">
-                  {post.excerpt}
-                </p>
-                <div className="flex justify-between text-xs text-gray-500">
-                  <span>{post.date}</span>
-                  <span>読了時間: {post.readTime}</span>
+                <div className="p-6">
+                  <h3 className="text-lg font-bold mb-2 text-gray-800 line-clamp-2">
+                    {post.title}
+                  </h3>
+                  <p className="text-gray-600 text-sm mb-4 line-clamp-3">
+                    {post.excerpt}
+                  </p>
+                  <div className="flex justify-between text-xs text-gray-500">
+                    <span>{post.date}</span>
+                    <span>読了時間: {post.readTime}</span>
+                  </div>
                 </div>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* お役立ち情報 */}
-        <div className="mt-16">
-          <h2 className="text-2xl font-bold mb-6 text-gray-800">
-            デジタル名刺の活用に役立つコンテンツ
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-xl text-gray-600">
+              このカテゴリーには記事がありません。
+            </p>
             <Link
-              href="/digital-namecard/ultimate-guide"
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all"
+              href="/blog"
+              className="mt-4 inline-block text-primary hover:underline"
             >
-              <h3 className="text-lg font-semibold mb-3 text-primary">
-                デジタル名刺完全ガイド
-              </h3>
-              <p className="text-gray-600 text-justify">
-                デジタル名刺の基礎から応用まで、すべてを網羅した総合ガイド。メリット・活用シーン・事例などを詳しく解説します。
-              </p>
-            </Link>
-            <Link
-              href="/digital-namecard/how-to-create"
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <h3 className="text-lg font-semibold mb-3 text-primary">
-                デジタル名刺の作り方
-              </h3>
-              <p className="text-gray-600 text-justify">
-                ステップバイステップで解説する、Share（シェア）でのデジタル名刺作成方法をご紹介します。
-              </p>
-            </Link>
-            <Link
-              href="/free-trial"
-              className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all"
-            >
-              <h3 className="text-lg font-semibold mb-3 text-primary">
-                7日間無料トライアル
-              </h3>
-              <p className="text-gray-600 text-justify">
-                Share（シェア）のデジタル名刺サービスを7日間無料でお試しいただけます。クレジットカード登録不要です。
-              </p>
+              すべての記事を見る
             </Link>
           </div>
-        </div>
+        )}
 
         {/* CTA */}
         <div className="mt-12 bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl p-8 shadow-lg">
