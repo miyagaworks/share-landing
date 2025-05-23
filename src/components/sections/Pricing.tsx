@@ -72,7 +72,7 @@ export default function Pricing() {
     },
   ];
 
-  // 料金プランデータ - 法人向け
+  // 料金プランデータ - 法人向け（Stripe設定に合わせて更新）
   const businessPlans: PricingPlan[] = [
     {
       title: "法人スタータープラン",
@@ -81,6 +81,7 @@ export default function Pricing() {
       description: "小規模チーム向け",
       price: isYearly ? "¥30,000" : "¥3,000",
       period: isYearly ? "年額（税込）" : "月額（税込）",
+      discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [
         { title: "最大10名のユーザー管理", included: true },
         { title: "共通カラーテーマ設定", included: true },
@@ -92,17 +93,37 @@ export default function Pricing() {
     },
     {
       title: "法人ビジネスプラン",
-      badge: "近日公開",
-      badgeColor: "blue",
-      description: "中規模〜大規模チーム向け",
-      price: isYearly ? "¥120,000" : "¥12,000",
+      badge: "ビジネスプラン",
+      badgeColor: "green",
+      description: "中規模チーム向け",
+      price: isYearly ? "¥60,000" : "¥6,000",
       period: isYearly ? "年額（税込）" : "月額（税込）",
+      discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [
-        { title: "最大50名のユーザー管理", included: true },
+        { title: "最大30名のユーザー管理", included: true },
         { title: "部署/チーム分け機能", included: true },
         { title: "高度なユーザー権限設定", included: true },
         { title: "優先サポート（営業時間内）", included: true },
         { title: "分析レポート", included: true },
+      ],
+      cta: "詳細を問い合わせる",
+      popular: true,
+    },
+    {
+      title: "法人エンタープライズプラン",
+      badge: "エンタープライズプラン",
+      badgeColor: "purple",
+      description: "大規模チーム向け",
+      price: isYearly ? "¥90,000" : "¥9,000",
+      period: isYearly ? "年額（税込）" : "月額（税込）",
+      discount: isYearly ? "2ヶ月分お得" : undefined,
+      features: [
+        { title: "最大50名のユーザー管理", included: true },
+        { title: "高度な部署管理機能", included: true },
+        { title: "詳細なアクセス権限制御", included: true },
+        { title: "24時間サポート", included: true },
+        { title: "カスタムブランディング", included: true },
+        { title: "API アクセス", included: true },
       ],
       cta: "詳細を問い合わせる",
     },
@@ -218,17 +239,30 @@ export default function Pricing() {
         </div>
 
         {/* プランカード */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-16">
+        <div
+          className={`grid gap-8 mb-16 ${
+            activeTab === "personal"
+              ? "md:grid-cols-2 lg:grid-cols-2"
+              : "md:grid-cols-2 lg:grid-cols-3"
+          }`}
+        >
           {activePlans.map((plan, index) => (
             <div
               key={index}
-              className={`pricing-card bg-white rounded-xl p-6 md:p-8 transition-all duration-500 opacity-0 transform translate-y-8 ${
+              className={`pricing-card bg-white rounded-xl p-6 md:p-8 transition-all duration-500 opacity-0 transform translate-y-8 relative ${
                 plan.popular
                   ? "border-2 border-primary shadow-xl"
                   : "border border-gray-200 shadow-lg"
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
+              {/* 人気プランバッジ */}
+              {plan.popular && (
+                <div className="absolute top-0 right-0 bg-primary text-white py-1 px-4 text-sm font-medium rounded-bl-lg rounded-tr-lg">
+                  人気
+                </div>
+              )}
+
               {/* バッジ */}
               {plan.badge && (
                 <div
@@ -247,16 +281,14 @@ export default function Pricing() {
                     plan.badgeColor === "green"
                       ? "bg-green-100 text-green-700"
                       : ""
+                  }
+                  ${
+                    plan.badgeColor === "purple"
+                      ? "bg-purple-100 text-purple-700"
+                      : ""
                   }`}
                 >
                   {plan.badge}
-                </div>
-              )}
-
-              {/* 人気プランバッジ */}
-              {plan.popular && (
-                <div className="absolute top-0 right-0 bg-primary text-white py-1 px-4 text-sm font-medium rounded-bl-lg rounded-tr-lg">
-                  人気
                 </div>
               )}
 
@@ -356,7 +388,7 @@ export default function Pricing() {
                 href={
                   plan.cta === "お問い合わせ" ||
                   plan.cta === "詳細を問い合わせる"
-                    ? "/contact"
+                    ? "/support/contact"
                     : signupUrl
                 }
                 className={`inline-block w-full py-3 px-6 rounded-md text-center font-medium transition-all duration-300 ${
@@ -397,7 +429,11 @@ export default function Pricing() {
                   <div>
                     <span className="font-medium">追加ユーザー:</span>
                     <p className="text-sm text-gray-600">
-                      スタータープラン 300円/ユーザー/月
+                      スタータープラン: 300円/ユーザー/月
+                      <br />
+                      ビジネスプラン: 200円/ユーザー/月
+                      <br />
+                      エンタープライズプラン: 180円/ユーザー/月
                     </p>
                   </div>
                 </div>
@@ -407,7 +443,7 @@ export default function Pricing() {
                     <span className="font-medium">
                       カスタムQRコードデザイン:
                     </span>
-                    <p className="text-sm text-gray-600">20,000円（一括）</p>
+                    <p className="text-sm text-gray-600">30,000円（一括）</p>
                   </div>
                 </div>
               </div>
@@ -425,7 +461,7 @@ export default function Pricing() {
                   <span className="text-blue-500 mr-2 font-bold">•</span>
                   <div>
                     <span className="font-medium">オンサイトトレーニング:</span>
-                    <p className="text-sm text-gray-600">50,000円/回</p>
+                    <p className="text-sm text-gray-600">80,000円/回</p>
                   </div>
                 </div>
               </div>
