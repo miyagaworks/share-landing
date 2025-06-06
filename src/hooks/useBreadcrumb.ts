@@ -41,7 +41,6 @@ export function useBreadcrumb() {
       "/support": "サポート",
       "/support/contact": "お問い合わせ",
       "/support/faq": "よくある質問",
-      "/support/help": "ヘルプセンター",
 
       "/legal/privacy": "プライバシーポリシー",
       "/legal/terms": "利用規約",

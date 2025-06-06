@@ -58,7 +58,7 @@ export default function FAQPage() {
       id: "corporate-plan",
       question: "法人プランはありますか？",
       answer:
-        "はい、法人向けプランをご用意しています。最大10名まで利用できるスタータープラン（月額3,000円）と、最大50名まで利用できるビジネスプラン（月額12,000円）があります。チーム管理機能や企業ブランディングの統一など、法人向けの機能が含まれています。",
+        "はい、法人向けプランをご用意しています。最大10名まで利用できるスタータープラン（月額3,000円）と、最大30名まで利用できるビジネスプラン（月額6,000円）、そして最大50名まで利用できるエンタープライズプラン（月額9,000円）があります。チーム管理機能や企業ブランディングの統一など、法人向けの機能が含まれています。",
       category: "料金・プラン",
     },
     {
@@ -327,25 +327,6 @@ export default function FAQPage() {
                 />
               </svg>
               お問い合わせ
-            </Link>
-            <Link
-              href="/support/help"
-              className="inline-flex items-center justify-center px-5 py-3 border border-gray-300 rounded-md shadow-sm text-base font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors"
-            >
-              <svg
-                className="w-5 h-5 mr-2"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
-              ヘルプセンター
             </Link>
           </div>
         </div>

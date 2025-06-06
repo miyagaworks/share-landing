@@ -113,7 +113,7 @@ export default function FreeTrial() {
     {
       question: "支払い方法にはどのようなものがありますか？",
       answer:
-        "クレジットカード（Visa、Mastercard、American Express、JCB）による支払いに対応しています。法人向けプランでは請求書払いも可能です。",
+        "クレジットカード（Visa、Mastercard、American Express、JCB）による支払いに対応しています。",
     },
   ];
 

@@ -483,7 +483,7 @@ export default function Pricing() {
               </h4>
               <p className="text-gray-600">
                 クレジットカード（Visa、Mastercard、American
-                Express、JCB）、PayPalに対応しています。法人向けプランでは請求書払いも可能です。
+                Express、JCB）に対応しています。
               </p>
             </div>
 
