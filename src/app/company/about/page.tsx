@@ -24,7 +24,7 @@ export const viewport: Viewport = {
 export default function CompanyAboutPage() {
   return (
     <PageLayout
-      title="ビイアルファ株式会社"
+      title="株式会社Senrigan"
       breadcrumbs={[
         { name: "ホーム", href: "/" },
         { name: "運営会社", href: "/company/about" },
@@ -46,7 +46,7 @@ export default function CompanyAboutPage() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    ビイアルファ株式会社
+                    株式会社Senrigan
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-4 w-4 ml-1"
@@ -81,9 +81,9 @@ export default function CompanyAboutPage() {
                   所在地
                 </th>
                 <td className="py-4 px-4">
-                  〒730-0046
+                  〒731-0137
                   <br />
-                  広島県広島市中区昭和町6-11
+                  広島県広島市安佐南区山本2-3-35
                 </td>
               </tr>
               <tr className="border-b">
