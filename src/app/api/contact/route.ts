@@ -78,7 +78,7 @@ export async function POST(request: Request) {
   
   <div style="font-size: 13px; margin: 4px 0;">
     メール: <a href="mailto:support@sns-share.com" style="color: #3B82F6; text-decoration: none;">support@sns-share.com</a><br>
-    電話: 082-208-3976（平日10:00〜18:00 土日祝日休業）<br>
+    電話: 082-209-0181（平日10:00〜18:00 土日祝日休業）<br>
     ウェブ: <a href="https://sns-share.com" style="color: #3B82F6; text-decoration: none;">sns-share.com</a>
   </div>
   
