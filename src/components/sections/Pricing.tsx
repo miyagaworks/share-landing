@@ -56,7 +56,7 @@ export default function Pricing() {
       badge: isYearly ? "年間プラン" : "月額プラン",
       badgeColor: "blue",
       description: "個人利用に最適なプラン",
-      price: isYearly ? "¥5,000" : "¥500",
+      price: isYearly ? "¥5,500" : "¥550",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       period: isYearly ? "年額（税込）" : "月額（税込）",
       features: [
@@ -79,7 +79,7 @@ export default function Pricing() {
       badge: "スタータープラン",
       badgeColor: "blue",
       description: "小規模チーム向け",
-      price: isYearly ? "¥30,000" : "¥3,000",
+      price: isYearly ? "¥33,000" : "¥3,300",
       period: isYearly ? "年額（税込）" : "月額（税込）",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [
@@ -96,7 +96,7 @@ export default function Pricing() {
       badge: "ビジネスプラン",
       badgeColor: "green",
       description: "中規模チーム向け",
-      price: isYearly ? "¥60,000" : "¥6,000",
+      price: isYearly ? "¥66,000" : "¥6,600",
       period: isYearly ? "年額（税込）" : "月額（税込）",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [
@@ -114,7 +114,7 @@ export default function Pricing() {
       badge: "エンタープライズプラン",
       badgeColor: "purple",
       description: "大規模チーム向け",
-      price: isYearly ? "¥90,000" : "¥9,000",
+      price: isYearly ? "¥99,000" : "¥9,900",
       period: isYearly ? "年額（税込）" : "月額（税込）",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [
@@ -443,7 +443,7 @@ export default function Pricing() {
                     <span className="font-medium">
                       カスタムQRコードデザイン:
                     </span>
-                    <p className="text-sm text-gray-600">30,000円（一括）</p>
+                    <p className="text-sm text-gray-600">33,000円（一括）</p>
                   </div>
                 </div>
               </div>
@@ -453,7 +453,7 @@ export default function Pricing() {
                   <div>
                     <span className="font-medium">NFCカード作成:</span>
                     <p className="text-sm text-gray-600">
-                      1,500円/枚（10枚以上で割引）
+                      550円/枚（10枚以上で割引）
                     </p>
                   </div>
                 </div>

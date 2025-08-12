@@ -15,8 +15,8 @@ export default function FreeTrial() {
     {
       id: "standard",
       name: "スタンダードプラン",
-      price: "月額 ¥500（税込）",
-      yearlyPrice: "年額 ¥5,000（税込）",
+      price: "月額 ¥550（税込）",
+      yearlyPrice: "年額 ¥5,500（税込）",
       yearlyDiscount: "2ヶ月分お得",
       features: [
         "SNSアカウント無制限追加",

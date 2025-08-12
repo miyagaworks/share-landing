@@ -27,7 +27,7 @@ export default function DigitalNamecardContent() {
     },
     {
       feature: "コスト",
-      digital: "月額500円から",
+      digital: "月額550円から",
       paper: "印刷コストが継続的に発生",
     },
     {

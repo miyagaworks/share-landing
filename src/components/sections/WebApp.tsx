@@ -144,7 +144,7 @@ export default function WebApp() {
                     一日たったの16円
                   </h3>
                   <p className="text-gray-600 text-sm text-justify">
-                    月額たった500円で、いつでもどこでもプロフェッショナルな印象を与えられるツールを手に入れられます。
+                    月額たった550円で、いつでもどこでもプロフェッショナルな印象を与えられるツールを手に入れられます。
                   </p>
                 </div>
               </div>
@@ -152,11 +152,11 @@ export default function WebApp() {
                 <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 sm:gap-0">
                   <div className="text-gray-700">
                     <span className="font-medium">月額プラン</span>
-                    <span className="text-sm ml-2">¥500/月（税込）</span>
+                    <span className="text-sm ml-2">¥550/月（税込）</span>
                   </div>
                   <div className="text-gray-700">
                     <span className="font-medium">年間プラン</span>
-                    <span className="text-sm ml-2">¥5,000/年（税込）</span>
+                    <span className="text-sm ml-2">¥5,500/年（税込）</span>
                     <span className="ml-2 bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">
                       2ヶ月分お得
                     </span>
@@ -212,7 +212,7 @@ export default function WebApp() {
                   年間プランでお得に
                 </h3>
                 <p className="text-center text-gray-600 mb-2">
-                  年間一括払いで5,000円
+                  年間一括払いで5,500円
                 </p>
                 <p className="text-center text-primary font-medium">
                   2ヶ月分無料！支払いを意識せず1年間ご利用いただけます

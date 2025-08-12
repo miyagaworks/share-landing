@@ -443,7 +443,7 @@ export default function HowToCreateDigitalNamecard() {
                 デジタル名刺の作成に費用はかかりますか？
               </h3>
               <p className="text-gray-600 text-justify">
-                Share（シェア）では7日間の無料トライアルをご用意しています。無料期間中にデジタル名刺を作成し、すべての機能をお試しいただけます。その後は、月額500円（税込）または年額5,000円（税込）の有料プランにお申し込みいただくことで、継続してご利用いただけます。
+                Share（シェア）では7日間の無料トライアルをご用意しています。無料期間中にデジタル名刺を作成し、すべての機能をお試しいただけます。その後は、月額550円（税込）または年額5,500円（税込）の有料プランにお申し込みいただくことで、継続してご利用いただけます。
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
