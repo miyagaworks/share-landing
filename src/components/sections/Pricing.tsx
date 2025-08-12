@@ -156,6 +156,16 @@ export default function Pricing() {
 
   const activePlans = activeTab === "personal" ? personalPlans : businessPlans;
 
+  // デバッグ用ログ（開発時のみ）
+  if (typeof window !== "undefined") {
+    console.log("activeTab:", activeTab);
+    console.log("activePlans length:", activePlans.length);
+    console.log(
+      "activePlans:",
+      activePlans.map((p) => p.title)
+    );
+  }
+
   return (
     <section
       id="pricing"
@@ -242,13 +252,13 @@ export default function Pricing() {
         <div
           className={`grid gap-8 mb-16 ${
             activeTab === "personal"
-              ? "md:grid-cols-2"
-              : "md:grid-cols-2 lg:grid-cols-3"
+              ? "grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto"
+              : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 max-w-7xl mx-auto"
           }`}
         >
           {activePlans.map((plan, index) => (
             <div
-              key={index}
+              key={`${activeTab}-${index}-${plan.title}`}
               className={`pricing-card bg-white rounded-xl p-6 md:p-8 transition-all duration-500 opacity-0 transform translate-y-8 relative ${
                 plan.popular
                   ? "border-2 border-primary shadow-xl"
