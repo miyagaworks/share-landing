@@ -72,7 +72,7 @@ export default function Pricing() {
     },
   ];
 
-  // 料金プランデータ - 法人向け（Stripe設定に合わせて更新）
+  // 料金プランデータ - 法人向け（エンタープライズプランを追加）
   const businessPlans: PricingPlan[] = [
     {
       title: "法人スタータープラン",
@@ -239,13 +239,7 @@ export default function Pricing() {
         </div>
 
         {/* プランカード */}
-        <div
-          className={`grid gap-8 mb-16 ${
-            activeTab === "personal"
-              ? "md:grid-cols-2 lg:grid-cols-2"
-              : "md:grid-cols-2 lg:grid-cols-3"
-          }`}
-        >
+        <div className="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-3">
           {activePlans.map((plan, index) => (
             <div
               key={index}
@@ -403,7 +397,7 @@ export default function Pricing() {
           ))}
         </div>
 
-        {/* 追加オプション */}
+        {/* 追加オプション（タッチシールのみ） */}
         {activeTab === "business" && (
           <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 border border-gray-200 rounded-lg p-6 mt-8 mb-8 shadow-sm transform transition-all duration-500 hover:shadow-md">
             <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
@@ -422,48 +416,11 @@ export default function Pricing() {
               </svg>
               追加オプション
             </h3>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="space-y-2">
-                <div className="flex items-start">
-                  <span className="text-blue-500 mr-2 font-bold">•</span>
-                  <div>
-                    <span className="font-medium">追加ユーザー:</span>
-                    <p className="text-sm text-gray-600">
-                      スタータープラン: 300円/ユーザー/月
-                      <br />
-                      ビジネスプラン: 200円/ユーザー/月
-                      <br />
-                      エンタープライズプラン: 180円/ユーザー/月
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-blue-500 mr-2 font-bold">•</span>
-                  <div>
-                    <span className="font-medium">
-                      カスタムQRコードデザイン:
-                    </span>
-                    <p className="text-sm text-gray-600">33,000円（一括）</p>
-                  </div>
-                </div>
-              </div>
-              <div className="space-y-2">
-                <div className="flex items-start">
-                  <span className="text-blue-500 mr-2 font-bold">•</span>
-                  <div>
-                    <span className="font-medium">NFCカード作成:</span>
-                    <p className="text-sm text-gray-600">
-                      550円/枚（10枚以上で割引）
-                    </p>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <span className="text-blue-500 mr-2 font-bold">•</span>
-                  <div>
-                    <span className="font-medium">オンサイトトレーニング:</span>
-                    <p className="text-sm text-gray-600">80,000円/回</p>
-                  </div>
-                </div>
+            <div className="flex items-start">
+              <span className="text-blue-500 mr-2 font-bold">•</span>
+              <div>
+                <span className="font-medium">タッチシール:</span>
+                <p className="text-sm text-gray-600">550円/枚</p>
               </div>
             </div>
           </div>
