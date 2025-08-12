@@ -89,7 +89,7 @@ export default function Pricing() {
         { title: "メールサポート", included: true },
         { title: "管理者ダッシュボード", included: true },
       ],
-      cta: "お問い合わせ",
+      cta: "詳細を問い合わせる",
     },
     {
       title: "法人ビジネスプラン",
@@ -239,7 +239,13 @@ export default function Pricing() {
         </div>
 
         {/* プランカード */}
-        <div className="grid gap-8 mb-16 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          className={`grid gap-8 mb-16 ${
+            activeTab === "personal"
+              ? "md:grid-cols-2"
+              : "md:grid-cols-2 lg:grid-cols-3"
+          }`}
+        >
           {activePlans.map((plan, index) => (
             <div
               key={index}
@@ -380,7 +386,6 @@ export default function Pricing() {
               {/* CTA ボタン */}
               <Link
                 href={
-                  plan.cta === "お問い合わせ" ||
                   plan.cta === "詳細を問い合わせる"
                     ? "/support/contact"
                     : signupUrl
