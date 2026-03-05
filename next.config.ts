@@ -19,6 +19,18 @@ const nextConfig = {
         source: '/partner/:path*',
         destination: 'https://app.sns-share.com/partner/:path*',
       },
+      {
+        source: '/api/auth/:path*',
+        destination: 'https://app.sns-share.com/api/auth/:path*',
+      },
+      {
+        source: '/images/partner/:path*',
+        destination: 'https://app.sns-share.com/images/partner/:path*',
+      },
+      {
+        source: '/logo.svg',
+        destination: 'https://app.sns-share.com/logo.svg',
+      },
     ];
   },
 };
