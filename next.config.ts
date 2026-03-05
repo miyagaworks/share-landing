@@ -8,6 +8,19 @@ const nextConfig = {
   images: {
     // unoptimized: true,  // この行を削除または false に設定
   },
+
+  async rewrites() {
+    return [
+      {
+        source: '/partner',
+        destination: 'https://app.sns-share.com/partner',
+      },
+      {
+        source: '/partner/:path*',
+        destination: 'https://app.sns-share.com/partner/:path*',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
