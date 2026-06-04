@@ -80,6 +80,14 @@ export default function Footer() {
                   サービスについて
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/partner"
+                  className="text-gray-700 hover:text-blue-600"
+                >
+                  パートナー募集
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

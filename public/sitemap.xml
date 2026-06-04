@@ -124,6 +124,14 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+
+  <!-- パートナー募集 -->
+  <url>
+    <loc>https://sns-share.com/partner</loc>
+    <lastmod>2026-06-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
   
   <!-- その他 -->
   <url>
