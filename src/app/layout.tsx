@@ -12,7 +12,10 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://sns-share.com"),
   manifest: "/manifest.json",
   alternates: {
-    canonical: "https://sns-share.com",
+    // "./" は各ページ自身のパスに解決される（metadataBase と組み合わせて絶対URL化）。
+    // 固定値（例: "https://sns-share.com"）に戻すと、この設定を継承する全ページが
+    // トップページの複製であると検索エンジンに申告してしまうため、変更しないこと。
+    canonical: "./",
   },
   keywords:
     "デジタル名刺, 電子名刺, QRコード名刺, SNS連携, 複数SNS一元管理, ビジネス名刺",
