@@ -4,13 +4,13 @@ import Link from "next/link";
 import type { Metadata, Viewport } from "next";
 
 export const metadata: Metadata = {
-  title: "運営会社 | 株式会社Shareについて",
+  title: "運営会社 | 株式会社Senriganについて",
   description:
-    "Share（シェア）デジタル名刺サービスを運営する株式会社Shareの会社概要、ミッション、ビジョン、沿革などをご紹介します。",
+    "Share（シェア）デジタル名刺サービスを運営する株式会社Senriganの会社概要、ミッション、ビジョン、沿革などをご紹介します。",
   openGraph: {
-    title: "運営会社 | 株式会社Shareについて",
+    title: "運営会社 | 株式会社Senriganについて",
     description:
-      "「人と人とのつながりをよりシンプルに、より豊かに」という理念のもと、デジタル名刺サービス「Share（シェア）」を提供する株式会社Shareをご紹介します。",
+      "「人と人とのつながりをよりシンプルに、より豊かに」という理念のもと、デジタル名刺サービス「Share（シェア）」を提供する株式会社Senriganをご紹介します。",
     type: "website",
   },
 };
