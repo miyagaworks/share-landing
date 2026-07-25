@@ -77,6 +77,24 @@ export default function FAQPage() {
     },
   ];
 
+  // 構造化FAQデータを生成（schema.org形式）
+  // 検索・カテゴリー絞り込みの結果（filteredFaqItems）ではなく、常に全件（faqItems）を対象にする。
+  // question / answer はページに表示している文言をそのまま使用すること。
+  // 表示と構造化データが食い違うと検索エンジンのガイドライン違反になるため、
+  // faqItems を変更した場合、構造化データは自動的に追従する（この方式を崩さないこと）。
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.answer,
+      },
+    })),
+  };
+
   // カテゴリーの抽出（重複なし）
   const categories = Array.from(
     new Set(faqItems.map((item) => item.category).filter(Boolean))
@@ -111,6 +129,12 @@ export default function FAQPage() {
         { name: "よくあるご質問", href: "/support/faq" },
       ]}
     >
+      {/* 構造化データを埋め込み */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+
       <div className="space-y-6">
         <p className="text-justify mb-6">
           Shareに関するよくあるご質問をまとめました。お探しの情報が見つからない場合は、お気軽に
