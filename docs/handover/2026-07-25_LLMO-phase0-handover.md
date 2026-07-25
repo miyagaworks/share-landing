@@ -1,5 +1,13 @@
 # 2026-07-25 LLMO（AI検索最適化）フェーズ0 引き継ぎノート
 
+> ⚠️ **警告: 本ノートの D-2・D-3 は誤りです（2026-07-26 に実測で判明）。**
+> - D-3「トップページに h1 が存在しない」→ **存在する**（Hero.tsx:21）。作業不要。
+> - D-2「構造化データは /digital-namecard に1件のみ」→ **複数ページに存在していた**。
+>
+> 誤った原因と正しい実測値は `2026-07-26_LLMO-phase1-handover.md` の §B に記載。
+> 本ノートの他の記述（サイト構造・Cloudflare設定・D-1の実測値）は正確であることを
+> 2026-07-26 に再確認済み。
+
 <reliability>
 本ノートの `<known-fact>` は全て当セッション中に Super が curl / git / gh / Read で
 直接実測した結果。推測は `<unconfirmed>` に分離した。
@@ -145,11 +153,21 @@ AIを招き入れた直後に壊れた地図を渡している状態のため、
 ページ追加時の追従漏れを構造的に防げる。
 
 ### D-2 構造化データ（JSON-LD）の実装 — share-landing
+> ⚠️ **以下の現状認識は誤り。** 共通部品 Breadcrumb.tsx がパンくずの構造化データを
+> 複数ページに出力しており、/blog/digital-namecard/what-is には FAQPage も実装済みだった。
+> 実際に0件だったのは トップページ と /support/faq の2箇所のみ。
+> **2026-07-26 に この2箇所へ実装済み（コミット 41eaa21）。D-2 は完了。**
+
 - 現状、sns-share.com 全体で `application/ld+json` は /digital-namecard に1件のみ
 - トップページは0件
 - 実装候補: Organization / SoftwareApplication / FAQPage / BreadcrumbList
 
 ### D-3 トップページに h1 を追加 — share-landing
+> ⚠️ **以下の実測は誤り。h1 は存在する。**
+> `<h1>先進的なデジタル名刺でビジネスに差をつける</h1>`（src/components/sections/Hero.tsx:21）
+> 中身が2つの span に分割されているため、タグ直後にテキストがある前提の検索で
+> 検出できなかった。**D-3 は作業不要。タスクから削除。**
+
 - 実測: https://sns-share.com/ に h1 が存在せず、h2 のみ（「Shareの主な特徴」等）
 
 ### D-4 コンテンツに統計・出典・引用を追加 — share-landing
