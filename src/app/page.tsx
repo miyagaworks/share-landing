@@ -151,7 +151,7 @@ const softwareApplicationStructuredData = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description:
-    "Share（シェア）は、複数のSNSアカウントを一つにまとめた次世代の電子名刺サービスです。QRコードで瞬時に共有でき、経営者や第一線のビジネスパーソンに選ばれています。",
+    "Share（シェア）は、複数のSNSアカウントを一つにまとめた次世代の電子名刺サービスです。QRコードで瞬時に共有でき、紙の名刺と併用することもできます。",
   provider: {
     "@type": "Organization",
     "@id": "https://sns-share.com/#organization",
