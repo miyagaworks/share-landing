@@ -197,7 +197,6 @@ export default function Home() {
       <Header />
       <div>
         <Hero />
-        {/* <Partners /> */}
         <Features />
         <AppScreenshots />
         <HowItWorks />
