@@ -89,9 +89,9 @@ export default function Features() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-bold mb-3">ワンクリック連絡先登録</h3>
+              <h3 className="text-xl font-bold mb-3">ワンタップ連絡先登録</h3>
               <p className="text-gray-600 text-justify">
-                プロフィール情報をワンクリックでスマートフォンの連絡先アプリに登録できます。名前、電話番号、メールアドレスなどの全ての情報が瞬時に保存されます。
+                プロフィール情報をワンタップでスマートフォンの連絡先アプリに登録できます。名前、電話番号、メールアドレスなどの全ての情報が瞬時に保存されます。
               </p>
             </div>
           </div>
