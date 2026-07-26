@@ -208,19 +208,6 @@ export default function BusinessAdvantage() {
         />
       ),
     },
-    {
-      title: "データの分析活用",
-      description:
-        "デジタル名刺のスキャン回数や閲覧統計から、ビジネスネットワークの効果測定が可能。名刺交換の効果を数値で把握できます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      ),
-    },
   ];
 
   // 業種別の活用シーン
@@ -383,7 +370,7 @@ export default function BusinessAdvantage() {
         {/* 競合との差別化ポイント */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            デジタル名刺がもたらす6つの差別化ポイント
+            デジタル名刺がもたらす5つの差別化ポイント
           </h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {differentiators.map((item, index) => (

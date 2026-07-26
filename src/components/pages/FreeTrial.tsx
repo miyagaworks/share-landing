@@ -22,7 +22,6 @@ export default function FreeTrial() {
         "SNSアカウント無制限追加",
         "QRコード生成（高解像度）",
         "プロフィールカスタマイズ",
-        "アクセス解析（基本機能）",
         "いつでもキャンセル可能",
       ],
     },
@@ -442,27 +441,6 @@ export default function FreeTrial() {
               </h3>
               <p className="text-gray-600 text-justify">
                 カラーテーマの設定や自己紹介文のカスタマイズなど、あなたのブランドや個性に合わせたプロフィールを作成できます。
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-lg font-semibold mb-3">アクセス解析</h3>
-              <p className="text-gray-600 text-justify">
-                プロフィールの閲覧数やQRコードのスキャン回数などの基本的な統計情報を確認できます。
               </p>
             </div>
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">

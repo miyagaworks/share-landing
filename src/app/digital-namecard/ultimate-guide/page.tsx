@@ -258,19 +258,6 @@ export default function DigitalNamecardCompleteGuide() {
         />
       ),
     },
-    {
-      title: "アクセス解析",
-      description:
-        "プロフィールの閲覧数やQRコードのスキャン回数などの統計情報を確認できます。ビジネスネットワーキングの効果測定に役立ちます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      ),
-    },
   ];
 
   // 作成ステップデータ
@@ -368,11 +355,6 @@ export default function DigitalNamecardCompleteGuide() {
       title: "TPO別プロフィールの使い分け",
       description:
         "ビジネス用、カジュアル用など、シーンに合わせて表示するSNSや情報を切り替えることで、最適なプロフィールを共有できます。",
-    },
-    {
-      title: "アナリティクスの活用",
-      description:
-        "プロフィールの閲覧数やQRコードのスキャン回数などの統計情報を分析することで、ビジネスネットワーキングの効果測定ができます。",
     },
   ];
 

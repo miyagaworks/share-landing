@@ -197,11 +197,6 @@ export default function QRCodeNamecardGuide() {
         "季節やキャンペーンに合わせてQRコードデザインを変更することで、話題性を創出できます。",
     },
     {
-      title: "統計データの活用",
-      description:
-        "QRコードのスキャン回数や時間帯などの統計を分析することで、マーケティング施策に活かせます。",
-    },
-    {
       title: "多言語対応",
       description:
         "国際的なビジネスシーンでは、多言語に対応したデジタルプロフィールを準備しておくと便利です。",
@@ -581,7 +576,7 @@ export default function QRCodeNamecardGuide() {
           </h2>
 
           <h3 className="text-xl font-semibold mb-4 text-gray-800">
-            QRコード名刺の5つのメリット
+            QRコード名刺の4つのメリット
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
             <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 relative">
@@ -684,31 +679,6 @@ export default function QRCodeNamecardGuide() {
                 </p>
               </div>
             </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 relative">
-              {/* 半透明の白いオーバーレイ */}
-              <div className="absolute top-0 left-0 right-0 h-full bg-white bg-opacity-50"></div>
-              <div className="relative z-10">
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 shadow-md">
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                    />
-                  </svg>
-                </div>
-                <h4 className="font-semibold mb-2">アクセス解析</h4>
-                <p className="text-gray-600 text-justify">
-                  QRコードのスキャン回数や時間帯などのデータを分析することで、ビジネスネットワーキングの効果測定が可能になります。
-                </p>
-              </div>
-            </div>
           </div>
 
           <h3 className="text-xl font-semibold mb-4 text-gray-800">
@@ -766,7 +736,6 @@ export default function QRCodeNamecardGuide() {
                 <ul className="list-disc pl-5 space-y-1 text-gray-600">
                   <li>デジタルプロフィールの情報を定期的に更新する</li>
                   <li>相手に応じて適切なSNSや情報を表示する設定に切り替える</li>
-                  <li>スキャン数や訪問者データを分析して効果測定を行う</li>
                   <li>
                     印刷前に様々なデバイスでQRコードの読み取りテストを行う
                   </li>
@@ -1234,103 +1203,6 @@ export default function QRCodeNamecardGuide() {
                     </div>
                   </li>
                 </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 mb-8 relative">
-            {/* 半透明の白いオーバーレイ */}
-            <div className="absolute top-0 left-0 right-0 h-full bg-white bg-opacity-50"></div>
-            <div className="relative z-10">
-              <h3 className="text-lg font-semibold mb-4 text-primary">
-                QRコード名刺の効果測定
-              </h3>
-              <p className="text-gray-700 text-justify mb-4">
-                QRコード名刺の使い方を見直すには、定期的にアクセス状況を確認することが役立ちます。
-                Share（シェア）のアナリティクス機能を使って以下のデータを分析しましょう。
-              </p>
-              <div className="grid md:grid-cols-3 gap-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-gray-800 mb-2 text-center">
-                    アクセス数
-                  </h4>
-                  <div className="flex justify-center mb-2">
-                    <svg
-                      className="w-10 h-10 text-primary"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-gray-600 text-center">
-                    QRコードのスキャン回数や、プロフィールページの閲覧数を計測
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-gray-800 mb-2 text-center">
-                    時間・場所
-                  </h4>
-                  <div className="flex justify-center mb-2">
-                    <svg
-                      className="w-10 h-10 text-primary"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-gray-600 text-center">
-                    アクセスのあった時間帯や地域を分析し、効果的な場面を特定
-                  </p>
-                </div>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-gray-800 mb-2 text-center">
-                    SNS連携率
-                  </h4>
-                  <div className="flex justify-center mb-2">
-                    <svg
-                      className="w-10 h-10 text-primary"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"
-                      />
-                    </svg>
-                  </div>
-                  <p className="text-sm text-gray-600 text-center">
-                    プロフィール閲覧後にSNSでつながった率を測定し、効果を確認
-                  </p>
-                </div>
               </div>
             </div>
           </div>
