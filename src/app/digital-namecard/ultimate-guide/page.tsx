@@ -23,7 +23,7 @@ export default function DigitalNamecardCompleteGuide() {
     { id: "features", title: "Shareの主な機能", href: "#features" },
     { id: "how-to-create", title: "作成方法", href: "#how-to-create" },
     { id: "usage-tips", title: "活用テクニック", href: "#usage-tips" },
-    { id: "success-cases", title: "活用事例", href: "#success-cases" },
+    { id: "success-cases", title: "活用シーン", href: "#success-cases" },
     { id: "faq", title: "よくある質問", href: "#faq" },
   ];
 
@@ -376,40 +376,27 @@ export default function DigitalNamecardCompleteGuide() {
     },
   ];
 
-  // 成功事例データ
-  const successCasesData = [
+  // 活用シーンデータ
+  // 実在の顧客事例ではなく、想定される利用場面の紹介として記載している。
+  // 企業名・個人名・成果を示す数値や程度表現は掲載しないこと。
+  const usageCasesData = [
     {
-      title: "展示会での営業効率化",
-      company: "製造業企業",
+      title: "展示会での名刺交換",
+      industry: "製造業",
       description:
-        "産業展示会で300名以上の参加者と名刺交換を行い、その場でSNSでつながることで、展示会後の商談につながりました。紙の名刺だけの場合と比較して、フォローアップの効率が大幅に向上しました。",
-      results: [
-        "営業リード数が前年比+45%増加",
-        "展示会後のフォロー率が78%に向上",
-        "商談成約率が23%アップ",
-      ],
+        "産業展示会で名刺交換をした相手と、その場でSNSでつながる活用方法です。紙の名刺だけの場合と異なり、展示会が終わったあとのフォローアップの導線を、その場でつくっておくことができます。",
     },
     {
-      title: "経営者のブランディング強化",
-      company: "IT企業CEO",
+      title: "経営者のブランディング",
+      industry: "IT企業の経営者",
       description:
-        "取締役会や投資家ミーティングでデジタル名刺を活用。革新的な企業イメージの醸成に貢献し、投資家からの評価も向上しました。複数のSNSアカウントを一元管理し、適切なチャネルで情報発信できるようになりました。",
-      results: [
-        "ビジネスSNSのフォロワーが3ヶ月で150%増加",
-        "投資家からの問い合わせが月平均5件増加",
-        "メディア露出機会が増加（年間20件以上のインタビュー）",
-      ],
+        "取締役会や投資家ミーティングでデジタル名刺を活用する方法です。複数のSNSアカウントを一元管理できるため、相手や場面に応じたチャネルを選んで情報発信の窓口を案内できます。",
     },
     {
-      title: "フリーランスの案件獲得",
-      company: "デザイナー",
+      title: "フリーランスのクライアント商談",
+      industry: "デザイナー",
       description:
-        "フリーランスデザイナーとして、クライアントミーティングでデジタル名刺を活用。ポートフォリオサイトへの直接リンクにより、その場で作品を見てもらえるようになりました。先進的なデザイナーとしてのイメージも強化されています。",
-      results: [
-        "新規クライアント獲得率が35%向上",
-        "ポートフォリオサイトへの訪問者が月平均60%増加",
-        "リピート案件が25%増加",
-      ],
+        "フリーランスのデザイナーが、クライアントミーティングでデジタル名刺を活用する方法です。ポートフォリオサイトへの直接リンクを載せておくことで、その場で作品を見てもらう導線をつくれます。",
     },
   ];
 
@@ -483,7 +470,7 @@ export default function DigitalNamecardCompleteGuide() {
                 基礎から応用まで、一冊でわかるデジタル名刺のすべて
               </p>
               <p className="text-blue-50 text-justify">
-                このガイドでは、デジタル名刺（電子名刺）の基本概念から具体的な活用方法、作成手順、成功事例まで、ビジネスシーンで差をつけるためのノウハウを総合的に解説します。Share（シェア）のデジタル名刺サービスを最大限に活用し、先進的なビジネスパーソンとしての印象を強化しましょう。
+                このガイドでは、デジタル名刺（電子名刺）の基本概念から具体的な活用方法、作成手順、活用シーンまで、ビジネスシーンで差をつけるためのノウハウを総合的に解説します。Share（シェア）のデジタル名刺サービスを活用し、先進的なビジネスパーソンとしての印象を強化しましょう。
               </p>
             </div>
             <div className="md:w-1/2 md:pl-12">
@@ -1162,13 +1149,16 @@ export default function DigitalNamecardCompleteGuide() {
           </div>
         </section>
 
-        {/* 活用事例 */}
+        {/* 活用シーン */}
         <section id="success-cases" className="mb-16 scroll-mt-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            7. 活用事例
+            7. 活用シーン
           </h2>
+          <p className="text-gray-600 text-justify mb-6">
+            以下は実在の顧客事例ではなく、業種ごとに想定される利用場面の紹介です。
+          </p>
           <div className="space-y-6">
-            {successCasesData.map((caseItem, index) => (
+            {usageCasesData.map((caseItem, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
@@ -1176,33 +1166,12 @@ export default function DigitalNamecardCompleteGuide() {
                 <h3 className="text-xl font-semibold mb-2 text-primary">
                   {caseItem.title}
                 </h3>
-                <p className="text-gray-500 text-sm mb-4">{caseItem.company}</p>
-                <p className="text-gray-600 text-justify mb-4">
+                <p className="text-gray-500 text-sm mb-4">
+                  {caseItem.industry}
+                </p>
+                <p className="text-gray-600 text-justify">
                   {caseItem.description}
                 </p>
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h4 className="font-medium text-gray-800 mb-2">成果：</h4>
-                  <ul className="space-y-1">
-                    {caseItem.results.map((result, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="ml-2 text-gray-700">{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             ))}
           </div>
@@ -1211,7 +1180,7 @@ export default function DigitalNamecardCompleteGuide() {
               href="/case-studies"
               className="inline-flex items-center text-primary font-medium hover:text-blue-700"
             >
-              より多くの活用事例を見る
+              より多くの活用シーンを見る
               <svg
                 className="w-4 h-4 ml-1"
                 fill="none"

@@ -135,25 +135,24 @@ export default function ForExecutives() {
     },
   ];
 
-  // 経営者からの声
-  const testimonials = [
+  // 経営者に想定される活用場面
+  // 実在の顧客事例ではなく、想定される利用場面の紹介として記載している。
+  // 企業名・個人名・成果を示す数値や程度表現は掲載しないこと。
+  const executiveScenes = [
     {
-      name: "鈴木 英一",
-      title: "株式会社テクノソリューション 代表取締役",
-      quote:
-        "投資家との会合やビジネスパートナーとの初対面で、Shareのデジタル名刺を使うと「さすが最先端の技術に精通している」という印象を与えることができます。特に海外の取引先からは高い評価を得ています。",
+      title: "初対面のあいさつ",
+      description:
+        "投資家との会合やビジネスパートナーとの初対面で、プロフィールと複数のSNSアカウントをQRコード一つで共有できます。名刺を切らしている場面でも、その場で連絡先を渡せます。",
     },
     {
-      name: "佐藤 真理子",
-      title: "グローバルマーケティング株式会社 CEO",
-      quote:
-        "複数の役職を持つ私にとって、シーンに合わせて異なるデジタル名刺を使い分けられるのは非常に便利です。取締役会では公式プロフィール、カジュアルな業界イベントではより親しみやすいプロフィールを使用しています。",
+      title: "役割に応じた使い分け",
+      description:
+        "複数の役職を兼任している場合、シーンに合わせて異なるプロフィールを使い分けられます。取締役会では公式のプロフィール、業界イベントではより砕けたプロフィール、といった切り替えができます。",
     },
     {
-      name: "高橋 大輔",
-      title: "NextGeneration Partners 代表パートナー",
-      quote:
-        "ベンチャー投資の世界では、先進的なツールを自ら使いこなしているかどうかも審査の対象です。Shareのデジタル名刺は、私自身がイノベーションを体現している証明になっています。",
+      title: "海外・社外との連絡先交換",
+      description:
+        "海外の取引先や社外の関係者と連絡先を交換する場面でも、URLとQRコードでプロフィールを渡せます。相手が使っているSNSに合わせて、連絡手段を選んでもらえます。",
     },
   ];
 
@@ -517,30 +516,38 @@ export default function ForExecutives() {
           </div>
         </section>
 
-        {/* 経営者からの声 */}
+        {/* 経営者に想定される活用場面 */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            経営者からの声
+            経営者に想定される活用場面
           </h2>
+          <p className="text-gray-600 mb-6 text-justify">
+            以下は実在の顧客事例ではなく、経営者・役員の方に想定される利用場面の紹介です。
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
+            {executiveScenes.map((scene, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
               >
-                <svg
-                  className="w-8 h-8 text-primary opacity-25 mb-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold">{testimonial.name}</h3>
-                  <p className="text-primary text-sm">{testimonial.title}</p>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
-                <p className="text-gray-700 italic text-justify">
-                  「{testimonial.quote}」
+                <h3 className="text-lg font-semibold mb-3">{scene.title}</h3>
+                <p className="text-gray-600 text-justify">
+                  {scene.description}
                 </p>
               </div>
             ))}

@@ -223,28 +223,27 @@ export default function BusinessAdvantage() {
     },
   ];
 
-  // 成功事例
-  const successStories = [
+  // 業種別の活用シーン
+  // 実在の顧客事例ではなく、想定される利用場面の紹介として記載している。
+  // 企業名・個人名・成果を示す数値や程度表現は掲載しないこと。
+  const usageScenes = [
     {
-      name: "佐藤 誠一",
-      title: "ITコンサルティング会社CEO",
-      quote:
-        "展示会で300人以上と名刺交換しましたが、デジタル名刺のおかげでその場でXでつながり、会話を続けることができました。紙の名刺だけでは絶対に実現できなかった関係構築のスピードです。",
-      results: ["商談数が前年比30%増加", "SNSフォロワーが1ヶ月で500人増加"],
+      role: "ITコンサルティング",
+      scene: "展示会でのネットワーキング",
+      description:
+        "展示会で名刺交換をした相手と、その場でXなどのSNSでつながる活用方法です。紙の名刺だけの場合と異なり、会場を離れたあとも会話を続ける導線をその場でつくれます。",
     },
     {
-      name: "田中 美香",
-      title: "フリーランスデザイナー",
-      quote:
-        "クライアントミーティングでデジタル名刺を使うと「さすが先進的なデザイナーだ」という印象を与えることができます。ポートフォリオサイトへの直接リンクもあり、その場で作品を見てもらえるのが大きな強みです。",
-      results: ["契約成約率が25%向上", "ポートフォリオサイトへの訪問が60%増加"],
+      role: "デザイン（フリーランス）",
+      scene: "クライアントとの商談",
+      description:
+        "クライアントミーティングでデジタル名刺を使う活用方法です。ポートフォリオサイトへの直接リンクを載せておけるため、その場で作品を見てもらいながら話を進められます。",
     },
     {
-      name: "山本 健太郎",
-      title: "不動産営業部長",
-      quote:
-        "お客様との信頼関係構築にShareのデジタル名刺が役立っています。物件情報へのリンクやSNSでの日々の情報発信を見てもらうことで、単なる営業マンではなく「不動産のプロフェッショナル」として認識してもらえるようになりました。",
-      results: ["顧客との長期的な関係構築率が40%向上", "SNS経由の問い合わせが月20件増加"],
+      role: "不動産営業",
+      scene: "お客様との関係づくり",
+      description:
+        "お客様との関係づくりにデジタル名刺を使う活用方法です。物件情報へのリンクや日々のSNSでの情報発信を見てもらうことで、担当者としての専門分野を伝える導線をつくれます。",
     },
   ];
 
@@ -496,56 +495,44 @@ export default function BusinessAdvantage() {
           </div>
         </section>
 
-        {/* 成功事例 */}
+        {/* 業種別の活用シーン */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            デジタル名刺活用の成功事例
+            業種別の活用シーン
           </h2>
+          <p className="text-gray-600 mb-6 text-justify">
+            以下は実在の顧客事例ではなく、業種ごとに想定される利用場面の紹介です。
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
-            {successStories.map((story, index) => (
+            {usageScenes.map((scene, index) => (
               <div
                 key={index}
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
               >
-                <svg
-                  className="w-8 h-8 text-primary opacity-25 mb-4"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <div className="mb-4">
-                  <h3 className="text-lg font-semibold">{story.name}</h3>
-                  <p className="text-primary text-sm">{story.title}</p>
+                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                  <svg
+                    className="w-6 h-6 text-primary"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
                 </div>
-                <p className="text-gray-700 italic mb-4 text-justify">
-                  「{story.quote}」
+                <div className="mb-3">
+                  <h3 className="text-lg font-semibold">{scene.role}</h3>
+                  <p className="text-primary text-sm">
+                    想定シーン: {scene.scene}
+                  </p>
+                </div>
+                <p className="text-gray-700 text-justify">
+                  {scene.description}
                 </p>
-                <div className="pt-4 border-t border-gray-200">
-                  <h4 className="font-medium text-gray-800 mb-2">実績:</h4>
-                  <ul className="space-y-1">
-                    {story.results.map((result, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-green-500 mt-1 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="ml-2 text-gray-700 text-sm">
-                          {result}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
               </div>
             ))}
           </div>

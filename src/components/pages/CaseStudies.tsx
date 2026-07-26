@@ -13,7 +13,7 @@ export default function CaseStudies() {
 
   // カテゴリー
   const categories = [
-    { id: "all", name: "すべての事例" },
+    { id: "all", name: "すべての活用シーン" },
     { id: "business", name: "ビジネス" },
     { id: "executive", name: "経営者" },
     { id: "freelance", name: "フリーランス" },
@@ -21,131 +21,77 @@ export default function CaseStudies() {
     { id: "event", name: "イベント" },
   ];
 
-  // 活用事例データ
+  // 業種別の活用シーンデータ
+  // 実在の顧客事例ではなく、想定される利用場面の紹介として記載している。
+  // 企業名・個人名・成果を示す数値や程度表現（大幅・多く 等）は掲載しないこと。
   const caseStudies = [
     {
-      title: "展示会での営業効率化",
+      title: "展示会での名刺交換",
       category: "business",
       industry: "製造業",
-      company: "株式会社テクノソリューション",
-      person: "営業部長 鈴木 健一",
       description:
-        "産業展示会で300名以上の参加者と名刺交換を行い、その場でSNSでつながることで、展示会後の商談につながりました。紙の名刺だけの場合と比較して、フォローアップの効率が大幅に向上しました。",
-      results: [
-        "営業リード数が前年比+45%増加",
-        "展示会後のフォロー率が78%に向上（前年は32%）",
-        "商談成約率が23%アップ",
-      ],
+        "産業展示会で名刺交換をした相手と、その場でSNSでつながる活用方法です。紙の名刺だけの場合と異なり、展示会が終わったあとのフォローアップの導線を、その場でつくっておくことができます。",
       tags: ["展示会", "営業", "BtoB"],
     },
     {
-      title: "役員会議でのデジタル活用",
+      title: "役員会議・投資家対応",
       category: "executive",
       industry: "金融",
-      company: "グロースキャピタル株式会社",
-      person: "代表取締役CEO 田中 誠一",
       description:
-        "取締役会や投資家ミーティングでデジタル名刺を活用。革新的な企業イメージの醸成に貢献し、投資家からの評価も向上しました。複数のSNSアカウントを一元管理し、適切なチャネルで情報発信できるようになりました。",
-      results: [
-        "ビジネスSNSのフォロワーが3ヶ月で150%増加",
-        "投資家からの問い合わせが月平均5件増加",
-        "メディア露出機会が増加（年間20件以上のインタビュー）",
-      ],
+        "取締役会や投資家ミーティングでデジタル名刺を活用する方法です。複数のSNSアカウントを一元管理できるため、相手や場面に応じたチャネルを選んで情報発信の窓口を案内できます。",
       tags: ["経営者", "投資家対応", "ブランディング"],
     },
     {
-      title: "フリーランスのブランディング強化",
+      title: "フリーランスのブランディング",
       category: "freelance",
       industry: "デザイン",
-      company: "個人事業主",
-      person: "UIデザイナー 佐藤 美咲",
       description:
-        "フリーランスのUIデザイナーとして、クライアントミーティングでデジタル名刺を活用。ポートフォリオサイトへの直接リンクにより、その場で作品を見てもらえるようになりました。先進的なデザイナーとしてのイメージも強化されています。",
-      results: [
-        "新規クライアント獲得率が35%向上",
-        "ポートフォリオサイトへの訪問者が月平均60%増加",
-        "リピート案件が25%増加",
-      ],
+        "フリーランスのUIデザイナーが、クライアントミーティングでデジタル名刺を活用する方法です。ポートフォリオサイトへの直接リンクを載せておくことで、その場で作品を見てもらう導線をつくれます。",
       tags: ["フリーランス", "デザイン", "ポートフォリオ"],
     },
     {
       title: "SNSマーケティングの一元化",
       category: "marketing",
       industry: "アパレル",
-      company: "StyleFirst株式会社",
-      person: "マーケティング部長 高橋 由美",
       description:
-        "複数のSNSチャネルを運用するマーケティングチームが、イベントやPRでデジタル名刺を活用。各プラットフォームへの誘導を一元化することで、フォロワー獲得効率が大幅に向上しました。また、アクセス解析により効果測定も容易になりました。",
-      results: [
-        "SNS総フォロワー数が6ヶ月で40%増加",
-        "クロスプラットフォームフォロー率が3倍に向上",
-        "キャンペーン認知度が平均28%アップ",
-      ],
+        "複数のSNSチャネルを運用するマーケティングチームが、イベントやPRでデジタル名刺を活用する方法です。各プラットフォームへの誘導を一元化でき、アクセス解析で反応を確認することもできます。",
       tags: ["SNSマーケティング", "マルチチャネル", "アクセス解析"],
     },
     {
-      title: "カンファレンスでの登壇者活用",
+      title: "カンファレンスでの登壇",
       category: "event",
       industry: "IT",
-      company: "テクノカンファレンス運営事務局",
-      person: "事務局長 伊藤 雄太",
       description:
-        "技術カンファレンスの登壇者全員がデジタル名刺を活用。スライド内にQRコードを掲載することで、参加者がその場で登壇者のプロフィールやSNSにアクセスできるようになりました。登壇者と参加者のつながりが促進され、カンファレンス全体の満足度も向上しています。",
-      results: [
-        "登壇者のフォローアップ数が前回比120%増加",
-        "参加者満足度スコアが4.2から4.8に向上（5点満点）",
-        "次回イベントの早期申込率が35%向上",
-      ],
+        "技術カンファレンスの登壇者がデジタル名刺を活用する方法です。スライド内にQRコードを掲載しておくことで、参加者がその場で登壇者のプロフィールやSNSにアクセスできます。",
       tags: ["カンファレンス", "イベント", "スピーカー"],
     },
     {
-      title: "不動産営業の信頼関係構築",
+      title: "不動産営業での関係づくり",
       category: "business",
       industry: "不動産",
-      company: "リアルエステート株式会社",
-      person: "営業課長 山本 健太郎",
       description:
-        "不動産営業担当者がお客様との信頼関係構築にデジタル名刺を活用。物件情報へのリンクやSNSでの日々の情報発信を見てもらうことで、単なる営業マンではなく「不動産のプロフェッショナル」としての認識を獲得しています。",
-      results: [
-        "顧客との長期的な関係構築率が40%向上",
-        "SNS経由の問い合わせが月20件増加",
-        "成約までの時間が平均15%短縮",
-      ],
+        "不動産営業担当者が、お客様との関係づくりにデジタル名刺を活用する方法です。物件情報へのリンクや日々のSNSでの情報発信を見てもらうことで、専門性を伝える導線をつくれます。",
       tags: ["不動産", "営業", "信頼構築"],
     },
     {
-      title: "採用活動でのブランディング",
+      title: "採用イベントでの情報提供",
       category: "business",
       industry: "IT",
-      company: "FutureTech株式会社",
-      person: "人事部長 中村 由紀",
       description:
-        "        採用担当者が就活イベントでデジタル名刺を活用。企業のSNSアカウントへの誘導や採用情報サイトへの直接リンクにより、その場で学生のフォローアップが可能になりました。先進的な企業イメージも学生からの人気につながっています。",
-      results: [
-        "新卒応募数が前年比30%増加",
-        "インターンシップ申込率が45%向上",
-        "SNSでの企業認知度が学生間で大幅向上",
-      ],
+        "採用担当者が就活イベントでデジタル名刺を活用する方法です。企業のSNSアカウントへの誘導や採用情報サイトへの直接リンクにより、その場で学生へ情報を渡すことができます。",
       tags: ["採用", "学生", "企業ブランディング"],
     },
     {
-      title: "医療機関の連携強化",
+      title: "医療機関どうしの連絡先共有",
       category: "business",
       industry: "医療",
-      company: "医療法人ライフケア",
-      person: "病院長 木村 俊介",
       description:
-        "医師や医療スタッフ間の連携強化にデジタル名刺を活用。複数の医療機関や診療科との連携がスムーズになり、紹介状の送付や患者の連携がよりスムーズになりました。特に若手医師からの評価が高く、先進的な医療環境の構築にも貢献しています。",
-      results: [
-        "医療機関間連携の処理時間が30%短縮",
-        "専門医への紹介プロセスの効率化",
-        "多職種チーム内のコミュニケーション改善",
-      ],
+        "医師や医療スタッフ間の連絡先共有にデジタル名刺を活用する方法です。複数の医療機関や診療科にまたがる連絡先を一つのプロフィールにまとめられるため、紹介の際のやり取りにも使えます。",
       tags: ["医療", "連携", "チームワーク"],
     },
   ];
 
-  // フィルタリングされた事例
+  // フィルタリングされた活用シーン
   const filteredCases =
     activeCategory === "all"
       ? caseStudies
@@ -168,15 +114,15 @@ export default function CaseStudies() {
           <div className="md:flex items-center">
             <div className="md:w-1/2 mb-8 md:mb-0">
               <h1 className="text-3xl md:text-4xl font-bold mb-4">
-                デジタル名刺活用事例集
+                デジタル名刺の活用シーン集
               </h1>
               <p className="text-xl text-blue-100 mb-6">
-                様々な業種・シーンでの成功事例をご紹介
+                様々な業種・シーンでの活用方法をご紹介
               </p>
               <p className="text-blue-50 text-justify">
-                Share（シェア）のデジタル名刺サービスは、多様なビジネスシーンで活用されています。
-                ここでは実際のユーザーが語る活用事例と成果をご紹介します。業種や目的に合わせた
-                活用方法を参考に、あなたのビジネスにおけるデジタル名刺の可能性を探ってください。
+                このページでご紹介するのは実在の顧客事例ではなく、Share（シェア）のデジタル名刺が
+                どのような場面で使えるかをまとめた想定例です。業種や目的に合わせた活用方法を参考に、
+                あなたのビジネスにおけるデジタル名刺の使いどころを探してみてください。
               </p>
             </div>
             <div className="md:w-1/2 md:pl-12 flex justify-center">
@@ -185,87 +131,40 @@ export default function CaseStudies() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="h-12 bg-primary flex items-center justify-center">
                       <p className="text-white text-sm font-medium">
-                        成功事例ハイライト
+                        主な活用シーン
                       </p>
                     </div>
                     <div className="p-4">
                       <div className="space-y-3">
-                        <div className="flex items-center">
-                          <svg
-                            className="w-4 h-4 text-green-500 mr-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span className="text-gray-700 text-sm">
-                            営業リード数 45%増加
-                          </span>
-                        </div>
-                        <div className="flex items-center">
-                          <svg
-                            className="w-4 h-4 text-green-500 mr-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span className="text-gray-700 text-sm">
-                            SNSフォロワー 3ヶ月で150%増加
-                          </span>
-                        </div>
-                        <div className="flex items-center">
-                          <svg
-                            className="w-4 h-4 text-green-500 mr-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span className="text-gray-700 text-sm">
-                            新規クライアント獲得率 35%向上
-                          </span>
-                        </div>
-                        <div className="flex items-center">
-                          <svg
-                            className="w-4 h-4 text-green-500 mr-2"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M5 13l4 4L19 7"
-                            />
-                          </svg>
-                          <span className="text-gray-700 text-sm">
-                            スピーカーフォローアップ 120%増
-                          </span>
-                        </div>
+                        {[
+                          "展示会・業界イベントでの名刺交換",
+                          "役員会議・投資家ミーティング",
+                          "クライアントとの商談・提案",
+                          "採用イベント・カンファレンス",
+                        ].map((scene) => (
+                          <div key={scene} className="flex items-center">
+                            <svg
+                              className="w-4 h-4 text-green-500 mr-2 flex-shrink-0"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M5 13l4 4L19 7"
+                              />
+                            </svg>
+                            <span className="text-gray-700 text-sm">
+                              {scene}
+                            </span>
+                          </div>
+                        ))}
                       </div>
                       <div className="mt-4 pt-3 border-t border-gray-100">
                         <div className="text-xs text-gray-500 text-center">
-                          実際のユーザーが達成した成果例
+                          想定される利用場面の例
                         </div>
                       </div>
                     </div>
@@ -282,7 +181,7 @@ export default function CaseStudies() {
         {/* カテゴリーフィルター */}
         <section className="mb-10">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            活用事例カテゴリー
+            活用シーンのカテゴリー
           </h2>
           <div className="flex flex-wrap gap-3">
             {categories.map((category) => (
@@ -305,17 +204,20 @@ export default function CaseStudies() {
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
             {activeCategory === "all"
-              ? "すべての事例"
+              ? "すべての活用シーン"
               : activeCategory === "business"
-              ? "ビジネス活用事例"
+              ? "ビジネスでの活用シーン"
               : activeCategory === "executive"
-              ? "経営者活用事例"
+              ? "経営者の活用シーン"
               : activeCategory === "freelance"
-              ? "フリーランス活用事例"
+              ? "フリーランスの活用シーン"
               : activeCategory === "marketing"
-              ? "マーケティング活用事例"
-              : "イベント活用事例"}
+              ? "マーケティングの活用シーン"
+              : "イベントでの活用シーン"}
           </h2>
+          <p className="text-gray-600 mb-6 text-justify">
+            以下は実在の顧客事例ではなく、業種ごとに想定される利用場面の紹介です。
+          </p>
           <div className="space-y-8">
             {filteredCases.map((caseStudy, index) => (
               <div
@@ -335,12 +237,6 @@ export default function CaseStudies() {
                     <div className="flex flex-wrap items-center gap-3 mt-2">
                       <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
                         {caseStudy.industry}
-                      </span>
-                      <span className="text-gray-500 text-sm">
-                        {caseStudy.company}
-                      </span>
-                      <span className="text-gray-500 text-sm">
-                        {caseStudy.person}
                       </span>
                     </div>
                   </div>
@@ -362,32 +258,6 @@ export default function CaseStudies() {
                 <p className="text-gray-700 mb-4 text-justify">
                   {caseStudy.description}
                 </p>
-
-                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                  <h4 className="font-semibold text-gray-800 mb-2">
-                    達成した成果:
-                  </h4>
-                  <ul className="space-y-1">
-                    {caseStudy.results.map((result, i) => (
-                      <li key={i} className="flex items-start">
-                        <svg
-                          className="w-4 h-4 text-green-500 mt-1 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="ml-2 text-gray-700">{result}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
 
                 <div className="flex flex-wrap gap-2">
                   {caseStudy.tags.map((tag, i) => (
@@ -546,12 +416,12 @@ export default function CaseStudies() {
           <div className="md:flex items-center justify-between gap-8">
             <div className="mb-6 md:mb-0 md:max-w-2xl">
               <h2 className="text-2xl font-bold mb-2">
-                あなたも成功事例を作りませんか？
+                あなたのビジネスでも使ってみませんか？
               </h2>
               <p className="text-blue-100 max-w-2xl text-justify">
-                Share（シェア）のデジタル名刺で、ビジネスに新たな価値をもたらしましょう。
-                7日間の無料トライアルで、すべての機能をお試しいただけます。
-                あなたならではの活用方法で、次の成功事例の主役になりませんか？
+                Share（シェア）のデジタル名刺を、あなたのビジネスシーンでお試しください。
+                7日間の無料トライアルで、すべての機能をご利用いただけます。
+                ご紹介した活用シーンを参考に、あなたに合った使い方を見つけてください。
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
