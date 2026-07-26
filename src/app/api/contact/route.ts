@@ -22,18 +22,9 @@ function getContactTypeJapanese(type: string): string {
 }
 
 export async function POST(request: Request) {
-  console.log("API Route Called");
-  console.log("環境変数:", {
-    RESEND_API_KEY: process.env.RESEND_API_KEY ? "設定あり" : "未設定",
-    MAIL_FROM: process.env.MAIL_FROM || "未設定",
-    NODE_ENV: process.env.NODE_ENV || "未設定",
-  });
-
   try {
     const body = await request.json();
     const { name, email, companyName, contactType, subject, message } = body;
-
-    console.log("リクエストボディ:", { name, email, contactType, subject });
 
     // バリデーション
     if (!name || !email || !subject || !message) {
@@ -177,8 +168,6 @@ ${htmlSignature}
     `;
 
     try {
-      console.log("Resendで送信を試みます:", { to, from, subject });
-
       // Resendを使用して管理者向けメールを送信
       const adminEmailResult = await resend.emails.send({
         from: `${siteName} <${from}>`,
@@ -186,8 +175,6 @@ ${htmlSignature}
         subject: `【お問い合わせ】${subject}`,
         html: adminEmailHtml,
       });
-
-      console.log("Resendのレスポンス:", adminEmailResult);
 
       if (adminEmailResult.error) {
         console.error("管理者向けメール送信エラー:", adminEmailResult.error);

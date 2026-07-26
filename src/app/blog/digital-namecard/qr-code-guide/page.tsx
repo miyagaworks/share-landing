@@ -1435,14 +1435,6 @@ export default function QRCodeNamecardGuide() {
                     <strong>企業ビジョンの共有</strong>
                     ：企業理念や将来展望に関する動画や資料への誘導
                   </li>
-                  <li>
-                    <strong>プレミアムデザイン</strong>
-                    ：高級感あるデザインとロゴ入りQRコードで会社ブランドを強化
-                  </li>
-                  <li>
-                    <strong>複数役割の切り替え</strong>
-                    ：異なる役職や場面に合わせたプロフィール表示を切り替え
-                  </li>
                 </ul>
               </div>
             </div>

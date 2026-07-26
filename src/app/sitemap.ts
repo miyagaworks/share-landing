@@ -135,7 +135,7 @@ const PAGES: Page[] = [
     images: ["/images/screenshots/intro-generator.webp"],
   },
 
-  // 活用事例
+  // 活用シーン集
   { path: "/case-studies", lastModified: "2025-05-08", priority: 0.8 },
 
   // 会社情報

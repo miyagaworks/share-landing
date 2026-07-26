@@ -116,7 +116,7 @@ export default function ForExecutives() {
                   <div className="bg-white rounded-lg shadow-lg overflow-hidden">
                     <div className="h-12 bg-gray-900 flex items-center justify-center">
                       <p className="text-white text-sm font-medium">
-                        エグゼクティブプロフィール
+                        プロフィール
                       </p>
                     </div>
                     <div className="p-6 flex flex-col items-center">
@@ -158,12 +158,9 @@ export default function ForExecutives() {
                         </div>
                       </div>
 
-                      <div className="flex justify-between w-full mb-2">
-                        <div className="bg-blue-50 text-blue-800 text-xs font-medium px-2 py-1 rounded-full">
-                          Premium
-                        </div>
+                      <div className="flex justify-end w-full mb-2">
                         <div className="text-xs text-gray-500">
-                          ID: EXC-2025
+                          ID: SAMPLE
                         </div>
                       </div>
 

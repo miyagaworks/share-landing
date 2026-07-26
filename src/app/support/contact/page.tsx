@@ -74,7 +74,6 @@ export default function ContactPage() {
         } else {
           // JSON以外の場合はテキストとして取得してパース
           const responseText = await response.text();
-          console.log("レスポンステキスト:", responseText);
 
           try {
             data = JSON.parse(responseText);

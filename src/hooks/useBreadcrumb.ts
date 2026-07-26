@@ -66,11 +66,6 @@ export function useBreadcrumb() {
       currentPath += `/${segment}`;
       const isLast = index === pathSegments.length - 1;
 
-      // デバッグ用にマッピングの内容を確認
-      console.log(
-        `現在のパス: ${currentPath}, マップされた名前: ${breadcrumbMap[currentPath]}`
-      );
-
       // マッピングされた名前があればそれを使用、なければセグメント名をキャピタライズして使用
       // デジタル名刺のパスを特別扱い
       let name = breadcrumbMap[currentPath];

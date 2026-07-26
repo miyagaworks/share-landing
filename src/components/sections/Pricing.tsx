@@ -156,16 +156,6 @@ export default function Pricing() {
 
   const activePlans = activeTab === "personal" ? personalPlans : businessPlans;
 
-  // デバッグ用ログ（開発時のみ）
-  if (typeof window !== "undefined") {
-    console.log("activeTab:", activeTab);
-    console.log("activePlans length:", activePlans.length);
-    console.log(
-      "activePlans:",
-      activePlans.map((p) => p.title)
-    );
-  }
-
   return (
     <section
       id="pricing"
