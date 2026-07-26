@@ -25,19 +25,16 @@ export function useBreadcrumb() {
       "/digital-namecard/about": "デジタル名刺とは",
       "/digital-namecard/how-to-create": "デジタル名刺の作り方",
       "/digital-namecard/business-benefits": "ビジネスで差をつける",
-      "/digital-namecard/for-executives": "経営者向けプラン",
+      "/digital-namecard/for-executives": "経営者向けデジタル名刺",
       "/digital-namecard/ultimate-guide": "デジタル名刺完全ガイド",
 
       // 無料トライアル
       "/free-trial": "無料トライアル",
 
       // 事例集
-      "/case-studies": "活用事例",
-      "/case-studies/executive-cases": "経営者の活用事例",
-      "/case-studies/business-cases": "ビジネスの活用事例",
+      "/case-studies": "活用シーン集",
 
       // その他のページ
-      "/pricing": "料金プラン",
       "/support": "サポート",
       "/support/contact": "お問い合わせ",
       "/support/faq": "よくある質問",

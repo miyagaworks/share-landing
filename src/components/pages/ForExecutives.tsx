@@ -4,67 +4,9 @@
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { useBreadcrumb } from "@/hooks/useBreadcrumb";
 import Link from "next/link";
-import { useState } from "react";
 
 export default function ForExecutives() {
   const breadcrumbItems = useBreadcrumb();
-  const [activeFeature, setActiveFeature] = useState(0);
-
-  // 経営者向け特別機能
-  const executiveFeatures = [
-    {
-      title: "プレミアムデザイン",
-      description:
-        "経営者専用のエレガントでプロフェッショナルなデザインテンプレートをご用意。高級感と品格のあるビジュアルで、第一印象から差別化できます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
-        />
-      ),
-    },
-    {
-      title: "高度なアナリティクス",
-      description:
-        "プロフィール閲覧データの詳細な分析機能を提供。スキャン回数、訪問者の地域情報、閲覧時間などの統計データを確認できます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-        />
-      ),
-    },
-    {
-      title: "複数プロフィール管理",
-      description:
-        "異なる役職や状況に応じて、複数のプロフィールを簡単に切り替え。TPOに合わせた最適なデジタル名刺を使用できます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
-        />
-      ),
-    },
-    {
-      title: "ワンクリックチームシェア",
-      description:
-        "会社のチーム全体のプロフィールを一度に共有できる機能。役員チームや部門全体を一つのQRコードで紹介できます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z"
-        />
-      ),
-    },
-  ];
 
   // 活用シーン
   const usageScenarios = [
@@ -161,11 +103,10 @@ export default function ForExecutives() {
                 経営者向けデジタル名刺
               </h1>
               <p className="text-xl text-blue-100 mb-6">
-                先見性と革新性を体現する、経営者のためのプレミアムプラン
+                先見性と革新性を体現する、経営者のためのデジタル名刺
               </p>
               <p className="text-blue-50 text-justify">
-                Share（シェア）の経営者向けデジタル名刺は、ビジネスリーダーとしてのあなたのステータスと革新性を両立させるプレミアムサービスです。
-                高級感あるデザイン、詳細な分析機能、複数プロフィール管理など、経営者特有のニーズに応える特別機能を搭載。
+                Share（シェア）の経営者向けデジタル名刺は、ビジネスリーダーとしてのあなたのステータスと革新性を両立させるデジタル名刺です。
                 重要なビジネスシーンで差をつけ、先進的なリーダーとしての印象を強化します。
               </p>
             </div>
@@ -246,41 +187,6 @@ export default function ForExecutives() {
 
       {/* メインコンテンツ */}
       <div className="max-w-6xl mx-auto px-4 py-12">
-        {/* 経営者向け特別機能 */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            経営者向け特別機能
-          </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {executiveFeatures.map((feature, index) => (
-              <div
-                key={index}
-                className={`bg-white p-6 rounded-lg shadow-md border border-gray-200 transition-all duration-300 ${
-                  activeFeature === index
-                    ? "border-primary ring-2 ring-primary/20"
-                    : ""
-                }`}
-                onMouseEnter={() => setActiveFeature(index)}
-              >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <svg
-                    className="w-6 h-6 text-primary"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    {feature.icon}
-                  </svg>
-                </div>
-                <h3 className="text-lg font-semibold mb-3">{feature.title}</h3>
-                <p className="text-gray-600 text-justify">
-                  {feature.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* 活用シーン */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
@@ -361,8 +267,8 @@ export default function ForExecutives() {
                 経営者としての先進性をアピールしよう
               </h2>
               <p className="text-blue-100 text-justify">
-                Share（シェア）の経営者向けデジタル名刺プランで、ビジネスリーダーとしての革新性とステータスを両立させましょう。
-                7日間の無料トライアルで、経営者向け特別機能をすべてお試しいただけます。
+                Share（シェア）の経営者向けデジタル名刺で、ビジネスリーダーとしての革新性とステータスを両立させましょう。
+                7日間の無料トライアルで、実際の使い勝手をお試しいただけます。
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">

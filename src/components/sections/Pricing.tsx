@@ -266,13 +266,6 @@ export default function Pricing() {
               }`}
               style={{ transitionDelay: `${index * 150}ms` }}
             >
-              {/* 人気プランバッジ */}
-              {plan.popular && (
-                <div className="absolute top-0 right-0 bg-primary text-white py-1 px-4 text-sm font-medium rounded-bl-lg rounded-tr-lg">
-                  人気
-                </div>
-              )}
-
               {/* バッジ */}
               {plan.badge && (
                 <div

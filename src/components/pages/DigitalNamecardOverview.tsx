@@ -346,7 +346,7 @@ export default function DigitalNamecardOverview() {
               href="/case-studies"
               className="inline-flex items-center text-primary font-medium hover:text-blue-700 transition-colors"
             >
-              活用事例をもっと見る
+              活用シーンをもっと見る
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 ml-1"

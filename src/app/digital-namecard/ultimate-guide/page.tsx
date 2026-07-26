@@ -876,83 +876,17 @@ export default function DigitalNamecardCompleteGuide() {
 
           <div className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 rounded-xl border border-blue-100">
             <h3 className="text-xl font-semibold mb-4 text-primary">
-              経営者向け特別機能
+              経営者・役員の方の活用
             </h3>
             <p className="text-gray-700 text-justify mb-4">
-              Share（シェア）では、経営者・役員向けに特別なプレミアム機能をご用意しています。先進的なビジネスリーダーとしてのイメージを強化するデザインや、詳細な閲覧データの分析機能をご利用いただけます。
+              Share（シェア）は、経営者・役員の方にもご利用いただけます。取締役会や投資家との会合、業界カンファレンスなど、初対面で連絡先を交換する場面での活用が想定されます。
             </p>
-            <div className="md:flex gap-6">
-              <div className="md:w-1/2 mb-4 md:mb-0">
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      <strong>プレミアムデザイン</strong>
-                      ：高級感あるテンプレート
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      <strong>高度なアナリティクス</strong>
-                      ：詳細な閲覧データ分析
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div className="md:w-1/2">
-                <ul className="space-y-2">
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      <strong>複数プロフィール管理</strong>：役割別の使い分け
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
             <div className="mt-4 text-center">
               <Link
                 href="/digital-namecard/for-executives"
                 className="inline-flex items-center text-primary font-medium hover:text-blue-700"
               >
-                経営者向けプランの詳細を見る
+                経営者向けデジタル名刺の活用法を見る
                 <svg
                   className="w-4 h-4 ml-1"
                   fill="none"
