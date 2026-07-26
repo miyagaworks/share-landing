@@ -26,21 +26,6 @@ export default function FreeTrial() {
         "いつでもキャンセル可能",
       ],
     },
-    {
-      id: "executive",
-      name: "経営者プラン",
-      price: "月額 ¥2,000（税込）",
-      yearlyPrice: "年額 ¥20,000（税込）",
-      yearlyDiscount: "2ヶ月分お得",
-      features: [
-        "スタンダードプランのすべての機能",
-        "プレミアムデザインテンプレート",
-        "複数プロフィール管理",
-        "高度なアナリティクス",
-        "優先サポート",
-        "チーム共有機能",
-      ],
-    },
   ];
 
   // トライアルの流れ
@@ -108,7 +93,7 @@ export default function FreeTrial() {
     {
       question: "プランの変更はできますか？",
       answer:
-        "はい、いつでもプランの変更が可能です。スタンダードプランから経営者プランへのアップグレードは即時反映されます。ダウングレードは次回の更新時から適用されます。",
+        "個人向けにはスタンダードプラン（月額・年額）をご用意しています。法人向けプランを含む料金の詳細は、トップページの料金表をご覧ください。プランの変更をご希望の場合は、お問い合わせフォームよりご連絡ください。",
     },
     {
       question: "支払い方法にはどのようなものがありますか？",
@@ -315,7 +300,15 @@ export default function FreeTrial() {
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800 text-center">
             料金プラン
           </h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <p className="text-gray-600 mb-8 text-center max-w-2xl mx-auto">
+            無料トライアル終了後は、個人向けのスタンダードプランでご利用いただけます。
+            法人向けプランを含む料金の詳細は、
+            <Link href="/#pricing" className="text-primary hover:underline">
+              トップページの料金表
+            </Link>
+            をご覧ください。
+          </p>
+          <div className="grid gap-8 max-w-md mx-auto">
             {plans.map((plan) => (
               <div
                 key={plan.id}

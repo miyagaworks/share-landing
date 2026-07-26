@@ -64,19 +64,6 @@ export default function ForExecutives() {
         />
       ),
     },
-    {
-      title: "優先サポート",
-      description:
-        "経営者プラン専用の優先サポートチームがあなたをサポート。技術的な問題や活用方法のアドバイスなど、迅速に対応します。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"
-        />
-      ),
-    },
   ];
 
   // 活用シーン
@@ -294,194 +281,6 @@ export default function ForExecutives() {
           </div>
         </section>
 
-        {/* 経営者プランの特長 */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            経営者プランの特長
-          </h2>
-          <div className="bg-white p-8 rounded-xl shadow-lg border border-gray-100">
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-primary">
-                  ステータスを演出
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      プレミアム限定の高級感あるデザインテンプレート
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      カスタムドメインオプション（example.share.com）
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      経営者・VIP向けのプレミアムバッジ表示
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      洗練されたQRコードデザイン（企業ロゴ入り）
-                    </span>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-4 text-primary">
-                  場面に応じた使い分け
-                </h3>
-                <ul className="space-y-3">
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      複数プロフィールの切り替え機能（役割別・シーン別）
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      詳細なアクセス解析とレポート機能
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      プライオリティサポート（24時間以内の返信保証）
-                    </span>
-                  </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      チーム全体のプロフィール管理機能
-                    </span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="mt-8 pt-6 border-t border-gray-200">
-              <div className="flex justify-between items-center">
-                <div>
-                  <div className="font-bold text-xl text-gray-800">
-                    経営者プラン
-                  </div>
-                  <div className="text-primary">
-                    月額 ¥2,000（税込）/ 年額 ¥20,000（税込）
-                  </div>
-                </div>
-                <Link
-                  href="/free-trial?plan=executive"
-                  className="inline-block py-3 px-6 bg-primary text-white rounded-lg font-medium hover:bg-blue-700 transition-colors"
-                >
-                  7日間無料で試す
-                </Link>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* 活用シーン */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
@@ -554,39 +353,6 @@ export default function ForExecutives() {
           </div>
         </section>
 
-        {/* よくある質問 */}
-        <section className="mb-16">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
-            よくある質問
-          </h2>
-          <div className="space-y-4">
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <h3 className="text-lg font-semibold mb-3 text-primary">
-                経営者プランと標準プランの違いは何ですか？
-              </h3>
-              <p className="text-gray-600 text-justify">
-                経営者プランでは、プレミアムデザインテンプレート、複数プロフィール管理、高度なアナリティクス、優先サポートなどの特別機能をご利用いただけます。また、経営者としての先進性やステータスを演出する専用機能も搭載しています。標準プランでは基本的な機能のみのご提供となります。
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <h3 className="text-lg font-semibold mb-3 text-primary">
-                複数のプロフィールはどのように使い分けられますか？
-              </h3>
-              <p className="text-gray-600 text-justify">
-                経営者プランでは、異なる役職や状況に応じた複数のプロフィールを作成・管理できます。例えば、公式な取締役会用、カジュアルなネットワーキングイベント用、業界カンファレンス用など、シーンに応じたプロフィールを簡単に切り替えることが可能です。アプリ内で数タップで切り替えられるため、TPOに合わせた最適なデジタル名刺をご利用いただけます。
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
-              <h3 className="text-lg font-semibold mb-3 text-primary">
-                経営者プランは組織全体で利用できますか？
-              </h3>
-              <p className="text-gray-600 text-justify">
-                経営者プランは個人向けのプレミアムプランです。組織全体での導入をご検討の場合は、法人プランがより適しています。法人プランでは、複数ユーザーの一括管理、企業ブランディングの統一、管理者ダッシュボードなどの機能をご利用いただけます。詳細はお問い合わせください。
-              </p>
-            </div>
-          </div>
-        </section>
-
         {/* CTA */}
         <section className="bg-gradient-to-r from-primary to-blue-600 text-white rounded-xl p-8 shadow-lg">
           <div className="md:flex items-center justify-between gap-8">
@@ -601,7 +367,7 @@ export default function ForExecutives() {
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">
               <Link
-                href="/free-trial?plan=executive"
+                href="/free-trial"
                 className="inline-flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-md text-base font-medium text-primary bg-white hover:bg-gray-50 transition-all whitespace-nowrap"
               >
                 <span>無料で試す</span>

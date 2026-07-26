@@ -944,24 +944,6 @@ export default function DigitalNamecardCompleteGuide() {
                       <strong>複数プロフィール管理</strong>：役割別の使い分け
                     </span>
                   </li>
-                  <li className="flex items-start">
-                    <svg
-                      className="w-5 h-5 text-primary mt-1 flex-shrink-0"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M5 13l4 4L19 7"
-                      />
-                    </svg>
-                    <span className="ml-2 text-gray-700">
-                      <strong>優先サポート</strong>：専任チームのサポート
-                    </span>
-                  </li>
                 </ul>
               </div>
             </div>

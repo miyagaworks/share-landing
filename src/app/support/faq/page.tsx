@@ -330,7 +330,7 @@ export default function FAQPage() {
           </h3>
           <p className="text-gray-600 mb-6 text-center">
             さらに詳しい情報が必要な場合は、サポートチームにお問い合わせください。
-            24時間以内（営業日に限る）に回答いたします。
+            内容を確認のうえ、順次お返事いたします。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
