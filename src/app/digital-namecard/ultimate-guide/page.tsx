@@ -814,7 +814,7 @@ export default function DigitalNamecardCompleteGuide() {
               最適な活用法：併用のすすめ
             </h3>
             <p className="text-gray-700 text-justify mb-4">
-              デジタル名刺と紙の名刺はそれぞれ異なる特徴と利点があるため、ビジネスシーンに応じて両方を併用することで最大の効果を発揮します。紙の名刺にQRコードを印刷することで、伝統的な名刺交換の形式を守りながら、デジタル名刺の便利さも提供できます。
+              デジタル名刺と紙の名刺はそれぞれ異なる特徴と利点があるため、ビジネスシーンに応じて両方を併用する使い方もできます。紙の名刺にQRコードを印刷することで、伝統的な名刺交換の形式を守りながら、デジタル名刺の便利さも提供できます。
             </p>
             <div className="md:flex items-start gap-6">
               <div className="md:w-1/2 mb-4 md:mb-0">
@@ -879,7 +879,7 @@ export default function DigitalNamecardCompleteGuide() {
               経営者向け特別機能
             </h3>
             <p className="text-gray-700 text-justify mb-4">
-              Share（シェア）では、経営者・役員向けに特別なプレミアム機能をご用意しています。先進的なビジネスリーダーとしてのイメージを強化し、より効果的なネットワーキングを実現します。
+              Share（シェア）では、経営者・役員向けに特別なプレミアム機能をご用意しています。先進的なビジネスリーダーとしてのイメージを強化するデザインや、詳細な閲覧データの分析機能をご利用いただけます。
             </p>
             <div className="md:flex gap-6">
               <div className="md:w-1/2 mb-4 md:mb-0">
@@ -1123,7 +1123,7 @@ export default function DigitalNamecardCompleteGuide() {
                 </h4>
                 <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
                   <li>展示会でのリード獲得に活用</li>
-                  <li>その場でSNSでつながり、関係構築を加速</li>
+                  <li>その場でSNSアカウントをまとめて共有</li>
                   <li>商品・サービス情報へのリンクを追加</li>
                 </ul>
               </div>
@@ -1306,7 +1306,7 @@ export default function DigitalNamecardCompleteGuide() {
                 経営者向けデジタル名刺
               </h3>
               <p className="text-gray-600 text-justify">
-                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築とビジネスコミュニケーションの効率化を実現します。
+                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築と、場面に応じた連絡先の使い分けをご紹介します。
               </p>
             </Link>
           </div>

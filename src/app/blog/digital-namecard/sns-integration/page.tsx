@@ -712,7 +712,7 @@ export default function SNSIntegrationBusinessCard() {
               </h2>
               <p className="text-blue-100 text-justify">
                 Share（シェア）なら、複数のSNSアカウントを簡単に一つのデジタル名刺にまとめられます。
-                7日間の無料トライアルでその効果を体験してください。
+                7日間の無料トライアルで実際の機能をお試しください。
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 flex-shrink-0">

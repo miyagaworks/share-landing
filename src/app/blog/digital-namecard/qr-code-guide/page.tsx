@@ -1150,7 +1150,7 @@ export default function QRCodeNamecardGuide() {
                     <div className="ml-2">
                       <strong className="text-gray-700">その場でSNS連携</strong>
                       <p className="text-gray-600 text-sm">
-                        QRコードをスキャンした後、その場でSNSでつながることを提案し、関係構築を加速させます。
+                        QRコードをスキャンした後、その場でSNSでつながることを提案できます。
                       </p>
                     </div>
                   </li>
@@ -1246,7 +1246,7 @@ export default function QRCodeNamecardGuide() {
                 QRコード名刺の効果測定
               </h3>
               <p className="text-gray-700 text-justify mb-4">
-                QRコード名刺の効果を最大化するには、定期的な効果測定と改善が重要です。
+                QRコード名刺の使い方を見直すには、定期的にアクセス状況を確認することが役立ちます。
                 Share（シェア）のアナリティクス機能を使って以下のデータを分析しましょう。
               </p>
               <div className="grid md:grid-cols-3 gap-4">

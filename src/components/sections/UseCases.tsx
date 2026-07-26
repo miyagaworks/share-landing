@@ -39,7 +39,7 @@ const useCases = [
   {
     title: "クリエイター活動",
     description:
-      "YouTubeやInstagram、Xなど作品を発表しているSNSアカウントを一元的に共有でき、ファン獲得やフォロワー増加につながります。プロフィールURLをコンテンツに記載するだけで効果的な宣伝になります。",
+      "YouTubeやInstagram、Xなど作品を発表しているSNSアカウントを一元的に共有できます。プロフィールURLをコンテンツに記載するだけで、複数のSNSへの入口をまとめて案内できます。",
     imagePath: "/images/usecase/creator-scene.png",
     bgColor: "bg-primary",
     iconPath: (

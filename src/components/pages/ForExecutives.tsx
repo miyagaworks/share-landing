@@ -84,7 +84,7 @@ export default function ForExecutives() {
     {
       title: "取締役会・役員会",
       description:
-        "取締役や役員同士の情報共有を効率化。会社の意思決定者として、先進的なデジタルツールの活用姿勢を示すことができます。",
+        "取締役や役員同士で連絡先やSNSアカウントをまとめて共有。会社の意思決定者として、先進的なデジタルツールの活用姿勢を示すことができます。",
       icon: (
         <path
           strokeLinecap="round"
@@ -123,7 +123,7 @@ export default function ForExecutives() {
     {
       title: "メディア対応",
       description:
-        "メディアインタビューや取材時に、プロフィールを瞬時に共有。SNSアカウントへの誘導も簡単に行え、メディア露出効果を最大化できます。",
+        "メディアインタビューや取材時に、プロフィールを瞬時に共有。SNSアカウントへの誘導も簡単に行えます。",
       icon: (
         <path
           strokeLinecap="round"
@@ -382,7 +382,7 @@ export default function ForExecutives() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-4 text-primary">
-                  ビジネス効率を最大化
+                  場面に応じた使い分け
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">

@@ -23,7 +23,7 @@ export default function Hero() {
                 <span className="block mt-2">ビジネスに差をつける</span>
               </h1>
               <p className="text-lg md:text-xl mb-8 opacity-90 text-justify">
-                Share（シェア）は、複数のSNSアカウントを一つにまとめた次世代の電子名刺サービスです。QRコードで瞬時に共有でき、経営者や第一線のビジネスパーソンに選ばれています。
+                Share（シェア）は、複数のSNSアカウントを一つにまとめた次世代の電子名刺サービスです。QRコードで瞬時に共有でき、紙の名刺と併用することもできます。
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-10">
                 <Link

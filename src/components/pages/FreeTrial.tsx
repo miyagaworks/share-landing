@@ -604,10 +604,10 @@ export default function FreeTrial() {
               className="bg-white p-6 rounded-lg shadow-md border border-gray-200 hover:shadow-lg transition-all"
             >
               <h3 className="text-lg font-semibold mb-3 text-primary">
-                活用事例集
+                活用シーン集
               </h3>
               <p className="text-gray-600 text-justify">
-                Share（シェア）のデジタル名刺を活用した成功事例。様々なビジネスシーンでの活用法や導入効果を紹介します。
+                Share（シェア）のデジタル名刺の活用シーン集。展示会や商談など、業種別の使い方をご紹介します。
               </p>
             </Link>
           </div>
