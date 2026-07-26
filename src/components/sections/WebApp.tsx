@@ -590,7 +590,7 @@ export default function WebApp() {
             <div className="text-left">
               <p className="font-medium">古里 健太</p>
               <p className="text-sm text-gray-500">
-                代表取締役 / タイムメイク株式会社
+                代表取締役 / 株式会社タイムメイク
               </p>
             </div>
           </div>
