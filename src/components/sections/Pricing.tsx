@@ -16,6 +16,7 @@ interface PricingPlan {
   description: string;
   price: string;
   period: string;
+  perPerson?: string;
   discount?: string;
   features: PricingFeature[];
   cta: string;
@@ -81,14 +82,9 @@ export default function Pricing() {
       description: "小規模チーム向け",
       price: isYearly ? "¥33,000" : "¥3,300",
       period: isYearly ? "年額（税込）" : "月額（税込）",
+      perPerson: isYearly ? "1名あたり 3,300円" : "1名あたり 330円",
       discount: isYearly ? "2ヶ月分お得" : undefined,
-      features: [
-        { title: "最大10名のユーザー管理", included: true },
-        { title: "共通カラーテーマ設定", included: true },
-        { title: "会社ロゴ表示", included: true },
-        { title: "メールサポート", included: true },
-        { title: "管理者ダッシュボード", included: true },
-      ],
+      features: [{ title: "最大10名のユーザー管理", included: true }],
       cta: "詳細を問い合わせる",
     },
     {
@@ -98,14 +94,9 @@ export default function Pricing() {
       description: "中規模チーム向け",
       price: isYearly ? "¥66,000" : "¥6,600",
       period: isYearly ? "年額（税込）" : "月額（税込）",
+      perPerson: isYearly ? "1名あたり 2,200円" : "1名あたり 220円",
       discount: isYearly ? "2ヶ月分お得" : undefined,
-      features: [
-        { title: "最大30名のユーザー管理", included: true },
-        { title: "部署/チーム分け機能", included: true },
-        { title: "高度なユーザー権限設定", included: true },
-        { title: "メールサポート", included: true },
-        { title: "分析レポート", included: true },
-      ],
+      features: [{ title: "最大30名のユーザー管理", included: true }],
       cta: "詳細を問い合わせる",
       popular: true,
     },
@@ -116,17 +107,19 @@ export default function Pricing() {
       description: "大規模チーム向け",
       price: isYearly ? "¥99,000" : "¥9,900",
       period: isYearly ? "年額（税込）" : "月額（税込）",
+      perPerson: isYearly ? "1名あたり 1,980円" : "1名あたり 198円",
       discount: isYearly ? "2ヶ月分お得" : undefined,
-      features: [
-        { title: "最大50名のユーザー管理", included: true },
-        { title: "高度な部署管理機能", included: true },
-        { title: "詳細なアクセス権限制御", included: true },
-        { title: "メールサポート", included: true },
-        { title: "カスタムブランディング", included: true },
-        { title: "API アクセス", included: true },
-      ],
+      features: [{ title: "最大50名のユーザー管理", included: true }],
       cta: "詳細を問い合わせる",
     },
+  ];
+
+  // 法人3プラン共通の機能（プランカードの外にまとめて表示）
+  const businessCommonFeatures: string[] = [
+    "共通カラーテーマ設定",
+    "会社ロゴ表示",
+    "管理者ダッシュボード",
+    "メールサポート",
   ];
 
   // スクロール位置によるアニメーション効果
@@ -316,6 +309,11 @@ export default function Pricing() {
                   <span className="text-4xl font-bold">{plan.price}</span>
                   <span className="text-gray-500 ml-2 pb-1">{plan.period}</span>
                 </div>
+                {plan.perPerson && (
+                  <div className="text-gray-600 mt-1 text-sm">
+                    {plan.perPerson}
+                  </div>
+                )}
                 {plan.discount && (
                   <div className="bg-green-100 text-green-800 text-xs font-medium px-2 py-1 rounded mt-2 inline-block">
                     {plan.discount}
@@ -394,6 +392,48 @@ export default function Pricing() {
             </div>
           ))}
         </div>
+
+        {/* 法人プラン共通の機能 */}
+        {activeTab === "business" && (
+          <div className="bg-white border border-gray-200 rounded-lg p-6 mb-8 shadow-sm">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
+              <svg
+                className="w-5 h-5 text-primary mr-2"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M5 13l4 4L19 7"
+                />
+              </svg>
+              法人プラン共通の機能
+            </h3>
+            <p className="text-sm text-gray-600 mb-4">
+              以下の機能は法人プラン3種すべてでご利用いただけます
+            </p>
+            <ul className="grid gap-3 sm:grid-cols-2">
+              {businessCommonFeatures.map((feature) => (
+                <li key={feature} className="flex items-start">
+                  <div className="flex-shrink-0 h-5 w-5 text-green-500">
+                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                  </div>
+                  <span className="ml-2 text-gray-700">{feature}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* 追加オプション（タッチシールのみ） */}
         {activeTab === "business" && (
