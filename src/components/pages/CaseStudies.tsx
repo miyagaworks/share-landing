@@ -176,6 +176,71 @@ export default function CaseStudies() {
         </div>
       </div>
 
+      {/* データで見る背景（公的統計） */}
+      <section className="bg-gray-50 border-b border-gray-100 py-12">
+        <div className="max-w-6xl mx-auto px-4">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+            データで見る、デジタル名刺が求められる背景
+          </h2>
+          <p className="text-gray-600 mb-8 text-justify">
+            以下の統計は、デジタル名刺が使われる利用環境の背景を示す公的調査の数値であり、Share（シェア）の利用効果を示すものではありません。
+          </p>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+              <p className="text-4xl md:text-5xl font-bold text-primary mb-3">
+                82.3%
+              </p>
+              <p className="text-gray-800 font-medium mb-2 text-justify">
+                インターネット利用者のうち、SNSを利用している人の割合
+              </p>
+              <p className="text-gray-600 text-sm mb-4 text-justify">
+                インターネットの利用目的・用途の中で最も高い割合
+              </p>
+              <div className="pt-4 border-t border-gray-100">
+                <p className="text-xs text-gray-500">
+                  出典: 総務省「令和7年通信利用動向調査」
+                </p>
+                <p className="text-xs text-gray-500">
+                  調査時点: 2025年8月末 / 公表日: 2026年5月29日
+                </p>
+                <a
+                  href="https://www.soumu.go.jp/menu_news/s-news/01tsushin02_02000183.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-xs text-primary hover:underline"
+                >
+                  総務省の公表資料を見る
+                </a>
+              </div>
+            </div>
+            <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200">
+              <p className="text-4xl md:text-5xl font-bold text-primary mb-3">
+                91.8%
+              </p>
+              <p className="text-gray-800 font-medium mb-4 text-justify">
+                スマートフォンを保有している世帯の割合
+              </p>
+              <div className="pt-4 border-t border-gray-100">
+                <p className="text-xs text-gray-500">
+                  出典: 総務省「令和7年通信利用動向調査」
+                </p>
+                <p className="text-xs text-gray-500">
+                  調査時点: 2025年8月末 / 公表日: 2026年5月29日
+                </p>
+                <a
+                  href="https://www.soumu.go.jp/menu_news/s-news/01tsushin02_02000183.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-xs text-primary hover:underline"
+                >
+                  総務省の公表資料を見る
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* メインコンテンツ */}
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* カテゴリーフィルター */}

@@ -339,6 +339,47 @@ export default function BusinessAdvantage() {
 
       {/* メインコンテンツ */}
       <div className="max-w-6xl mx-auto px-4 py-12">
+        {/* データで見る背景（公的統計） */}
+        <section className="mb-16">
+          <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-800">
+            データで見る、働き方の変化
+          </h2>
+          <p className="text-gray-600 mb-6 text-justify">
+            以下の統計は、ビジネスにおける利用環境の背景を示す公的調査の数値であり、Share（シェア）の利用効果を示すものではありません。
+          </p>
+          <div className="bg-white p-6 rounded-lg shadow-md border border-gray-200 md:flex md:items-center">
+            <div className="md:w-1/4 mb-4 md:mb-0 md:pr-8">
+              <p className="text-4xl md:text-5xl font-bold text-primary">
+                50.1%
+              </p>
+            </div>
+            <div className="md:w-3/4">
+              <p className="text-gray-800 font-medium mb-2 text-justify">
+                テレワークを導入している企業の割合
+              </p>
+              <p className="text-gray-600 text-sm mb-4 text-justify">
+                ※この調査の企業対象は「常用雇用者規模100人以上の企業」です。
+              </p>
+              <div className="pt-4 border-t border-gray-100">
+                <p className="text-xs text-gray-500">
+                  出典: 総務省「令和7年通信利用動向調査」
+                </p>
+                <p className="text-xs text-gray-500">
+                  調査時点: 2025年8月末 / 公表日: 2026年5月29日
+                </p>
+                <a
+                  href="https://www.soumu.go.jp/menu_news/s-news/01tsushin02_02000183.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-xs text-primary hover:underline"
+                >
+                  総務省の公表資料を見る
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* 競合との差別化ポイント */}
         <section className="mb-16">
           <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-800">
