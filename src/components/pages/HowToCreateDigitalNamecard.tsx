@@ -29,12 +29,11 @@ export default function HowToCreateDigitalNamecard() {
     {
       number: 2,
       title: "基本情報の入力",
-      description: "名前、肩書き、会社名などの基本情報を入力します。",
+      description: "名前、連絡先などの基本情報を入力します。",
       details: [
         "プロフィール写真をアップロード（任意）",
         "氏名（漢字とローマ字）を入力",
         "電話番号を設定",
-        "会社名や会社ホームページを入力",
       ],
       image: "/images/howto/create-step2.webp", // 実際の画像パスに置き換え
       tip: "プロフィール写真は正方形の画像が最適です。ビジネス用のプロフェッショナルな写真を使用することをおすすめします。",
@@ -81,7 +80,6 @@ export default function HowToCreateDigitalNamecard() {
       description: "完成したプロフィールを共有するためのQRコードを生成します。",
       details: [
         "公開プロフィールのリンクURLを共有",
-        "QRコードのカラーを選択",
         "ダウンロード形式を選択（PNG, SVG）",
         "高解像度QRコードをダウンロード",
       ],

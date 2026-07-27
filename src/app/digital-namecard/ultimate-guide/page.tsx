@@ -58,7 +58,7 @@ export default function DigitalNamecardCompleteGuide() {
     {
       title: "情報の即時更新",
       description:
-        "役職や所属が変わった際も、デジタル名刺なら情報をリアルタイムで更新できます。常に最新の情報を提供でき、古い名刺を廃棄する必要もありません。",
+        "デジタル名刺なら、情報をリアルタイムで更新できます。常に最新の情報を提供でき、古い名刺を廃棄する必要もありません。",
       icon: (
         <path
           strokeLinecap="round"
@@ -97,7 +97,7 @@ export default function DigitalNamecardCompleteGuide() {
     {
       title: "コスト削減",
       description:
-        "紙の名刺の印刷コストや管理コストを削減できます。肩書きや所属が変わるたびに新しい名刺を印刷する必要がなく、長期的に見て経済的です。",
+        "紙の名刺の印刷コストや管理コストを削減できます。情報が変わるたびに新しい名刺を印刷する必要がなく、長期的に見て経済的です。",
       icon: (
         <path
           strokeLinecap="round"
@@ -193,11 +193,6 @@ export default function DigitalNamecardCompleteGuide() {
       paper: "紙資源を消費",
     },
     {
-      feature: "検索・管理",
-      digital: "デジタルで検索・管理が容易",
-      paper: "物理的な整理・検索が必要",
-    },
-    {
       feature: "ビジネス印象",
       digital: "先進的でデジタルに精通したイメージ",
       paper: "伝統的で堅実なイメージ",
@@ -267,7 +262,7 @@ export default function DigitalNamecardCompleteGuide() {
       number: 2,
       title: "基本情報の入力",
       description:
-        "名前、肩書き、会社名、連絡先情報などの基本情報を入力します。プロフィール写真も設定できます。",
+        "名前、連絡先情報などの基本情報を入力します。プロフィール写真も設定できます。",
       icon: (
         <path
           strokeLinecap="round"
@@ -531,7 +526,7 @@ export default function DigitalNamecardCompleteGuide() {
                   </svg>
                   <span className="ml-2 text-gray-700">
                     <strong>プロフィール情報</strong>
-                    ：氏名、肩書き、会社名、連絡先など
+                    ：氏名、連絡先など
                   </span>
                 </li>
                 <li className="flex items-start">

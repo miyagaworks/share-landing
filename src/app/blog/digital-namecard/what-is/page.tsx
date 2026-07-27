@@ -39,11 +39,6 @@ export default function WhatIsDigitalNamecard() {
       paper: "限られたスペースに情報を集約",
     },
     {
-      feature: "検索性",
-      digital: "デジタルで管理・検索可能",
-      paper: "物理的な整理が必要",
-    },
-    {
       feature: "差別化",
       digital: "先進的なイメージを演出",
       paper: "従来型のビジネス印象",
@@ -55,7 +50,7 @@ export default function WhatIsDigitalNamecard() {
     {
       title: "展示会・商談",
       description:
-        "その場でQRコードを表示するだけで、複数の方に同時に情報を共有できます。展示会後の名刺整理の手間も省けます。",
+        "その場でQRコードを表示するだけで、複数の方に同時に情報を共有できます。",
       icon: (
         <path
           strokeLinecap="round"
@@ -68,7 +63,7 @@ export default function WhatIsDigitalNamecard() {
     {
       title: "ビジネス名刺",
       description:
-        "肩書きや所属が変わっても、デジタル名刺なら情報をリアルタイムで更新可能。古い名刺を廃棄する必要もありません。",
+        "デジタル名刺なら、情報をリアルタイムで更新可能。古い名刺を廃棄する必要もありません。",
       icon: (
         <path
           strokeLinecap="round"
@@ -449,11 +444,10 @@ export default function WhatIsDigitalNamecard() {
                     自分らしいプロフィールを作成
                   </h3>
                   <p className="text-gray-600 mb-4 text-justify">
-                    プロフィール写真、職種、自己紹介文などを自由にカスタマイズ。あなたのブランドやイメージに合ったデジタル名刺を作成できます。AIが最適な自己紹介文を提案する機能も搭載しています。
+                    プロフィール写真、自己紹介文などを自由にカスタマイズ。あなたのブランドやイメージに合ったデジタル名刺を作成できます。AIが最適な自己紹介文を提案する機能も搭載しています。
                   </p>
                   <ul className="list-disc pl-5 space-y-2 text-gray-600">
                     <li>カラーテーマのカスタマイズ</li>
-                    <li>職種・経歴の詳細な記載</li>
                     <li>AI自己紹介文ジェネレーター</li>
                   </ul>
                 </div>
