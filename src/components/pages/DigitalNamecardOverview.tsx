@@ -41,7 +41,7 @@ export default function DigitalNamecardOverview() {
     {
       title: "プロフィールカスタマイズ",
       description:
-        "あなたのブランドに合わせたカラーテーマ設定や自己紹介文のカスタマイズが可能。ビジネス用とプライベート用で表示を切り替えることもできます。",
+        "あなたのブランドに合わせたカラーテーマ設定や自己紹介文のカスタマイズが可能。",
       icon: (
         <path
           strokeLinecap="round"
@@ -461,7 +461,7 @@ export default function DigitalNamecardOverview() {
                 経営者向けデジタル名刺
               </h3>
               <p className="text-gray-600 text-justify">
-                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築と、場面に応じた連絡先の使い分けをご紹介します。
+                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築についてご紹介します。
               </p>
             </Link>
             <Link

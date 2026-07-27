@@ -5,7 +5,7 @@ import ForExecutives from "@/components/pages/ForExecutives";
 export const metadata: Metadata = {
   title: "経営者向けデジタル名刺 | ステータスと革新性を両立 | Share",
   description:
-    "経営者・役員向けデジタル名刺の活用方法を解説。複数のSNSアカウントの一元管理や、場面に応じた連絡先の使い分けなど、Share（シェア）の経営者向けデジタル名刺の機能をご紹介します。",
+    "経営者・役員向けデジタル名刺の活用方法を解説。複数のSNSアカウントの一元管理など、Share（シェア）の経営者向けデジタル名刺の機能をご紹介します。",
   openGraph: {
     title: "経営者向けデジタル名刺 | ステータスと革新性を両立",
     description:

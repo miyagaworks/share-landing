@@ -93,11 +93,6 @@ export default function SNSIntegrationBusinessCard() {
       },
       {
         "@type": "HowToStep",
-        name: "共有モードの設定",
-        text: "ビジネス用とプライベート用で表示するSNSを切り替えます。",
-      },
-      {
-        "@type": "HowToStep",
         name: "QRコード生成",
         text: "作成したデジタル名刺のQRコードを生成します。",
       },
@@ -115,11 +110,6 @@ export default function SNSIntegrationBusinessCard() {
       question: "Share（シェア）で登録できるSNSの種類は？",
       answer:
         "LINE、YouTube、X、Instagram、TikTok、Facebook、Pinterest、Threads、note、BeRealなど、主要なSNSプラットフォームに対応しています。さらに、カスタムリンクを追加することで、その他のサービスやウェブサイトも登録できます。",
-    },
-    {
-      question: "ビジネス用とプライベート用でSNSを使い分けられますか？",
-      answer:
-        "はい、Share（シェア）では共有モード機能により、ビジネス用とプライベート用でSNSアカウントの表示を切り替えることができます。これにより、TPOに合わせて適切な情報共有が可能になります。",
     },
     {
       question: "SNSアカウントの追加や変更は簡単にできますか？",
@@ -432,19 +422,6 @@ export default function SNSIntegrationBusinessCard() {
                     strokeLinejoin="round"
                     strokeWidth="2"
                     d="M4 6h16M4 12h16M4 18h16"
-                  />
-                ),
-              },
-              {
-                title: "共有モードの設定",
-                description:
-                  "ビジネス用とプライベート用で、表示するSNSを切り替えられるよう設定します。",
-                icon: (
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
                   />
                 ),
               },

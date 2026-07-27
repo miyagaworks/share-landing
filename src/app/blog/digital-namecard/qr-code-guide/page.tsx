@@ -735,7 +735,6 @@ export default function QRCodeNamecardGuide() {
                 </h4>
                 <ul className="list-disc pl-5 space-y-1 text-gray-600">
                   <li>デジタルプロフィールの情報を定期的に更新する</li>
-                  <li>相手に応じて適切なSNSや情報を表示する設定に切り替える</li>
                   <li>
                     印刷前に様々なデバイスでQRコードの読み取りテストを行う
                   </li>

@@ -245,19 +245,6 @@ export default function DigitalNamecardCompleteGuide() {
         />
       ),
     },
-    {
-      title: "共有モード切替",
-      description:
-        "ビジネス用とプライベート用で表示するSNSや情報を切り替えられます。TPOに合わせて最適な情報を共有できます。",
-      icon: (
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4"
-        />
-      ),
-    },
   ];
 
   // 作成ステップデータ
@@ -308,7 +295,7 @@ export default function DigitalNamecardCompleteGuide() {
       number: 4,
       title: "デザインカスタマイズ",
       description:
-        "カラーテーマやレイアウトをカスタマイズし、あなたらしいプロフィールに仕上げます。企業のブランドカラーに合わせることもできます。",
+        "カラーテーマをカスタマイズし、あなたらしいプロフィールに仕上げます。企業のブランドカラーに合わせることもできます。",
       icon: (
         <path
           strokeLinecap="round"
@@ -350,11 +337,6 @@ export default function DigitalNamecardCompleteGuide() {
       title: "メール署名への追加",
       description:
         "ビジネスメールの署名にQRコードやデジタル名刺へのリンクを追加することで、メールのやり取りからSNSへの導線を作ることができます。",
-    },
-    {
-      title: "TPO別プロフィールの使い分け",
-      description:
-        "ビジネス用、カジュアル用など、シーンに合わせて表示するSNSや情報を切り替えることで、最適なプロフィールを共有できます。",
     },
   ];
 
@@ -407,7 +389,7 @@ export default function DigitalNamecardCompleteGuide() {
     {
       question: "デジタル名刺の情報セキュリティは大丈夫ですか？",
       answer:
-        "Share（シェア）では、ユーザー情報保護を最優先事項として、業界標準の暗号化技術を採用しています。また、共有モード機能により、ビジネス用とプライベート用で共有する情報を使い分けることができるため、TPOに応じた適切な情報共有が可能です。",
+        "Share（シェア）では、ユーザー情報保護を最優先事項として、業界標準の暗号化技術を採用しています。",
     },
   ];
 
@@ -957,10 +939,6 @@ export default function DigitalNamecardCompleteGuide() {
                     ：最もアクティブなSNSを上位に表示させましょう。
                   </li>
                   <li>
-                    <strong>ビジネス用とプライベート用の区別</strong>
-                    ：TPOに合わせて共有モードを切り替えましょう。
-                  </li>
-                  <li>
                     <strong>定期的な更新</strong>
                     ：SNSアカウントや情報は定期的に更新しましょう。
                   </li>
@@ -1029,8 +1007,6 @@ export default function DigitalNamecardCompleteGuide() {
                 <h4 className="font-medium text-gray-800 mb-2">経営者・役員</h4>
                 <ul className="list-disc pl-5 space-y-1 text-sm text-gray-600">
                   <li>ステータス性の高いデザインを選択</li>
-                  <li>複数の役割に応じたプロフィール管理</li>
-                  <li>メディア対応用のプロフィールを準備</li>
                 </ul>
               </div>
               <div className="bg-white p-4 rounded-lg shadow-sm">
@@ -1204,7 +1180,7 @@ export default function DigitalNamecardCompleteGuide() {
                 経営者向けデジタル名刺
               </h3>
               <p className="text-gray-600 text-justify">
-                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築と、場面に応じた連絡先の使い分けをご紹介します。
+                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築についてご紹介します。
               </p>
             </Link>
           </div>

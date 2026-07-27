@@ -115,7 +115,7 @@ export default function DigitalNamecardContent() {
     {
       question: "デジタル名刺の情報セキュリティは大丈夫ですか？",
       answer:
-        "Shareでは、ユーザー情報保護を最優先事項として、業界標準の暗号化技術を採用しています。また、共有モード機能により、ビジネス用とプライベート用で共有する情報を使い分けることができるため、TPOに応じた適切な情報共有が可能です。",
+        "Shareでは、ユーザー情報保護を最優先事項として、業界標準の暗号化技術を採用しています。",
     },
   ];
 
@@ -381,7 +381,7 @@ export default function DigitalNamecardContent() {
                     複数SNSを一つのプロフィールに
                   </h3>
                   <p className="text-gray-600 mb-4 text-justify">
-                    Shareのデジタル名刺では、LINE、X、Instagram、Facebookなど、複数のSNSアカウントを一つのプロフィールにまとめることができます。相手に共有するアカウントを選択でき、ビジネス用とプライベート用で使い分けることも可能です。
+                    Shareのデジタル名刺では、LINE、X、Instagram、Facebookなど、複数のSNSアカウントを一つのプロフィールにまとめることができます。
                   </p>
                   <ul className="list-disc pl-5 space-y-2 text-gray-600">
                     <li>10種類以上のSNSプラットフォームに対応</li>

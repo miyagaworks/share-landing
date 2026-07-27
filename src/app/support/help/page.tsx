@@ -336,7 +336,6 @@ export default function HelpPage() {
               "プロフィールの編集",
               "SNS連携の解除",
               "パスワードの変更",
-              "プライバシー設定",
             ].map((topic, index) => (
               <Link
                 key={index}

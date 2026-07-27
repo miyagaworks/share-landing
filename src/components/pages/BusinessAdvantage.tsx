@@ -18,7 +18,6 @@ export default function BusinessAdvantage() {
       advantages: [
         "先進的でデジタルに精通しているイメージの獲得",
         "複数のSNSや連絡先を効率的に共有",
-        "場面に応じた連絡先の使い分けとステータス性の両立",
         "紙の名刺切れの心配がない",
       ],
       icon: (
@@ -130,7 +129,7 @@ export default function BusinessAdvantage() {
     {
       title: "採用・人材獲得",
       description:
-        "優秀な人材に対して企業の革新性をアピールできます。就活イベントで学生に共有すれば、その場で企業SNSのフォロワーに。候補者の情報もデジタルで一元管理できます。",
+        "優秀な人材に対して企業の革新性をアピールできます。就活イベントで学生に共有すれば、その場で企業SNSのフォロワーに。",
       image: "/images/business/recruitment.webp", // 実際の画像パスに置き換え
     },
     {
@@ -689,7 +688,7 @@ export default function BusinessAdvantage() {
                 経営者向けデジタル名刺
               </h3>
               <p className="text-gray-600 text-justify">
-                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築と、場面に応じた連絡先の使い分けをご紹介します。
+                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築についてご紹介します。
               </p>
             </Link>
           </div>

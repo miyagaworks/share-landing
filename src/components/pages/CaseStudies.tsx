@@ -566,7 +566,7 @@ export default function CaseStudies() {
                 経営者向けデジタル名刺
               </h3>
               <p className="text-gray-600 text-justify">
-                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築と、場面に応じた連絡先の使い分けをご紹介します。
+                経営者・役員向けデジタル名刺の活用方法。先進的なイメージ構築についてご紹介します。
               </p>
             </Link>
           </div>
