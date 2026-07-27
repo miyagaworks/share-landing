@@ -305,7 +305,7 @@ export default function FreeTrial() {
             <Link href="/#pricing" className="text-primary hover:underline">
               トップページの料金表
             </Link>
-            をご覧ください。
+            をご覧ください。有料プランは解約しない限り自動更新されます。
           </p>
           <div className="grid gap-8 max-w-md mx-auto">
             {plans.map((plan) => (
