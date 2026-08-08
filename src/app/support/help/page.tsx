@@ -13,6 +13,14 @@ export const metadata: Metadata = {
     description:
       "Share（シェア）デジタル名刺サービスの詳しい使い方ガイド。初めての方から上級者まで、サービスを最大限に活用するためのヒントが見つかります。",
     type: "website",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

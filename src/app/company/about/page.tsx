@@ -12,6 +12,14 @@ export const metadata: Metadata = {
     description:
       "「人と人とのつながりをよりシンプルに、より豊かに」という理念のもと、デジタル名刺サービス「Share（シェア）」を提供する株式会社Senriganをご紹介します。",
     type: "website",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

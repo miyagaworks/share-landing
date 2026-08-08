@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "従来の紙の名刺では実現できなかった新しいビジネスコミュニケーションの形。デジタル名刺でできることと、ビジネスシーンでの使い方を解説します。",
     type: "article",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

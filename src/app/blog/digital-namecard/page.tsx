@@ -10,6 +10,14 @@ export const metadata: Metadata = {
     description:
       "デジタル名刺に関する役立つ情報を集めたブログ記事一覧。基本から応用まで、ビジネスに役立つデジタル名刺の活用法をご紹介します。",
     type: "website",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

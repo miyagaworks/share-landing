@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "デジタル名刺（電子名刺）の基本から活用法まで徹底解説。複数SNSの一元管理、QRコードでの簡単共有など、紙の名刺との違いとデジタル名刺でできることがわかります。",
     type: "article",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

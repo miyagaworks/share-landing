@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "複数SNSをまとめて共有できるデジタル名刺サービスを無料体験。QRコード生成やプロフィールカスタマイズなど全機能をお試しいただけます。",
     type: "website",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 
