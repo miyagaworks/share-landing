@@ -277,6 +277,18 @@ Google 側の記録が古いため断定できない。次回巡回で確定す�
   実行前に必ず承認を取る。承認後は Super が Chrome で代行してよい
 </user-confirmed-spec>
 
+<reflection>
+- GSC のドリルダウンは行クリックで遷移するが、`get_page_text` が DOM 更新前の内容を返すことがある。
+  スクリーンショットで確認するのが確実
+- Vercel の preview デプロイは Deployment Protection（SSO）で curl から読めない。
+  preview 検証は諦め、マージ後に本番実測する運用にした
+- URL 検査の「インデックス登録をリクエスト」は処理に1〜2分かかり、
+  完了ダイアログが自動で閉じることがある。その場合は再度クリックして
+  「✓ インデックス登録をリクエスト済み 再リクエスト」表示で確認する（重複送信は無害）
+</reflection>
+
+---
+
 ## H. §E-1 の訂正（2026-08-08 次セッションで追記）
 
 <finding type="correction">
@@ -337,12 +349,122 @@ Google 側の記録が古いため断定できない。次回巡回で確定す�
 
 ---
 
-<reflection>
-- GSC のドリルダウンは行クリックで遷移するが、`get_page_text` が DOM 更新前の内容を返すことがある。
-  スクリーンショットで確認するのが確実
-- Vercel の preview デプロイは Deployment Protection（SSO）で curl から読めない。
-  preview 検証は諦め、マージ後に本番実測する運用にした
-- URL 検査の「インデックス登録をリクエスト」は処理に1〜2分かかり、
-  完了ダイアログが自動で閉じることがある。その場合は再度クリックして
-  「✓ インデックス登録をリクエスト済み 再リクエスト」表示で確認する（重複送信は無害）
-</reflection>
+## I. H-1 の完了記録（2026-08-08）
+
+<commit-status>
+| ハッシュ | 内容 |
+|---|---|
+| 658b390 | 本ノートを記録 |
+| a530b67 | §E-1 を撤回し §H を追記 |
+| a9e654c | 空ページ `/blog/digital-namecard` を削除し `/blog` へ恒久転送 |
+| 563ebc3 | 転送先 URL を指すパンくずリンクと JSON-LD を除去 + sitemap コメント訂正 |
+
+`main` へ直接コミット（PR なし。ノート系の従来慣習に合わせた）。
+`origin/main` と一致、作業ツリーはクリーン。`68af988..563ebc3` の変更は下記5ファイルのみ。
+
+- `next.config.ts`（`redirects()` を新規追加）
+- `src/app/blog/digital-namecard/page.tsx`（削除 -39行）
+- `src/app/sitemap.ts`（コメントのみ。**PAGES 定義は無変更**）
+- `src/hooks/useBreadcrumb.ts`
+- `docs/handover/2026-08-08_SEO-index-fix-handover.md`
+</commit-status>
+
+<verification>
+本番 `sns-share.com` で Super が実測（dev 実測は CC が別途実施済み）。
+
+| 項目 | 結果 |
+|---|---|
+| `/blog/digital-namecard` | **308** → `location: /blog` |
+| `/blog/digital-namecard/{what-is,qr-code-guide,sns-integration}` | 3本とも **200**（転送されない） |
+| 記事HTML内の `href="/blog/digital-namecard"` | 3本とも **0件** |
+| 記事HTML内の `"/blog/digital-namecard"` 単体参照 | 3本とも **0件** |
+| BreadcrumbList JSON-LD | `ホーム → ブログ → 記事名`。転送 URL を含まない |
+| `sitemap.xml` | 22件。`https://sns-share.com/blog/digital-namecard` は完全一致 **0件** |
+| `/blog/digital-namecard/`（末尾スラッシュ） | 2ホップで `/blog` に到達し 200 |
+
+**sitemap.xml の中身は今回変わっていない**（22件のまま）。GSC への再送信は不要と判断し、実施していない。
+</verification>
+
+<finding type="process">
+**Super の見落としを CC が検出（通算3件目）**
+
+Super が設計したプロンプトは「転送設定の追加」と「空ページの削除」の2点のみで、
+**削除したページを指すサイト内リンクが残る点を設計に含めていなかった。**
+CC がこれを検出し、さらに `src/hooks/useBreadcrumb.ts:83` の
+`else if (segment === "digital-namecard")` フォールバックにより、
+マッピング表からエントリを消すだけではクラムが復活する構造まで突き止めた。
+Super が当該行の実在を確認済み。指示どおり2点だけ実施していれば、
+クローラーが記事を巡回するたびに転送 URL を踏む状態が残っていた。
+
+**教訓**: ページを削除・転送する指示を出すときは、
+「そのページを指す既存のリンク・構造化データ・ナビゲーションはどこにあるか」を
+必ず設計に含める。削除と転送だけでは片手落ち。
+</finding>
+
+<finding type="process">
+**Super 自身の計測ミス（記録）**
+
+サイトマップ検証で `grep -c 'digital-namecard</loc>'` を使い、
+サービス紹介ページ `https://sns-share.com/digital-namecard` を誤って拾って
+「転送 URL が1件混入」と誤判定した。`<loc>` を全件列挙して目視し 0件と確定。
+**部分一致で数えない。完全一致（`grep -cx`）か全件列挙で確認する。**
+</finding>
+
+<known-fact>
+**末尾スラッシュの1ホップ化は見送り（判断確定）**
+
+`redirects()` に `source: '/blog/digital-namecard/'` を追加しても、
+Next.js が正規化を先に行うため一度も一致せず 2ホップのままだった（CC が実測）。
+死んだ設定は残さず撤去済み（`next.config.ts` は a9e654c の状態に復帰、差分ゼロを確認）。
+
+1ホップ化には `skipTrailingSlashRedirect: true` が必要だが、
+これは**サイト全ルートの URL 正規化を変える全体設定**。
+最終到達先は `/blog` で正しく、誰もリンクしていない URL のため、
+影響範囲と釣り合わないと判断して見送った。**再検討不要。**
+</known-fact>
+
+---
+
+## J. 次セッションへの申し送り
+
+<next-action>
+1. 本ノートを Read（特に §H の訂正と §I の完了記録）
+2. `git status` / `git log -5 --oneline` で照合。main・HEAD は `563ebc3` の想定
+3. **当面やるべき実装作業はない。** 残るのは下記の効果測定と低優先の残件のみ
+</next-action>
+
+<task priority="1">
+### J-1. Search Console の効果測定（2026-08-15 以降）
+
+再巡回に数日〜2週間かかるため、**2026-08-15 より前に見ても数値は動かない。**
+
+`sc-domain:sns-share.com` の「ページ」レポートで、§E-2 に記録した
+2026-08-05 時点（＝全修正前）の数値と比較する。
+
+| 区分 | 修正前 | 期待する変化 |
+|---|---|---|
+| 未登録 | 47 | 減少 |
+| クロール済み - インデックス未登録 | 27 | 減少（特に主要コンテンツ7件） |
+| 検出 - インデックス未登録 | 14 | 減少（全て末尾スラッシュ付き。発生源は解消済み） |
+| 登録済み | 19 | 増加 |
+
+`/blog/digital-namecard` は 308 になったため「ページにリダイレクトがあります」へ
+移動するのが正常。これは是正済みの印であって不具合ではない。
+</task>
+
+<unconfirmed>
+§F の `<unconfirmed>`（正規 URL 指定がトップを向いていた可能性）は
+J-1 の効果測定で確定する。27件が実際に減れば、layout.tsx 追加が効いたと判断できる。
+</unconfirmed>
+
+<task priority="3">
+### J-2. 低優先の残件（§E-3 から継続）
+
+- `app.sns-share.com` に sitemap.xml が存在しない（404 実測済み）。別リポジトリ `~/Projects/share` の管轄
+- `/blog/category/` 配下は存在しない slug でも 200 を返す（§H の `<unconfirmed>` 参照）。
+  無制限の soft-404 URL 空間
+- 同一の `images` ブロックが12ファイルに重複。定数化の余地あり（動作には影響なし）
+- `caniuse-lite` が16ヶ月前というビルド警告（`npx update-browserslist-db@latest`）
+- 前セッションで `/blog/category/{all,basic}` にインデックス登録をリクエストしたが、
+  §H のとおり両ページは薄い重複ページ。Google は登録しない見込み。害はないため放置でよい
+</task>
