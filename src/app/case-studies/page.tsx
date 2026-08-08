@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "展示会、商談、採用イベントなど、デジタル名刺の活用が想定される場面を業種別にまとめました。経営者、営業担当者、フリーランスなど立場ごとの使い方もご紹介します。",
     type: "article",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

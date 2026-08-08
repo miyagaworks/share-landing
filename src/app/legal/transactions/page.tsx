@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Share（シェア）デジタル名刺サービスの特定商取引法に基づく表記。サービス提供者情報や取引条件を明示しています。",
     type: "website",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

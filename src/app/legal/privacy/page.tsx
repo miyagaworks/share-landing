@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "Share（シェア）デジタル名刺サービスのプライバシーポリシー。個人情報の収集・利用・保護に関する方針をご説明します。",
     type: "website",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 

@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     description:
       "経営者としてのブランディングを強化するデジタル名刺活用法。先進的なデジタルツールを使いこなす革新的な経営者像を演出する使い方をご紹介します。",
     type: "article",
+    images: [
+      {
+        url: "https://sns-share.com/images/icons/ogp.png",
+        width: 1200,
+        height: 630,
+        alt: "Share - デジタル名刺サービス",
+      },
+    ],
   },
 };
 
