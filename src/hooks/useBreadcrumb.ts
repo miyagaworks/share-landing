@@ -14,8 +14,9 @@ export function useBreadcrumb() {
       "/": "ホーム",
 
       // ブログ関連のマッピングを追加
+      // 注: /blog/digital-namecard は空ページのため削除し /blog へ恒久転送済み。
+      // パンくずからも除外しているのでマッピングは持たない（復活させないこと）。
       "/blog": "ブログ",
-      "/blog/digital-namecard": "デジタル名刺",
       "/blog/digital-namecard/qr-code-guide": "QRコード名刺ガイド",
       "/blog/digital-namecard/what-is": "デジタル名刺とは",
       "/blog/digital-namecard/sns-integration": "SNSアカウント一元管理",
@@ -65,6 +66,12 @@ export function useBreadcrumb() {
     pathSegments.forEach((segment, index) => {
       currentPath += `/${segment}`;
       const isLast = index === pathSegments.length - 1;
+
+      // /blog/digital-namecard は /blog へ恒久転送される中間パス。
+      // クラムとして出すとリンクと BreadcrumbList JSON-LD が転送 URL を指すため除外する。
+      if (!isLast && currentPath === "/blog/digital-namecard") {
+        return;
+      }
 
       // マッピングされた名前があればそれを使用、なければセグメント名をキャピタライズして使用
       // デジタル名刺のパスを特別扱い

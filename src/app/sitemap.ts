@@ -40,8 +40,10 @@
  *   配信されているため find では検出されないが、正規 URL はこちら側を指しているので掲載する。
  * - /blog/category/[slug] は除外。記事本体と内容が重複する一覧ページであり、
  *   対象カテゴリを列挙する仕組み（generateStaticParams）も未実装で静的に列挙できないため。
- * - /blog/digital-namecard は除外。同じく記事本体と内容が重複する一覧ページで、
- *   かつ記事リストが未実装の空ページのため。実装され次第ここに追記してよい。
+ * - /blog/digital-namecard は掲載しない。記事リストが未実装の空ページだったため
+ *   ページ実体を削除し、next.config.ts の redirects() で /blog へ恒久転送（308）して
+ *   いる。転送される URL をサイトマップに載せてはならないので、復活させないこと。
+ *   一覧が必要になった場合も、このパスを再作成せず /blog 側を拡張する。
  *
  * 参照: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/sitemap
  */
