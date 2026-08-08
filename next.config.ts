@@ -9,6 +9,16 @@ const nextConfig = {
     // unoptimized: true,  // この行を削除または false に設定
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/blog/digital-namecard',
+        destination: '/blog',
+        permanent: true,
+      },
+    ];
+  },
+
   async rewrites() {
     return [
       {
