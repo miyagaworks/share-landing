@@ -93,13 +93,13 @@ export default function Header() {
               メリット
             </Link>
             <Link
-              href="/digital-namecard/"
+              href="/digital-namecard"
               className="text-sm font-medium text-gray-700 hover:text-primary"
             >
               デジタル名刺
             </Link>
             <Link
-              href="/blog/"
+              href="/blog"
               className="text-sm font-medium text-gray-700 hover:text-primary"
             >
               ブログ
@@ -201,14 +201,14 @@ export default function Header() {
             メリット
           </Link>
           <Link
-            href="/digital-namecard/"
+            href="/digital-namecard"
             className="block px-6 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
             デジタル名刺
           </Link>
           <Link
-            href="/blog/"
+            href="/blog"
             className="block px-6 py-2 rounded-md text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mb-1"
             onClick={handleMenuItemClick}
           >
