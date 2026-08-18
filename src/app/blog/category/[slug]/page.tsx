@@ -6,12 +6,6 @@ import { useParams } from "next/navigation";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import { useBreadcrumb } from "@/hooks/useBreadcrumb";
 
-// BreadcrumbItemの型定義を取得（既存のものと一致させる）
-interface BreadcrumbItem {
-  name: string;
-  href: string;
-}
-
 export default function BlogCategory() {
   const params = useParams();
   const { slug } = params;
@@ -97,18 +91,12 @@ export default function BlogCategory() {
     },
   ];
 
-  // 修正: BreadcrumbItemのhrefプロパティを追加
-  const categoryBreadcrumb: BreadcrumbItem = {
-    name: currentCategory,
-    href: `/blog/category/${slug}`,
-  };
-
   return (
     <div className="bg-white">
       {/* パンくずリスト */}
       <div className="bg-white py-2 border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-4">
-          <Breadcrumb items={[...breadcrumbItems, categoryBreadcrumb]} />
+          <Breadcrumb items={breadcrumbItems} />
         </div>
       </div>
 

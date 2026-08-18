@@ -21,6 +21,13 @@ export function useBreadcrumb() {
       "/blog/digital-namecard/what-is": "デジタル名刺とは",
       "/blog/digital-namecard/sns-integration": "SNSアカウント一元管理",
 
+      // ブログのカテゴリー一覧。名称は
+      // src/app/blog/category/[slug]/{page,layout}.tsx の categoryNames と一致させること。
+      "/blog/category/all": "すべて",
+      "/blog/category/basic": "基礎知識",
+      "/blog/category/guide": "活用ガイド",
+      "/blog/category/technique": "活用テクニック",
+
       // デジタル名刺関連
       "/digital-namecard": "デジタル名刺",
       "/digital-namecard/about": "デジタル名刺とは",
@@ -70,6 +77,12 @@ export function useBreadcrumb() {
       // /blog/digital-namecard は /blog へ恒久転送される中間パス。
       // クラムとして出すとリンクと BreadcrumbList JSON-LD が転送 URL を指すため除外する。
       if (!isLast && currentPath === "/blog/digital-namecard") {
+        return;
+      }
+
+      // /blog/category は実体のページを持たず 404 を返す中間パス。
+      // クラムとして出すとリンクと BreadcrumbList JSON-LD が 404 を指すため除外する。
+      if (!isLast && currentPath === "/blog/category") {
         return;
       }
 
