@@ -373,15 +373,25 @@ a8f1bfd（08/18）から3日分しか反映されておらず、**効果は判�
 - `/blog/category/` 配下は存在しない slug でも 200 を返す。無制限の soft-404 URL 空間
 - 同一の `images` ブロックが12ファイルに重複。定数化の余地あり（動作には影響なし）
 - `caniuse-lite` が16ヶ月前というビルド警告（`npx update-browserslist-db@latest`）
-- **`npm run build` が追跡対象ファイルを書き換える**（2026-08-26 実測）。
+- **`npm run build` が `public/` 直下に .webp を生成する**（2026-08-26 実測）。
   `scripts/convert-images.js` が `public/**/*.png` と `public/**/*.{jpg,jpeg}` を
-  `destination: "public"` へ変換するため階層が潰れ、**`public/` 直下に .webp が36個**生成される。
+  `destination: "public"` へ変換する。**`destination` に固定値を渡しており、
+  imagemin は入力側の階層を保持しない**ため階層が潰れ、
+  **`public/` 直下に .webp が36個**生成される。
   変換元の36個は全て `public/pwa` `public/images/...` 配下にあり、直下には1つもない。
-  生成物は git 追跡下（`.gitignore` に webp 除外なし）で、ビルドのたびに書き戻される。
+  生成物は git 追跡下（`.gitignore` に webp 除外なし）。
   抽出した5件はいずれも `src/` から参照されていない（**36件全件は未確認**）。
-  **影響**: 「push 前にビルド確認」を実行すると毎回 working tree が汚れる。
-  docs のみの変更では type-check と lint で代替した（2026-08-26 の判断）。
-  **未着手。直すなら参照の全件調査が先。**
+
+  **作業ツリーが汚れるかの実測（2026-08-26）**:
+  clean な状態から `npm run build` を1回実行した結果、
+  `git status --porcelain` は空のままだった。生成物は書き直されるが内容が同一のため、
+  Git は差分として検出しない。
+  → **「push 前にビルド確認」を実行してもツリーは汚れない。**
+  **1回の実測であり、変換元の画像を追加・変更した場合の挙動は未検証。**
+
+  2026-08-26 の docs のみの変更では、この点が未確認だったため
+  type-check と lint で代替した（実測の結果、ビルドを回しても問題なかったことになる）。
+  **未着手。階層の潰れを直すなら、参照の全件調査が先。**
 </task>
 
 <user-confirmed-spec>
