@@ -145,7 +145,8 @@ export default function Pricing() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+    // 個人／法人の切替でカードが作り直される（key に activeTab を含む）ため、切替後にも判定し直す
+  }, [activeTab]);
 
   const activePlans = activeTab === "personal" ? personalPlans : businessPlans;
 
