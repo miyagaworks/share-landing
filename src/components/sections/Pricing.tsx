@@ -57,7 +57,7 @@ export default function Pricing() {
       badge: isYearly ? "年間プラン" : "月額プラン",
       badgeColor: "blue",
       description: "個人利用に最適なプラン",
-      price: isYearly ? "¥5,500" : "¥550",
+      price: isYearly ? "¥1,100" : "¥110",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       period: isYearly ? "年額（税込）" : "月額（税込）",
       features: [
@@ -80,9 +80,9 @@ export default function Pricing() {
       badge: "スタータープラン",
       badgeColor: "blue",
       description: "小規模チーム向け",
-      price: isYearly ? "¥33,000" : "¥3,300",
+      price: isYearly ? "¥11,000" : "¥1,100",
       period: isYearly ? "年額（税込）" : "月額（税込）",
-      perPerson: isYearly ? "1名あたり 3,300円" : "1名あたり 330円",
+      perPerson: isYearly ? "1名あたり 1,100円" : "1名あたり 110円",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [{ title: "最大10名のユーザー管理", included: true }],
       cta: "詳細を問い合わせる",
@@ -92,9 +92,9 @@ export default function Pricing() {
       badge: "ビジネスプラン",
       badgeColor: "green",
       description: "中規模チーム向け",
-      price: isYearly ? "¥66,000" : "¥6,600",
+      price: isYearly ? "¥22,000" : "¥2,200",
       period: isYearly ? "年額（税込）" : "月額（税込）",
-      perPerson: isYearly ? "1名あたり 2,200円" : "1名あたり 220円",
+      perPerson: isYearly ? "1名あたり 約733円" : "1名あたり 約73円",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [{ title: "最大30名のユーザー管理", included: true }],
       cta: "詳細を問い合わせる",
@@ -105,9 +105,9 @@ export default function Pricing() {
       badge: "エンタープライズプラン",
       badgeColor: "purple",
       description: "大規模チーム向け",
-      price: isYearly ? "¥99,000" : "¥9,900",
+      price: isYearly ? "¥33,000" : "¥3,300",
       period: isYearly ? "年額（税込）" : "月額（税込）",
-      perPerson: isYearly ? "1名あたり 1,980円" : "1名あたり 198円",
+      perPerson: isYearly ? "1名あたり 660円" : "1名あたり 66円",
       discount: isYearly ? "2ヶ月分お得" : undefined,
       features: [{ title: "最大50名のユーザー管理", included: true }],
       cta: "詳細を問い合わせる",
@@ -477,7 +477,7 @@ export default function Pricing() {
               <h4 className="font-semibold text-lg mb-2">
                 支払い方法はどのようなものがありますか？
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-justify">
                 クレジットカード（Visa、Mastercard、American
                 Express、JCB）に対応しています。
               </p>
@@ -487,8 +487,8 @@ export default function Pricing() {
               <h4 className="font-semibold text-lg mb-2">
                 途中解約した場合の返金はありますか？
               </h4>
-              <p className="text-gray-600">
-                月額プランは日割り返金はございません。年間プランは契約開始から30日以内の場合、利用期間分を差し引いた金額を返金いたします。
+              <p className="text-gray-600 text-justify">
+                月額プランは返金いたしません。年額プランは、ご利用の月数分を差し引いて返金いたします。
               </p>
             </div>
 
@@ -496,7 +496,7 @@ export default function Pricing() {
               <h4 className="font-semibold text-lg mb-2">
                 無料トライアルから自動で課金されますか？
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-justify">
                 いいえ、自動課金はされません。トライアル終了前にご案内メールをお送りし、継続をご希望の場合はお支払い情報をご登録いただきます。
               </p>
             </div>
@@ -505,7 +505,7 @@ export default function Pricing() {
               <h4 className="font-semibold text-lg mb-2">
                 プランの変更はいつでも可能ですか？
               </h4>
-              <p className="text-gray-600">
+              <p className="text-gray-600 text-justify">
                 はい、いつでもプランの変更が可能です。アップグレードの場合は即時反映され、ダウングレードは次の更新日から適用されます。
               </p>
             </div>

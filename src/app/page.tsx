@@ -92,42 +92,42 @@ const organizationStructuredData = {
 const pricingOffers = [
   // 個人向け
   { name: "7日間無料体験", price: "0", quantity: 7, unitCode: "DAY" },
-  { name: "スタンダード（月額）", price: "550", quantity: 1, unitCode: "MON" },
-  { name: "スタンダード（年額）", price: "5500", quantity: 1, unitCode: "ANN" },
+  { name: "スタンダード（月額）", price: "110", quantity: 1, unitCode: "MON" },
+  { name: "スタンダード（年額）", price: "1100", quantity: 1, unitCode: "ANN" },
   // 法人向け
   {
     name: "法人スタータープラン（月額）",
-    price: "3300",
+    price: "1100",
     quantity: 1,
     unitCode: "MON",
   },
   {
     name: "法人スタータープラン（年額）",
-    price: "33000",
+    price: "11000",
     quantity: 1,
     unitCode: "ANN",
   },
   {
     name: "法人ビジネスプラン（月額）",
-    price: "6600",
+    price: "2200",
     quantity: 1,
     unitCode: "MON",
   },
   {
     name: "法人ビジネスプラン（年額）",
-    price: "66000",
+    price: "22000",
     quantity: 1,
     unitCode: "ANN",
   },
   {
     name: "法人エンタープライズプラン（月額）",
-    price: "9900",
+    price: "3300",
     quantity: 1,
     unitCode: "MON",
   },
   {
     name: "法人エンタープライズプラン（年額）",
-    price: "99000",
+    price: "33000",
     quantity: 1,
     unitCode: "ANN",
   },
