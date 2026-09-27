@@ -436,7 +436,7 @@ export default function Pricing() {
           </div>
         )}
 
-        {/* 追加オプション（タッチシールのみ） */}
+        {/* 追加オプション（ワンタップシールのみ） */}
         {activeTab === "business" && (
           <div className="bg-gradient-to-r from-gray-50 via-white to-gray-50 border border-gray-200 rounded-lg p-6 mt-8 mb-8 shadow-sm transform transition-all duration-500 hover:shadow-md">
             <h3 className="text-xl font-semibold text-gray-800 mb-4 flex items-center">
@@ -458,8 +458,10 @@ export default function Pricing() {
             <div className="flex items-start">
               <span className="text-blue-500 mr-2 font-bold">•</span>
               <div>
-                <span className="font-medium">タッチシール:</span>
-                <p className="text-sm text-gray-600">550円/枚</p>
+                <span className="font-medium">ワンタップシール:</span>
+                <p className="text-sm text-gray-600">
+                  550円/枚（送料は1回のご注文につき240円）
+                </p>
               </div>
             </div>
           </div>

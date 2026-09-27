@@ -100,6 +100,14 @@ export default function TransactionsPage() {
               </tr>
               <tr className="border-b">
                 <th className="text-left py-4 px-4 font-semibold bg-gray-50">
+                  ワンタップシールの価格
+                </th>
+                <td className="py-4 px-4 text-justify">
+                  1枚550円（税込）。送料は、1回のご注文につき240円（税込）です。
+                </td>
+              </tr>
+              <tr className="border-b">
+                <th className="text-left py-4 px-4 font-semibold bg-gray-50">
                   支払方法
                 </th>
                 <td className="py-4 px-4 text-justify">
@@ -117,6 +125,9 @@ export default function TransactionsPage() {
                   <br />
                   年間プラン:
                   申込時および契約更新時に1年分の利用料をお支払いいただきます。
+                  <br />
+                  ワンタップシール:
+                  ご注文の時にお支払いいただきます。
                 </td>
               </tr>
               <tr className="border-b">
@@ -129,10 +140,25 @@ export default function TransactionsPage() {
               </tr>
               <tr className="border-b">
                 <th className="text-left py-4 px-4 font-semibold bg-gray-50">
-                  返品・キャンセル
+                  ワンタップシールの発送時期
                 </th>
                 <td className="py-4 px-4 text-justify">
-                  デジタルコンテンツのため、原則として返品・キャンセルはできません。ただし、法令に基づく場合はこの限りではありません。
+                  お支払いの確認後、1〜3営業日以内に発送します。
+                </td>
+              </tr>
+              <tr className="border-b">
+                <th className="text-left py-4 px-4 font-semibold bg-gray-50">
+                  返品・キャンセル
+                </th>
+                <td className="py-4 px-4 text-justify space-y-2">
+                  <p>
+                    ご利用プラン:
+                    解約はいつでも申請できます。月額プランは返金いたしません。年額プランは、ご利用の月数分を差し引いて返金いたします。解約の方法は、下の「解約方法」のとおりです。
+                  </p>
+                  <p>
+                    ワンタップシール:
+                    お客様ごとにプロフィールを書き込んでお作りするため、お客様のご都合による返品・交換はお受けしていません。不良品やご注文と違う品が届いた場合は、上記のメールアドレスか電話番号へご連絡ください。当社の負担で交換いたします。
+                  </p>
                 </td>
               </tr>
               <tr className="border-b">
