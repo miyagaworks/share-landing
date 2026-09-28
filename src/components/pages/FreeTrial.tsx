@@ -98,6 +98,8 @@ export default function FreeTrial() {
       question: "支払い方法にはどのようなものがありますか？",
       answer:
         "クレジットカード（Visa、Mastercard、American Express、JCB）による支払いに対応しています。",
+      // 英語の社名・サービス名は途中で折り返せないため、両端揃えでは字間が大きく開く。この答えは左揃えにする
+      alignLeft: true,
     },
   ];
 
@@ -465,7 +467,11 @@ export default function FreeTrial() {
                 <h3 className="text-lg font-semibold mb-3 text-primary">
                   <KeepLastChars text={faq.question} />
                 </h3>
-                <p className="text-gray-600 text-justify">
+                <p
+                  className={`text-gray-600 ${
+                    faq.alignLeft ? "text-left" : "text-justify"
+                  }`}
+                >
                   <KeepLastChars text={faq.answer} />
                 </p>
               </div>

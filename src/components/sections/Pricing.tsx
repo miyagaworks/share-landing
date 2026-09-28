@@ -479,7 +479,7 @@ export default function Pricing() {
               <h4 className="font-semibold text-lg mb-2">
                 <KeepLastChars text="支払い方法はどのようなものがありますか？" />
               </h4>
-              <p className="text-gray-600 text-justify">
+              <p className="text-gray-600 text-left">
                 <KeepLastChars text="クレジットカード（Visa、Mastercard、American Express、JCB）に対応しています。" />
               </p>
             </div>

@@ -10,6 +10,7 @@ interface FAQItem {
   question: string;
   answer: string;
   category?: string;
+  alignLeft?: boolean;
 }
 
 export default function FAQ() {
@@ -35,6 +36,8 @@ export default function FAQ() {
       answer:
         "LINE、YouTube、X、Instagram、TikTok、Facebook、Pinterest、Threads、BeRealなど主要なSNSに対応しています。また、カスタムリンクも追加できるため、上記以外のサービスも登録可能です。",
       category: "機能・使い方",
+      // 英語の社名・サービス名は途中で折り返せないため、両端揃えでは字間が大きく開く。この答えは左揃えにする
+      alignLeft: true,
     },
     {
       id: "cancellation",
@@ -270,7 +273,11 @@ export default function FAQ() {
                 >
                   <div className="px-6 pb-5">
                     <div className="border-l-4 border-primary pl-4 py-1">
-                      <p className="text-gray-600 text-justify">
+                      <p
+                        className={`text-gray-600 ${
+                          item.alignLeft ? "text-left" : "text-justify"
+                        }`}
+                      >
                         <KeepLastChars text={item.answer} />
                       </p>
                     </div>
