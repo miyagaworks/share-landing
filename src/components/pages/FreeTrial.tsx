@@ -2,6 +2,7 @@
 "use client";
 
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import KeepLastChars from "@/components/ui/KeepLastChars";
 import { useBreadcrumb } from "@/hooks/useBreadcrumb";
 import Link from "next/link";
 import { useState } from "react";
@@ -269,7 +270,9 @@ export default function FreeTrial() {
                 <h3 className="text-xl font-semibold mb-2 text-center">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-center">{step.description}</p>
+                <p className="text-gray-600 text-center">
+                  <KeepLastChars text={step.description} />
+                </p>
               </div>
             ))}
           </div>
@@ -460,9 +463,11 @@ export default function FreeTrial() {
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
               >
                 <h3 className="text-lg font-semibold mb-3 text-primary">
-                  {faq.question}
+                  <KeepLastChars text={faq.question} />
                 </h3>
-                <p className="text-gray-600 text-justify">{faq.answer}</p>
+                <p className="text-gray-600 text-justify">
+                  <KeepLastChars text={faq.answer} />
+                </p>
               </div>
             ))}
           </div>

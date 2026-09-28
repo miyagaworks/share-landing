@@ -3,6 +3,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import KeepLastChars from "@/components/ui/KeepLastChars";
 
 interface PricingFeature {
   title: string;
@@ -476,38 +477,37 @@ export default function Pricing() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-semibold text-lg mb-2">
-                支払い方法はどのようなものがありますか？
+                <KeepLastChars text="支払い方法はどのようなものがありますか？" />
               </h4>
               <p className="text-gray-600 text-justify">
-                クレジットカード（Visa、Mastercard、American
-                Express、JCB）に対応しています。
+                <KeepLastChars text="クレジットカード（Visa、Mastercard、American Express、JCB）に対応しています。" />
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-semibold text-lg mb-2">
-                途中解約した場合の返金はありますか？
+                <KeepLastChars text="途中解約した場合の返金はありますか？" />
               </h4>
               <p className="text-gray-600 text-justify">
-                月額プランは返金いたしません。年額プランは、ご利用の月数分を差し引いて返金いたします。
+                <KeepLastChars text="月額プランは返金いたしません。年額プランは、ご利用の月数分を差し引いて返金いたします。" />
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-semibold text-lg mb-2">
-                無料トライアルから自動で課金されますか？
+                <KeepLastChars text="無料トライアルから自動で課金されますか？" />
               </h4>
               <p className="text-gray-600 text-justify">
-                いいえ、自動課金はされません。トライアル終了前にご案内メールをお送りし、継続をご希望の場合はお支払い情報をご登録いただきます。
+                <KeepLastChars text="いいえ、自動課金はされません。トライアル終了前にご案内メールをお送りし、継続をご希望の場合はお支払い情報をご登録いただきます。" />
               </p>
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-semibold text-lg mb-2">
-                プランの変更はできますか？
+                <KeepLastChars text="プランの変更はできますか？" />
               </h4>
               <p className="text-gray-600 text-justify">
-                プランの変更をご希望の場合は、お問い合わせフォームよりご連絡ください。
+                <KeepLastChars text="プランの変更をご希望の場合は、お問い合わせフォームよりご連絡ください。" />
               </p>
             </div>
           </div>

@@ -4,6 +4,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import { useState } from "react";
 import Link from "next/link";
+import KeepLastChars from "@/components/ui/KeepLastChars";
 
 interface FAQItem {
   id: string;
@@ -235,7 +236,7 @@ export default function FAQPage() {
                   className="flex justify-between items-center w-full px-6 py-5 text-left focus:outline-none"
                 >
                   <h3 className="text-lg font-medium text-gray-900 pr-6">
-                    {item.question}
+                    <KeepLastChars text={item.question} />
                   </h3>
                   <div
                     className={`flex-shrink-0 ml-2 transition-transform duration-300 ${
@@ -267,7 +268,7 @@ export default function FAQPage() {
                   <div className="px-6 pb-5">
                     <div className="border-l-4 border-primary pl-4 py-1">
                       <p className="text-gray-600 text-justify">
-                        {item.answer}
+                        <KeepLastChars text={item.answer} />
                       </p>
                     </div>
                     {item.category && (
