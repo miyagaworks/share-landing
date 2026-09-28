@@ -65,7 +65,6 @@ export default function Pricing() {
         { title: "SNSアカウント無制限追加", included: true },
         { title: "QRコード生成（高解像度）", included: true },
         { title: "プロフィールカスタマイズ", included: true },
-        { title: "いつでもキャンセル可能", included: true },
       ],
       cta: "プランを選択",
       popular: true,
@@ -505,10 +504,10 @@ export default function Pricing() {
 
             <div className="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
               <h4 className="font-semibold text-lg mb-2">
-                プランの変更はいつでも可能ですか？
+                プランの変更はできますか？
               </h4>
               <p className="text-gray-600 text-justify">
-                はい、いつでもプランの変更が可能です。アップグレードの場合は即時反映され、ダウングレードは次の更新日から適用されます。
+                プランの変更をご希望の場合は、お問い合わせフォームよりご連絡ください。
               </p>
             </div>
           </div>

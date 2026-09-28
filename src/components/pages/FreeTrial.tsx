@@ -22,7 +22,6 @@ export default function FreeTrial() {
         "SNSアカウント無制限追加",
         "QRコード生成（高解像度）",
         "プロフィールカスタマイズ",
-        "いつでもキャンセル可能",
       ],
     },
   ];
@@ -60,7 +59,7 @@ export default function FreeTrial() {
       number: 3,
       title: "継続or解約",
       description:
-        "気に入ったら継続し、そうでなければいつでも解約できます。自動更新はありません。",
+        "気に入ったら、有料プランにお申し込みください。お申し込みがなければ、無料トライアルは自動で終了し、料金はかかりません。",
       icon: (
         <path
           strokeLinecap="round"
@@ -87,7 +86,7 @@ export default function FreeTrial() {
     {
       question: "無料トライアル中に解約した場合、料金は発生しますか？",
       answer:
-        "いいえ、無料トライアル期間内に解約された場合、一切の料金は発生しません。いつでも簡単に解約いただけます。",
+        "いいえ、無料トライアル期間内に解約された場合、一切の料金は発生しません。",
     },
     {
       question: "プランの変更はできますか？",
@@ -229,24 +228,6 @@ export default function FreeTrial() {
                           />
                         </svg>
                         <span className="ml-2 text-gray-700">自動更新なし</span>
-                      </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="ml-2 text-gray-700">
-                          いつでもキャンセル可能
-                        </span>
                       </li>
                     </ul>
                     <div className="mt-6 text-center">
