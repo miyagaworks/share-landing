@@ -21,6 +21,22 @@ function getContactTypeJapanese(type: string): string {
   return types[type] || "その他";
 }
 
+// お客様が入れた文字を、運営あてのメールの HTML に入れる前に置き換える（アプリの lib/email/escape-html.ts と同じ中身）
+const HTML_ESCAPES: Record<string, string> = {
+  "&": "&amp;",
+  "<": "&lt;",
+  ">": "&gt;",
+  '"': "&quot;",
+  "'": "&#39;",
+};
+
+/**
+ * HTML の特別な文字（& < > " ' の5つ）を文字参照に置き換える。メールの画面に見える文は変わらない。
+ */
+function escapeHtml(value: string): string {
+  return value.replace(/[&<>"']/g, (char) => HTML_ESCAPES[char]);
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -97,18 +113,18 @@ export async function POST(request: Request) {
   <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
     <tr>
       <th style="text-align: left; padding: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0; width: 30%;">お名前</th>
-      <td style="padding: 8px; border: 1px solid #e2e8f0;">${name}</td>
+      <td style="padding: 8px; border: 1px solid #e2e8f0;">${escapeHtml(String(name ?? ""))}</td>
     </tr>
     <tr>
       <th style="text-align: left; padding: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0;">メールアドレス</th>
-      <td style="padding: 8px; border: 1px solid #e2e8f0;"><a href="mailto:${email}">${email}</a></td>
+      <td style="padding: 8px; border: 1px solid #e2e8f0;"><a href="mailto:${escapeHtml(String(email ?? ""))}">${escapeHtml(String(email ?? ""))}</a></td>
     </tr>
     ${
       companyName
         ? `
     <tr>
       <th style="text-align: left; padding: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0;">会社名</th>
-      <td style="padding: 8px; border: 1px solid #e2e8f0;">${companyName}</td>
+      <td style="padding: 8px; border: 1px solid #e2e8f0;">${escapeHtml(String(companyName ?? ""))}</td>
     </tr>
     `
         : ""
@@ -119,13 +135,13 @@ export async function POST(request: Request) {
     </tr>
     <tr>
       <th style="text-align: left; padding: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0;">件名</th>
-      <td style="padding: 8px; border: 1px solid #e2e8f0;">${subject}</td>
+      <td style="padding: 8px; border: 1px solid #e2e8f0;">${escapeHtml(String(subject ?? ""))}</td>
     </tr>
   </table>
   
   <div style="margin-bottom: 20px;">
     <h3 style="color: #1E40AF; margin-bottom: 10px;">お問い合わせ内容:</h3>
-    <div style="background-color: #f8fafc; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; white-space: pre-line; text-align: justify;">${message}</div>
+    <div style="background-color: #f8fafc; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; white-space: pre-line; text-align: justify;">${escapeHtml(String(message ?? ""))}</div>
   </div>
 ${htmlSignature}
 </div>
@@ -134,32 +150,17 @@ ${htmlSignature}
     // 自動返信用のメール本文（HTML形式）
     const autoReplyHtml = `
 <div style="font-family: 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e0e0e0; border-radius: 5px;">
-  <p style="font-size: 16px; margin-bottom: 20px;">${name} 様</p>
+  <p style="font-size: 16px; margin-bottom: 20px;">お問い合わせいただいた方へ</p>
   
   <p style="margin-bottom: 20px;">
     お問い合わせありがとうございます。<br>
-    以下の内容でお問い合わせを受け付けました。${
+    お問い合わせを受け付けました。${
       contactType === "corporate"
         ? "担当者より1営業日以内にご連絡いたします。"
         : "内容を確認の上、必要に応じてご連絡いたします。"
     }
   </p>
   
-  <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-    <tr>
-      <th style="text-align: left; padding: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0; width: 30%;">お問い合わせカテゴリ</th>
-      <td style="padding: 8px; border: 1px solid #e2e8f0;">${contactTypeJapanese}</td>
-    </tr>
-    <tr>
-      <th style="text-align: left; padding: 8px; background-color: #f8fafc; border: 1px solid #e2e8f0;">件名</th>
-      <td style="padding: 8px; border: 1px solid #e2e8f0;">${subject}</td>
-    </tr>
-  </table>
-  
-  <div style="margin-bottom: 20px;">
-    <h3 style="color: #1E40AF; margin-bottom: 10px;">お問い合わせ内容:</h3>
-    <div style="background-color: #f8fafc; padding: 15px; border-radius: 4px; border: 1px solid #e2e8f0; white-space: pre-line; text-align: justify;">${message}</div>
-  </div>
 ${htmlSignature}
   <p style="color: #6B7280; font-size: 13px; margin-top: 30px; padding-top: 10px; border-top: 1px solid #e2e8f0;">
     ※このメールは自動送信されています。このメールには返信しないでください。
