@@ -146,7 +146,6 @@ const PAGES: Page[] = [
 
   // 法的ページ
   { path: "/legal/privacy", lastModified: "2025-07-17", priority: 0.5 },
-  { path: "/legal/terms", lastModified: "2025-07-17", priority: 0.5 },
   { path: "/legal/transactions", lastModified: "2025-08-12", priority: 0.5 },
 
   // サポート

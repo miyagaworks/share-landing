@@ -100,7 +100,7 @@ export async function POST(request: Request) {
   
   <div style="margin-top: 10px;">
     <a href="https://sns-share.com/legal/privacy" style="display: inline-block; margin-right: 8px; color: #3B82F6; text-decoration: none;">プライバシーポリシー</a> | 
-    <a href="https://sns-share.com/legal/terms" style="display: inline-block; margin-right: 8px; color: #3B82F6; text-decoration: none;">利用規約</a>
+    <a href="https://app.sns-share.com/legal/terms" style="display: inline-block; margin-right: 8px; color: #3B82F6; text-decoration: none;">利用規約</a>
   </div>
 </div>
     `;

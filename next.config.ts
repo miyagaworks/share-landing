@@ -16,6 +16,11 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
+      {
+        source: '/legal/terms',
+        destination: 'https://app.sns-share.com/legal/terms',
+        permanent: true,
+      },
     ];
   },
 
