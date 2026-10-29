@@ -166,7 +166,7 @@ export default function TransactionsPage() {
                   解約方法
                 </th>
                 <td className="py-4 px-4 text-justify">
-                  解約は、ダッシュボードの「ご利用プラン」画面から、いつでも申請できます。解約後は、契約期間の終了をもってサービスの提供が終了します。解約と返金の条件と、解約後のデータの扱いは、
+                  解約は、ダッシュボードの「ご利用プラン」画面から、いつでも申請できます。解約後は、月額プランは契約期間の満了日をもって、年額プランはお選びいただいた解約日をもって、サービスの提供が終了します。解約と返金の条件と、解約後のデータの扱いは、
                   <Link
                     href="https://app.sns-share.com/legal/terms"
                     className="text-primary hover:underline"
