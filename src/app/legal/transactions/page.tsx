@@ -2,6 +2,7 @@
 import { PageLayout } from "@/components/layout/PageLayout";
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
+import KeepLastChars from "@/components/ui/KeepLastChars";
 
 export const metadata: Metadata = {
   title: "特定商取引法に基づく表記 | Share（シェア）",
@@ -173,7 +174,7 @@ export default function TransactionsPage() {
                   >
                     利用規約
                   </Link>
-                  の「7. 解約および返金」のとおりです。
+                  <KeepLastChars text="の「7. 解約および返金」のとおりです。" />
                 </td>
               </tr>
             </tbody>
