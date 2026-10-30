@@ -3,12 +3,14 @@
 
 import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import KeepLastChars from "@/components/ui/KeepLastChars";
 
 interface FAQItem {
   id: string;
   question: string;
   answer: string;
   category?: string;
+  alignLeft?: boolean;
 }
 
 export default function FAQ() {
@@ -25,7 +27,7 @@ export default function FAQ() {
       id: "is-free",
       question: "無料で利用できますか？",
       answer:
-        "Shareには7日間の無料トライアル期間があります。その後は月額550円（税込）または年額5,500円（税込）の有料プランに移行していただく必要があります。有料プランでは、すべての機能を制限なくご利用いただけます。",
+        "Shareには7日間の無料トライアル期間があります。その後は月額110円（税込）または年額1,100円（税込）の有料プランに移行していただく必要があります。有料プランでは、すべての機能を制限なくご利用いただけます。",
       category: "料金・プラン",
     },
     {
@@ -34,12 +36,14 @@ export default function FAQ() {
       answer:
         "LINE、YouTube、X、Instagram、TikTok、Facebook、Pinterest、Threads、BeRealなど主要なSNSに対応しています。また、カスタムリンクも追加できるため、上記以外のサービスも登録可能です。",
       category: "機能・使い方",
+      // 英語の社名・サービス名は途中で折り返せないため、両端揃えでは字間が大きく開く。この答えは左揃えにする
+      alignLeft: true,
     },
     {
       id: "cancellation",
-      question: "解約はいつでもできますか？",
+      question: "解約はどのようにできますか？",
       answer:
-        "はい、「ご利用プラン」ページから解約手続きをいつでも行うことができます。解約手続きを行っても、契約期間の終了までサービスをご利用いただけます。なお、解約後の日割り返金はございませんので、ご了承ください。",
+        "「ご利用プラン」ページから、いつでも解約を申請できます。解約手続きを行っても、月額プランは契約期間の満了日まで、年額プランはお選びいただいた解約日まで、サービスをご利用いただけます。なお、月額プランは返金いたしません。年額プランは、ご利用の月数分を差し引いて返金いたします。",
       category: "料金・プラン",
     },
     {
@@ -53,7 +57,7 @@ export default function FAQ() {
       id: "corporate-plan",
       question: "法人プランはありますか？",
       answer:
-        "はい、法人向けプランをご用意しています。最大10名まで利用できるスタータープラン（月額3,300円）と、最大30名まで利用できるビジネスプラン（月額6,600円）、そして最大50名まで利用できるエンタープライズプラン（月額9,900円）があります。会社ロゴの表示や共通カラーテーマの設定、管理者ダッシュボードなど、法人向けの機能が含まれています。",
+        "はい、法人向けプランをご用意しています。最大10名まで利用できるスタータープラン（月額1,100円）と、最大30名まで利用できるビジネスプラン（月額2,200円）、そして最大50名まで利用できるエンタープライズプラン（月額3,300円）があります。会社ロゴの表示や共通カラーテーマの設定、管理者ダッシュボードなど、法人向けの機能が含まれています。",
       category: "料金・プラン",
     },
     {
@@ -238,7 +242,7 @@ export default function FAQ() {
                   className="flex justify-between items-center w-full px-6 py-5 text-left focus:outline-none"
                 >
                   <h3 className="text-lg font-medium text-gray-900 pr-6">
-                    {item.question}
+                    <KeepLastChars text={item.question} />
                   </h3>
                   <div
                     className={`flex-shrink-0 ml-2 transition-transform duration-300 ${
@@ -269,8 +273,12 @@ export default function FAQ() {
                 >
                   <div className="px-6 pb-5">
                     <div className="border-l-4 border-primary pl-4 py-1">
-                      <p className="text-gray-600 text-justify">
-                        {item.answer}
+                      <p
+                        className={`text-gray-600 ${
+                          item.alignLeft ? "text-left" : "text-justify"
+                        }`}
+                      >
+                        <KeepLastChars text={item.answer} />
                       </p>
                     </div>
                     {item.category && (

@@ -2,6 +2,7 @@
 "use client";
 
 import Breadcrumb from "@/components/ui/Breadcrumb";
+import KeepLastChars from "@/components/ui/KeepLastChars";
 import { useBreadcrumb } from "@/hooks/useBreadcrumb";
 import Link from "next/link";
 import { useState } from "react";
@@ -15,14 +16,13 @@ export default function FreeTrial() {
     {
       id: "standard",
       name: "スタンダードプラン",
-      price: "月額 ¥550（税込）",
-      yearlyPrice: "年額 ¥5,500（税込）",
+      price: "月額 ¥110（税込）",
+      yearlyPrice: "年額 ¥1,100（税込）",
       yearlyDiscount: "2ヶ月分お得",
       features: [
         "SNSアカウント無制限追加",
         "QRコード生成（高解像度）",
         "プロフィールカスタマイズ",
-        "いつでもキャンセル可能",
       ],
     },
   ];
@@ -60,7 +60,7 @@ export default function FreeTrial() {
       number: 3,
       title: "継続or解約",
       description:
-        "気に入ったら継続し、そうでなければいつでも解約できます。自動更新はありません。",
+        "気に入ったら、有料プランにお申し込みください。お申し込みがなければ、無料トライアルは自動で終了し、料金はかかりません。",
       icon: (
         <path
           strokeLinecap="round"
@@ -87,7 +87,7 @@ export default function FreeTrial() {
     {
       question: "無料トライアル中に解約した場合、料金は発生しますか？",
       answer:
-        "いいえ、無料トライアル期間内に解約された場合、一切の料金は発生しません。いつでも簡単に解約いただけます。",
+        "いいえ、無料トライアル期間内に解約された場合、一切の料金は発生しません。",
     },
     {
       question: "プランの変更はできますか？",
@@ -98,6 +98,8 @@ export default function FreeTrial() {
       question: "支払い方法にはどのようなものがありますか？",
       answer:
         "クレジットカード（Visa、Mastercard、American Express、JCB）による支払いに対応しています。",
+      // 英語の社名・サービス名は途中で折り返せないため、両端揃えでは字間が大きく開く。この答えは左揃えにする
+      alignLeft: true,
     },
   ];
 
@@ -230,24 +232,6 @@ export default function FreeTrial() {
                         </svg>
                         <span className="ml-2 text-gray-700">自動更新なし</span>
                       </li>
-                      <li className="flex items-start">
-                        <svg
-                          className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M5 13l4 4L19 7"
-                          />
-                        </svg>
-                        <span className="ml-2 text-gray-700">
-                          いつでもキャンセル可能
-                        </span>
-                      </li>
                     </ul>
                     <div className="mt-6 text-center">
                       <span className="text-sm text-gray-500">
@@ -288,7 +272,9 @@ export default function FreeTrial() {
                 <h3 className="text-xl font-semibold mb-2 text-center">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-center">{step.description}</p>
+                <p className="text-gray-600 text-center">
+                  <KeepLastChars text={step.description} />
+                </p>
               </div>
             ))}
           </div>
@@ -479,9 +465,15 @@ export default function FreeTrial() {
                 className="bg-white p-6 rounded-lg shadow-md border border-gray-200"
               >
                 <h3 className="text-lg font-semibold mb-3 text-primary">
-                  {faq.question}
+                  <KeepLastChars text={faq.question} />
                 </h3>
-                <p className="text-gray-600 text-justify">{faq.answer}</p>
+                <p
+                  className={`text-gray-600 ${
+                    faq.alignLeft ? "text-left" : "text-justify"
+                  }`}
+                >
+                  <KeepLastChars text={faq.answer} />
+                </p>
               </div>
             ))}
           </div>

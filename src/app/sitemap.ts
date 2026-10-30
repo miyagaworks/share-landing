@@ -68,7 +68,7 @@ type Page = {
 
 const PAGES: Page[] = [
   // トップページ
-  { path: "", lastModified: "2025-05-08", priority: 1.0 },
+  { path: "", lastModified: "2026-10-30", priority: 1.0 },
 
   // 主要導線（サービス紹介・トライアル・パートナー募集）
   {
@@ -77,7 +77,7 @@ const PAGES: Page[] = [
     priority: 0.9,
     images: ["/images/screenshots/profile-creation.webp"],
   },
-  { path: "/free-trial", lastModified: "2025-05-08", priority: 0.9 },
+  { path: "/free-trial", lastModified: "2026-10-30", priority: 0.9 },
   // /partner のみ page.tsx が無く git から更新日を取得できないため、
   // 移行前の public/sitemap.xml に記載されていた値をそのまま引き継いでいる。
   { path: "/partner", lastModified: "2026-06-04", priority: 0.9 },
@@ -85,7 +85,7 @@ const PAGES: Page[] = [
   // デジタル名刺 配下
   {
     path: "/digital-namecard/about",
-    lastModified: "2025-05-08",
+    lastModified: "2026-10-30",
     priority: 0.8,
     images: ["/images/screenshots/social-links.webp"],
   },
@@ -103,13 +103,13 @@ const PAGES: Page[] = [
   },
   {
     path: "/digital-namecard/how-to-create",
-    lastModified: "2025-05-08",
+    lastModified: "2026-10-30",
     priority: 0.8,
     images: ["/images/screenshots/profile-creation.webp"],
   },
   {
     path: "/digital-namecard/ultimate-guide",
-    lastModified: "2025-08-12",
+    lastModified: "2026-10-30",
     priority: 0.8,
     images: ["/images/screenshots/qr-code.webp"],
   },
@@ -132,7 +132,7 @@ const PAGES: Page[] = [
   },
   {
     path: "/blog/digital-namecard/what-is",
-    lastModified: "2025-08-12",
+    lastModified: "2026-10-30",
     priority: 0.8,
     images: ["/images/screenshots/intro-generator.webp"],
   },
@@ -146,12 +146,11 @@ const PAGES: Page[] = [
 
   // 法的ページ
   { path: "/legal/privacy", lastModified: "2025-07-17", priority: 0.5 },
-  { path: "/legal/terms", lastModified: "2025-07-17", priority: 0.5 },
-  { path: "/legal/transactions", lastModified: "2025-08-12", priority: 0.5 },
+  { path: "/legal/transactions", lastModified: "2026-10-30", priority: 0.5 },
 
   // サポート
   { path: "/support/contact", lastModified: "2025-07-17", priority: 0.5 },
-  { path: "/support/faq", lastModified: "2025-08-12", priority: 0.5 },
+  { path: "/support/faq", lastModified: "2026-10-30", priority: 0.5 },
   { path: "/support/help", lastModified: "2025-05-08", priority: 0.5 },
 ];
 

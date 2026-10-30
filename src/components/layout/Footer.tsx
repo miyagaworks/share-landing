@@ -11,7 +11,7 @@ export default function Footer() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/legal/terms"
+                  href="https://app.sns-share.com/legal/terms"
                   className="text-gray-700 hover:text-blue-600"
                 >
                   利用規約
